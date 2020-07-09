@@ -1,0 +1,208 @@
+.card-real-estate {
+  position: relative;
+
+  width: 100%;
+  height: 340px;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: #fff;
+
+  font-family: 'Geometria', Arial, sans-serif;
+  line-height: 1;
+  color: #597DA3;
+
+  &:hover {
+
+    .card-real-estate {
+
+      &__img {
+        height: 60px;
+        transition: height $time-animation-card ease-in;
+      }
+
+      &__info {
+        height: 280px;
+        transition: height $time-animation-card ease-in;
+      }
+
+      &__address {
+        margin-bottom: 18px;
+      }
+
+      &__row {
+        position: initial;
+        opacity: 1;
+        transition: opacity $time-animation-card $time-animation-card / 2 ease-in;
+      }
+
+      &__link {
+        position: relative;
+        opacity: 1;
+        transition: opacity $time-animation-card $time-animation-card / 2 ease-in;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 195px;
+
+    transition: height $time-animation-card ease-in;
+
+    img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__info {
+    flex: 1 1 auto;
+
+    height: 145px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    border: 1px solid rgba(89, 125, 163, .5);
+    border-top: none;
+
+    transition: height $time-animation-card ease-in;
+  }
+
+  &__name {
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    font-size: 24px;
+    font-weight: normal;
+  }
+
+  &__type {
+    margin-bottom: 18px;
+    font-weight: 300;
+  }
+
+  &__address {
+    position: relative;
+
+    margin-top: auto;
+    padding-left: 11px;
+
+    font-weight: 300;
+    font-size: 12px;
+    font-style: normal;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto 0;
+
+      width: 7px;
+      height: 9px;
+
+      background: url('../svg/icons/point.svg') center/contain no-repeat;
+    }
+  }
+
+  &__row {
+    display: flex;
+    position: absolute;
+    opacity: 0;
+
+    margin-bottom: 9px;
+  }
+
+  &__row-title {
+    width: 80px;
+    margin-right: 12px;
+    font-weight: 300;
+  }
+
+  &__row-info {
+    width: 140px;
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 500;
+  }
+
+  &__link {
+    display: inline;
+    position: absolute;
+    opacity: 0;
+
+    margin-top: 11px;
+
+    text-decoration: none;
+    color: #597DA3;
+
+    &::after {
+      position: absolute;
+      content: '';
+      top: 0;
+      bottom: 0;
+      right: -50px;
+      margin: auto 0;
+
+      width: 39px;
+      height: 7px;
+
+      background: url('../svg/icons/arrow-right.svg') center/contain no-repeat;
+    }
+  }
+
+  &__plus {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+
+    width: 8px;
+    height: 8px;
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+
+      width: 1px;
+      height: 9px;
+
+      background-color: rgba(15, 43, 68, .5);
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+
+      width: 9px;
+      height: 1px;
+
+      background-color: rgba(15, 43, 68, .5);
+    }
+  }
+}

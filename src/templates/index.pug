@@ -1,0 +1,20 @@
+extends layout/layout
+
+block head
+  - var title = 'Главная';
+
+block header
+  include layout/header
+
+block content
+  main
+    include components/main-screen
+    a(id='projects')
+    include components/projects
+    include components/about-us
+    include components/map
+    include components/rooms
+
+block footer
+  include layout/footer
+

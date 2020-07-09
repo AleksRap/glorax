@@ -1,0 +1,25 @@
+mixin card-real-estate(data)
+  .card-real-estate
+    .card-real-estate__img
+      img(src=data.img alt=data.name)
+    .card-real-estate__info
+      h3.card-real-estate__name=data.name
+      span.card-real-estate__type=data.type
+      address.card-real-estate__address=data.address
+      .card-real-estate__row
+        span.card-real-estate__row-title Класс:
+        span.card-real-estate__row-info=data.classObj
+      .card-real-estate__row
+        span.card-real-estate__row-title Сдача:
+        span.card-real-estate__row-info=data.dateEnd
+      .card-real-estate__row
+        span.card-real-estate__row-title Метро:
+        span.card-real-estate__row-info=data.metro
+      .card-real-estate__row
+        span.card-real-estate__row-title
+          | Цена за м
+          sup 2
+          | :
+        span.card-real-estate__row-info=data.price
+      a.card-real-estate__link(href=data.url) На сайт объекта
+      button.card-real-estate__plus

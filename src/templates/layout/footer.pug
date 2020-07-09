@@ -1,0 +1,12 @@
+include ../mixins/number
+include ../mixins/callback-btn
+
+footer.footer
+  .content.footer__content
+    a.logo.footer__logo(href='#')
+    a.logo-m2.footer__logo-m2(href='#')
+    .footer__info
+      +number('footer')
+      +callback-btn('footer')
+
+      include ../components/social-links

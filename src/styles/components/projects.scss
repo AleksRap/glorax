@@ -1,0 +1,16 @@
+.projects {
+  background-color: #fff;
+
+  &__content {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  &__cards {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+  }
+}

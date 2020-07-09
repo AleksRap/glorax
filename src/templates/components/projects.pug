@@ -1,0 +1,95 @@
+include ../mixins/card-real-estate
+
+section.projects
+  .content.projects__content
+    h2.title.title_mb Проекты
+
+    .projects__cards
+
+      -
+        cards = [
+          {
+            name: 'Ligovsky city - Второй квартал',
+            img: 'images/real-estate/1.jpg',
+            type: 'Жилой комплекс',
+            address: 'Лиговский проспект, 232',
+            classObj: 'Бизнес класс',
+            dateEnd: 'III кв. 2020 года',
+            metro: 'Обводный канал',
+            price: 'от 165 000 ₽',
+            url: '#'
+          }, {
+            name: 'Ligovsky city - Первый квартал',
+            img: 'images/real-estate/2.jpg',
+            type: 'Жилой комплекс',
+            address: 'Лиговский проспект, 271',
+            classObj: 'Бизнес класс',
+            dateEnd: 'III кв. 2020 года',
+            metro: 'Обводный канал',
+            price: 'от 165 000 ₽',
+            url: '#'
+          }, {
+            name: 'Golden City',
+            img: 'images/real-estate/3.jpg',
+            type: 'Жилой комплекс',
+            address: 'ул. Челюскина, 4',
+            classObj: 'Бизнес класс',
+            dateEnd: 'III кв. 2020 года',
+            metro: 'Обводный канал',
+            price: 'от 165 000 ₽',
+            url: '#'
+          }, {
+            name: 'Английская миля',
+            img: 'images/real-estate/4.jpg',
+            type: 'Жилой комплекс',
+            address: 'Петергофское ш., 78',
+            classObj: 'Бизнес класс',
+            dateEnd: 'III кв. 2020 года',
+            metro: 'Обводный канал',
+            price: 'от 165 000 ₽',
+            url: '#'
+          }, {
+            name: 'Grand House',
+            img: 'images/real-estate/5.jpg',
+            type: 'Жилой комплекс',
+            address: 'Тележная ул., 17-19',
+            classObj: 'Бизнес класс',
+            dateEnd: 'III кв. 2020 года',
+            metro: 'Обводный канал',
+            price: 'от 165 000 ₽',
+            url: '#'
+          }, {
+            name: 'Олимп',
+            img: 'images/real-estate/6.jpg',
+            type: 'Жилой комплекс',
+            address: 'МО, г. Хотьково, ул. Михеенко, 25',
+            classObj: 'Бизнес класс',
+            dateEnd: 'III кв. 2020 года',
+            metro: 'Обводный канал',
+            price: 'от 165 000 ₽',
+            url: '#'
+          }, {
+            name: 'Мейн Хаус',
+            img: 'images/real-estate/7.jpg',
+            type: 'Жилой комплекс',
+            address: 'Гражданский проспект, 107',
+            classObj: 'Бизнес класс',
+            dateEnd: 'III кв. 2020 года',
+            metro: 'Обводный канал',
+            price: 'от 165 000 ₽',
+            url: '#'
+          }, {
+            name: 'Твин Хаус',
+            img: 'images/real-estate/8.jpg',
+            type: 'Жилой комплекс',
+            address: 'Будапештская, 2',
+            classObj: 'Бизнес класс',
+            dateEnd: 'III кв. 2020 года',
+            metro: 'Обводный канал',
+            price: 'от 165 000 ₽',
+            url: '#'
+          },
+        ]
+
+      each card in cards
+        +card-real-estate(card)

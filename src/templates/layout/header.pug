@@ -1,0 +1,28 @@
+include ../mixins/number
+include ../mixins/callback-btn
+
+header.header
+  .header__logo-wrap
+    a.logo.header__logo(href='#')
+  nav.nav.header__nav
+    ul.nav__list
+      -
+        items = [
+          {name: 'Проекты', url: '#projects'},
+          {name: 'О компании', url: '#about-us'},
+          {name: 'На карте', url: '#map'},
+          {name: 'Выбор помещений', url: '#rooms'}
+        ]
+
+      each item in items
+        li.nav__item
+          a.nav__link(href=item.url)=item.name
+
+    +number('nav')
+    +callback-btn('nav')
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+.number {
+  font-family: 'Geometria', Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  text-decoration: none;
+  color: white;
+  transition: color $time-opacity-animation-on-off ease-in;
+
+  &:hover {
+    color: rgba(255, 255, 255, $opacity-animation-on-off);
+    transition: color $time-opacity-animation-on-off ease-in;
+  }
+}

@@ -1,0 +1,74 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  
+  width: 100%;
+  height: 90px;
+
+  margin-top: 30px;
+  display: flex;
+  background-color: transparent;
+
+  transition: height $time-animation-header ease-in, margin-top $time-animation-header $time-animation-header ease-in, background-color $time-animation-header ease-in;
+
+  &_color {
+    height: 120px;
+    margin-top: 0;
+    background-color: $first-color;
+
+    transition: height $time-animation-header $time-animation-header ease-in, margin-top $time-animation-header ease-in, background-color $time-animation-header $time-animation-header ease-in;
+
+    .header {
+
+      &__logo-wrap {
+        width: 150px;
+        height: 150px;
+
+        transition: width $time-animation-header $time-animation-header ease-in, height $time-animation-header $time-animation-header ease-in;
+      }
+
+      &__logo {
+        max-width: 112px;
+        max-height: 112px;
+
+        transition: max-width $time-animation-header $time-animation-header ease-in, max-height $time-animation-header $time-animation-header ease-in;
+      }
+
+      &__nav {
+
+        &::after {
+          opacity: 0;
+          transition: opacity $time-animation-header $time-animation-header ease-in;
+        }
+      }
+    }
+  }
+
+  &__nav {
+    flex: 1 1 auto;
+  }
+
+  &__logo-wrap {
+    width: 200px;
+    height: 200px;
+
+    margin: 10px 70px 0 85px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $first-color;
+
+    transition: width $time-animation-header ease-in, height $time-animation-header ease-in;
+  }
+
+  &__logo {
+    max-width: 150px;
+    max-height: 150px;
+
+    transition: max-width $time-animation-header ease-in, max-height $time-animation-header ease-in;
+  }
+}
