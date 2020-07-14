@@ -398,6 +398,10 @@ var GalleryCards = /*#__PURE__*/function () {
     this._render();
 
     this._bind();
+    /** Рефрешим либу галереи */
+
+
+    refreshFsLightbox();
   }
 
   _createClass(GalleryCards, [{
@@ -434,15 +438,21 @@ var GalleryCards = /*#__PURE__*/function () {
     key: "_generateTemplate",
     value: function _generateTemplate() {
       var countImg = this._gallery.childElementCount;
-      return "\n      <div class=\"card-tower__sections\">\n        ".concat(this._getTemplateSection(countImg), "\n      </div>\n    ");
+      var links = [];
+
+      _toConsumableArray(this._gallery.children).forEach(function (img) {
+        return links.push(img.src.split(location.origin).join(''));
+      });
+
+      return "\n      <div class=\"card-tower__sections\">\n        ".concat(this._getTemplateSection(countImg, links), "\n      </div>\n    ");
     }
   }, {
     key: "_getTemplateSection",
-    value: function _getTemplateSection(count) {
+    value: function _getTemplateSection(count, links) {
       var sectionTemplate = '';
 
       for (var i = 0; i < count; i++) {
-        sectionTemplate += '<div class="card-tower__section"></div>';
+        sectionTemplate += "<a class=\"card-tower__section\" href=\"".concat(links[i], "\" data-fslightbox=\"gallery\"></a>");
       }
 
       return sectionTemplate;

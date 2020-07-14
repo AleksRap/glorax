@@ -629,7 +629,7 @@ body {
       object-fit: cover;
       object-position: center; }
       .card-tower__img img.active {
-        display: initial; }
+        display: block; }
   .card-tower__sections {
     position: absolute;
     top: 0;

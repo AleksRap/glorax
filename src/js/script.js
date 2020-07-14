@@ -326,6 +326,9 @@ class GalleryCards {
 
     this._render();
     this._bind();
+
+    /** Рефрешим либу галереи */
+    refreshFsLightbox();
   }
 
   _render() {
@@ -351,19 +354,22 @@ class GalleryCards {
 
   _generateTemplate() {
     const countImg = this._gallery.childElementCount;
+    const links = [];
+
+    [...this._gallery.children].forEach(img => links.push(img.src.split(location.origin).join('')));
 
     return `
       <div class="card-tower__sections">
-        ${this._getTemplateSection(countImg)}
+        ${this._getTemplateSection(countImg, links)}
       </div>
     `;
   }
 
-  _getTemplateSection(count) {
+  _getTemplateSection(count, links) {
     let sectionTemplate = '';
 
     for (let i = 0; i < count; i++) {
-      sectionTemplate += '<div class="card-tower__section"></div>'
+      sectionTemplate += `<a class="card-tower__section" href="${links[i]}" data-fslightbox="gallery"></a>`
     }
 
     return sectionTemplate
