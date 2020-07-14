@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileMenu.classList.remove('open');
   });
 
+
   /** Модалка */
   new Modal({
     idModal: 'modal-callback',
@@ -104,7 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
   /** Планировки */
   document.querySelectorAll('.card-tower').forEach(card => new Layouts(card));
 
-  /** Галереи в карточках жк */
+
+  /** Галереи в карточках ЖК */
   document.querySelectorAll('.card-tower__img').forEach(wrapImg => new GalleryCards(wrapImg));
 });
 

@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.card-tower').forEach(function (card) {
     return new Layouts(card);
   });
-  /** Галереи в карточках жк */
+  /** Галереи в карточках ЖК */
 
   document.querySelectorAll('.card-tower__img').forEach(function (wrapImg) {
     return new GalleryCards(wrapImg);
