@@ -2,15 +2,28 @@
   background-color: #fff;
 
   &__content {
-    padding-top: 55px;
-    padding-bottom: 55px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+
+    @media (min-width: 1360px) {
+      padding-top: 55px;
+      padding-bottom: 55px;
+    }
   }
 
   &__cards {
     width: 100%;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 30px;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 30px;
+    }
+    @media (min-width: 1360px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 }

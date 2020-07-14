@@ -1,1 +1,49 @@
+include ../mixins/callback-btn
+
 .main-screen
+  .swiper-container.main-screen__swiper-container
+    .swiper-wrapper
+      -
+        arrInfo = [{
+          title: 'Ligovsky city - Второй квартал',
+          type: 'Жилой комплекс',
+          img: 'images/slider/slide-1.jpg'
+        }, {
+          title: 'Ligovsky city - Сотый квартал',
+          type: 'Жилой комплекс',
+          img: 'images/slider/slide-1.jpg'
+        }, {
+          title: 'Ligovsky city - Миллионный квартал',
+          type: 'Жилой комплекс',
+          img: 'images/slider/slide-1.jpg'
+        }, {
+          title: 'Ligovsky city - Первый квартал',
+          type: 'Жилой комплекс',
+          img: 'images/slider/slide-1.jpg'
+        }, {
+          title: 'Golden City',
+          type: 'Жилой комплекс',
+          img: 'images/slider/slide-1.jpg'
+        }];
+
+      each item, index in arrInfo
+        .swiper-slide.main-screen__slide
+          .main-screen__img
+            img.swiper-lazy(data-src=item.img alt=`slide-${index}` src='images/other/pixel.png')
+            .swiper-lazy-preloader
+          .main-screen__wrap
+            section.main-screen__content
+              h2.main-screen__title=item.title
+              p.main-screen__type=item.type
+              a.main-screen__link(href="#rooms") Перейти к выбору помещений
+
+    .swiper-pagination.main-screen__pagination
+
+  .main-screen__info
+    .main-screen__advantages
+      .main-screen__advantage.main-screen__advantage_1
+      .main-screen__advantage.main-screen__advantage_2
+      .main-screen__advantage.main-screen__advantage_3
+    a.logo-m2.main-screen__logo-m2(href='#')
+
+  +callback-btn('main-screen', 'little')

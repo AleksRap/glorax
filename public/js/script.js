@@ -1,5 +1,17 @@
 "use strict";
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -7,309 +19,58 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 document.addEventListener('DOMContentLoaded', function () {
-  // const screenWidth = document.documentElement.clientWidth;
-  //
-  // /**
-  //  * 100vh - высота без учета панелей инструментов на мобильных
-  //  */
-  // const vh = window.innerHeight * 0.01;
-  // document.documentElement.style.setProperty('--vh', `${vh}px`);
-  //
-  // const header = document.querySelector('.header').clientHeight;
-  // document.documentElement.style.setProperty('--header', `${header}px`);
-  //
-  //
-  // /**
-  //  * Обложки статей в соотношении 3.6
-  //  */
-  // const coversArticles = document.querySelectorAll('.article__pic');
-  // if (coversArticles.length) coversArticles.forEach(cover => cover.style.height = `${cover.clientWidth / 3.6}px`);
-  //
-  // /**
-  //  * Обложки статей в соотношении 3.6
-  //  */
-  // const coversCardsArt = document.querySelectorAll('.article-card__img');
-  // if (coversCardsArt.length) coversCardsArt.forEach(cover => cover.style.height = `${cover.clientWidth / 3.6}px`);
-  //
-  // /**
-  //  * Соотношение сторон баннера акций 6:1 (ПК), 330:200 (мобилки, ниже 480px)
-  //  */
-  // const bannersStock = document.querySelectorAll('.banner-stock');
-  // screenWidth <= 480
-  //   ? bannersStock.forEach(banner => banner.style.height = `${banner.clientWidth / 1.65}px`)
-  //   : bannersStock.forEach(banner => banner.style.height = `${banner.clientWidth / 6}px`);
-  //
-  //
-  // /**
-  //  * Если видно мобильное меню
-  //  */
-  // if (screenWidth < 1200) {
-  //
-  //   /**
-  //    * Открытие мобильного меню
-  //    */
-  //   const burger = document.querySelector('.burger');
-  //   burger.addEventListener('click', function (event) {
-  //     this.classList.toggle('open');
-  //     this
-  //       .closest('.navigation')
-  //       .querySelector('.navigation__content')
-  //       .classList.toggle('open');
-  //   });
-  //
-  //   /**
-  //    * Переключение открытой навигации
-  //    */
-  //   const navigation = document.querySelector('.navigation');
-  //   const arrDropdownItem = navigation.querySelectorAll('.navigation__item');
-  //
-  //   navigation.addEventListener('click', event => {
-  //     /**
-  //      * Если клик был не по пункту с дропдауном, то выходим
-  //      */
-  //       const target = event.target.closest('.navigation__item_drop');
-  //       if (!target) return;
-  //
-  //     /**
-  //      * Если клик был по ссылке внутри дропдауна, то выходим
-  //      */
-  //     const subItem = event.target.closest('.navigation__link');
-  //     if (!subItem) return;
-  //
-  //     event.preventDefault();
-  //
-  //     const itemOpen = target.classList.contains('open');
-  //
-  //     /**
-  //      * Закрываем все пункты
-  //      */
-  //     arrDropdownItem.forEach(item => item.closest('.open') && item.classList.remove('open'));
-  //
-  //     /**
-  //      * Открываем нужный
-  //      */
-  //     !itemOpen && target.classList.add('open');
-  //   })
-  // }
-  //
-  //
-  // /** Прилипание меню после прокрутки */
-  // const firstMenu = document.querySelector('.navbar-first');
-  // const secondMenu = document.querySelector('.navbar-second');
-  // const secondMenuMb = +getComputedStyle(secondMenu).marginBottom.split('px').join('');
-  // const scrollHeight = firstMenu.clientHeight;
-  // const mb = secondMenu.clientHeight + secondMenuMb;
-  //
-  // function transferNavbarSecond() {
-  //   window.pageYOffset > scrollHeight
-  //     ? secondMenu.classList.add('navbar-second_glue')
-  //     : secondMenu.classList.remove('navbar-second_glue');
-  //
-  //   window.pageYOffset > scrollHeight
-  //     ? firstMenu.style.marginBottom = `${mb}px`
-  //     : firstMenu.style.marginBottom = '0px';
-  // }
-  //
-  // transferNavbarSecond();
-  // window.addEventListener('scroll', transferNavbarSecond);
-  //
-  //
-  // /** Инициализация слайдеров swiper */
-  // const swiperMain = new Swiper('.swiper-main', {
-  //   slidesPerView: 'auto',
-  //   initialSlide: 0,
-  //   centeredSlides: true,
-  //   spaceBetween: 30,
-  //   loop: true,
-  //   autoplay: true,
-  //   delay: 4000,
-  //   pagination: {
-  //     el: '.swiper-pagination',
-  //     clickable: true,
-  //   },
-  //   navigation: {
-  //     prevEl: '.swiper-main__prev',
-  //     nextEl: '.swiper-main__next'
-  //   },
-  //   slideToClickedSlide: true,
-  //   preloadImages: false,
-  //   lazy: true,
-  //   loadOnTransitionStart: true
-  // });
-  //
-  // const swiperSpecialist = new Swiper('.swiper-specialist', {
-  //   initialSlide: 0,
-  //   spaceBetween: 30,
-  //   centeredSlides: false,
-  //   allowTouchMove: false,
-  //   navigation: {
-  //     nextEl: '.specialists__next',
-  //     prevEl: '.specialists__prev',
-  //   },
-  //   breakpoints: {
-  //     480: {
-  //       spaceBetween: 10,
-  //       slidesPerView: 2
-  //     },
-  //     768: {
-  //       spaceBetween: 20,
-  //       slidesPerView: 3
-  //     },
-  //     992: {
-  //       slidesPerView: 4
-  //     },
-  //     1200: {
-  //       slidesPerView: 5
-  //     },
-  //     1500: {
-  //       slidesPerView: 6
-  //     }
-  //   }
-  // });
-  //
-  // const swipersComments = new Swiper('.swiper-comments', {
-  //   initialSlide: 0,
-  //   centeredSlides: true,
-  //   loop: true,
-  //   autoplay: false,
-  //   navigation: {
-  //     nextEl: '.comments__next',
-  //     prevEl: '.comments__prev',
-  //   },
-  // });
-  //
-  // const swipersComments2 = new Swiper('.swiper-comments-2', {
-  //   initialSlide: 0,
-  //   centeredSlides: true,
-  //   loop: true,
-  //   autoplay: false,
-  //   navigation: {
-  //     nextEl: '.comments__next',
-  //     prevEl: '.comments__prev',
-  //   },
-  // });
-  //
-  //
-  // /**
-  //  * После инициализации всех слайдеров с комментами скрываем их
-  //  * видны будут только те у которых есть класс .active
-  //  */
-  // const commentsWrap = document.querySelectorAll('.comments__swiper');
-  // commentsWrap.forEach(el => el.style.display = 'none');
-  //
-  //
-  // /** Табы внутри блока отзывов */
-  // const clinicWrap = document.querySelector('[data-wrap="clinic"]');
-  // const specialistWrap = document.querySelector('[data-wrap="specialist"]');
-  // const btnClinic = document.querySelector('[data-btn="clinic"]');
-  // const btnSpecialist = document.querySelector('[data-btn="specialist"]');
-  //
-  // function toggleFeedback() {
-  //   btnClinic.classList.toggle('active');
-  //   btnSpecialist.classList.toggle('active');
-  //   clinicWrap.classList.toggle('active');
-  //   specialistWrap.classList.toggle('active');
-  // }
-  //
-  // btnClinic && btnClinic.addEventListener('click', toggleFeedback);
-  // btnSpecialist && btnSpecialist.addEventListener('click', toggleFeedback);
-  //
-  //
-  // /**
-  //  * Ленивая загрузка видео
-  //  * событие скролла удаляется по достижению 50% прокрутки до видео
-  //  */
-  // const videoWrap = document.querySelector('.video');
-  //
-  // if (videoWrap) {
-  //   const video = videoWrap.querySelector('video');
-  //   const videoScrollTop = Math.ceil(video.getBoundingClientRect().top);
-  //
-  //   window.addEventListener('scroll', loadVideo);
-  //
-  //   function loadVideo() {
-  //     const scrollTop = window.pageYOffset;
-  //
-  //     if (scrollTop > videoScrollTop / 2) {
-  //       window.removeEventListener('scroll', loadVideo);
-  //
-  //       const source = video.querySelector('source');
-  //       const urlVideo = source.dataset.src;
-  //       source.setAttribute('src', urlVideo);
-  //       video.load();
-  //
-  //       /** Вешаем обработчик на воспроизведение/остановку видео */
-  //       videoWrap.addEventListener('click', async event => {
-  //
-  //         if (video.paused) {
-  //           await video.play();
-  //           videoWrap.style.background = 'url(../images/other/pattern.png) center repeat';
-  //           video.controls = true;
-  //         } else {
-  //           video.pause();
-  //           video.controls = false;
-  //         }
-  //
-  //         event.target.closest('.video').classList.toggle('play');
-  //       });
-  //     }
-  //   }
-  // }
-  //
-  //
-  // /** Календарь в модалке */
-  // $('#datepicker').datepicker({
-  //   minDate: new Date(),
-  //   onSelect: function (dateText) {
-  //     $('#appointment-date').val(dateText);
-  //   }
-  // });
-  //
-  //
-  // /** Инициализация модалок */
-  // const modalCallFeedback = new Modal({
-  //   idModal: 'modal-call-feedback',
-  //   selectorBtnOpen: '[data-btn="modal-call-feedback-btn"]'
-  // });
-  //
-  // const modalDoctorCall = new Modal({
-  //   idModal: 'modal-doctor-call',
-  //   selectorBtnOpen: '[data-btn="modal-doctor-call-btn"]'
-  // });
-  //
-  // const modalAppointment = new Modal({
-  //   idModal: 'modal-appointment',
-  //   selectorBtnOpen: '[data-btn="modal-appointment-btn"]'
-  // });
-  //
-  // const modalFeedback = new Modal({
-  //   idModal: 'modal-feedback',
-  //   selectorBtnOpen: '[data-btn="modal-feedback-btn"]'
-  // });
-  //
-  // const modalThanksFeedback = new Modal({
-  //   idModal: 'modal-thanks-feedback',
-  //   selectorBtnOpen: '[data-btn="modal-thanks-feedback-btn"]'
-  // });
-  //
-  // const modalThanksAppointment = new Modal({
-  //   idModal: 'modal-thanks-appointment',
-  //   selectorBtnOpen: '[data-btn="modal-thanks-appointment-btn"]'
-  // });
-  //
-  //
-  // /** Проверка согласия на обработку персональных данных */
-  // function checkAgree() {
-  //   const btn = this.closest('form').querySelector('.button');
-  //   btn.toggleAttribute('disabled');
-  // }
-  // document.getElementById('call-feedback-checkbox').addEventListener('change', checkAgree);
-  // document.getElementById('doctor-call-checkbox').addEventListener('change', checkAgree);
-  // document.getElementById('appointment-checkbox').addEventListener('change', checkAgree);
+  /** Мобильное меню */
+  var btnMobile = document.querySelector('[data-mobile-nav="open"]');
+  var btnCloseMobileMenu = document.querySelector('[data-mobile-nav="close"]');
+  var mobileMenu = document.querySelector('.nav__mobile-list-wrap');
+  btnMobile.addEventListener('click', function () {
+    mobileMenu.classList.add('open');
+  });
+  btnCloseMobileMenu.addEventListener('click', function () {
+    mobileMenu.classList.remove('open');
+  });
+  mobileMenu.addEventListener('click', function (event) {
+    var link = event.target.closest('.nav__mobile-link');
+    if (!link) return;
+    mobileMenu.classList.remove('open');
+  });
+  /** Модалка */
 
+  new Modal({
+    idModal: 'modal-callback',
+    selectorBtnOpen: '.callback-btn'
+  });
+  /** Прилипание меню после прокрутки */
+
+  var header = document.querySelector('.header');
+  var headerHeight = header.clientHeight;
+
+  function transferNavbarSecond() {
+    window.pageYOffset > headerHeight ? header.classList.add('header_color') : header.classList.remove('header_color');
+  }
+
+  transferNavbarSecond();
+  window.addEventListener('scroll', transferNavbarSecond);
+  /** Инициализация слайдеров swiper */
+
+  new Swiper('.main-screen__swiper-container', {
+    slidesPerView: 1,
+    initialSlide: 0,
+    loop: true,
+    autoplay: true,
+    delay: 4000,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+    preloadImages: false,
+    lazy: true,
+    loadOnTransitionStart: true
+  });
   /** Плавная прокрутка до якоря */
+
   var anchors = document.querySelectorAll('[href^="#"]');
-  var speed = 0.5;
+  var speed = 0.3;
 
   if (anchors.length) {
     anchors.forEach(function (anchor) {
@@ -335,32 +96,24 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
     });
-  } // /** Маска номера телефона на поля. Maskedinput */
-  // $("#call-feedback-tel").mask("+7 (999) 999-9999");
-  // $("#call-doctor-call-tel").mask("+7 (999) 999-9999");
-  // $("#call-appointment-tel").mask("+7 (999) 999-9999");
-  //
-  //
-  // /** Инициализация галереи fancybox */
-  // document.querySelector('[data-fancybox="gallery"]') && $('[data-fancybox="gallery"]').fancybox({
-  //   toolbar: false,
-  //   transitionEffect: "zoom-in-out",
-  //   loop: true
-  // });
-  //
-  //
-  // /** Спойлеры услуг */
-  // const spoilerWrap = document.querySelector('.amenities__spoilers');
-  // if (spoilerWrap) {
-  //   const spoilers = document.querySelectorAll('.spoiler');
-  //   spoilers.forEach(spoiler => {
-  //     new Spoiler({
-  //       spoiler,
-  //       wrap: spoilerWrap
-  //     })
-  //   });
-  // }
+  }
+  /** Маска номера телефона на поля. Maskedinput */
 
+
+  var input = document.querySelector('[data-input="tel"]');
+  input.addEventListener("input", mask);
+  input.addEventListener("focus", mask);
+  input.addEventListener("blur", mask);
+  /** Планировки */
+
+  document.querySelectorAll('.card-tower').forEach(function (card) {
+    return new Layouts(card);
+  });
+  /** Галереи в карточках жк */
+
+  document.querySelectorAll('.card-tower__img').forEach(function (wrapImg) {
+    return new GalleryCards(wrapImg);
+  });
 });
 /** Управляем событиями */
 
@@ -413,6 +166,8 @@ var ManagementEvents = /*#__PURE__*/function () {
 
   return ManagementEvents;
 }();
+/** Модалка */
+
 
 var Modal = /*#__PURE__*/function () {
   function Modal(data) {
@@ -495,67 +250,280 @@ var Modal = /*#__PURE__*/function () {
 
   return Modal;
 }();
+/** Маска на телефон */
 
-var Spoiler = /*#__PURE__*/function () {
-  function Spoiler(data) {
-    _classCallCheck(this, Spoiler);
 
-    this.spoiler = data.spoiler;
-    this.body = this.spoiler.querySelector('.spoiler__body');
-    this.wrap = data.wrap;
-    this.spoilers = null;
-    this.height = null;
+function setCursorPosition(pos, elem) {
+  elem.focus();
 
-    this._initialize();
+  if (elem.setSelectionRange) {
+    elem.setSelectionRange(pos, pos);
+  } else if (elem.createTextRange) {
+    var range = elem.createTextRange();
+    range.collapse(true);
+    range.moveEnd("character", pos);
+    range.moveStart("character", pos);
+    range.select();
+  }
+}
+
+function mask(event) {
+  var matrix = "+7 (___) ___ ____";
+  var i = 0;
+  var def = matrix.replace(/\D/g, '');
+  var val = this.value.replace(/\D/g, '');
+  if (def.length >= val.length) val = def;
+  this.value = matrix.replace(/./g, function (str) {
+    return /[_\d]/.test(str) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : str;
+  });
+
+  if (event.type === "blur") {
+    if (this.value.length === 2) this.value = "";
+  } else {
+    setCursorPosition(this.value.length, this);
+  }
+}
+/** Планировки */
+
+
+var Layouts = /*#__PURE__*/function () {
+  function Layouts(el) {
+    _classCallCheck(this, Layouts);
+
+    this._wrap = el;
+    this._body = this._wrap.querySelector('.card-tower__body');
+    this._allBlock = this._wrap.querySelectorAll('[data-block]');
+    this._btnAbout = this._wrap.querySelector('[data-btn="about"]');
+    this._btnLayouts = this._wrap.querySelector('[data-btn="layouts"]');
+    this._btnClose = this._wrap.querySelector('[data-btn="close"]');
+    this._about = this._wrap.querySelector('.card-tower__general-information');
+    this._layouts = this._wrap.querySelector('.card-tower__layouts');
+    this._rowsWrap = this._wrap.querySelector('.card-tower__table-row-wrap');
+    this._images = this._wrap.querySelector('.card-tower__table-img');
+
+    this._bind();
   }
 
-  _createClass(Spoiler, [{
-    key: "open",
-    value: function open() {
-      this.spoiler.classList.add('open');
-      this.body.style.height = "".concat(this.height, "px");
+  _createClass(Layouts, [{
+    key: "showBlock",
+    value: function showBlock(el) {
+      this._body.removeAttribute('hidden');
+
+      this._allBlock.forEach(function (block) {
+        return block.setAttribute('hidden', true);
+      });
+
+      el.removeAttribute('hidden');
+
+      switch (el) {
+        case this._about:
+          this._btnAbout.classList.add('card-tower__btn_active');
+
+          this._btnLayouts.classList.remove('card-tower__btn_active');
+
+          break;
+
+        default:
+          this._btnLayouts.classList.add('card-tower__btn_active');
+
+          this._btnAbout.classList.remove('card-tower__btn_active');
+
+          break;
+      }
     }
   }, {
-    key: "close",
-    value: function close() {
-      this.spoiler.classList.remove('open');
-      this.body.style.height = '0px';
+    key: "hideBlock",
+    value: function hideBlock() {
+      this._body.setAttribute('hidden', true);
+
+      this._allBlock.forEach(function (block) {
+        return block.removeAttribute('hidden');
+      });
+
+      this._btnAbout.classList.remove('card-tower__btn_active');
+
+      this._btnLayouts.classList.remove('card-tower__btn_active');
     }
   }, {
-    key: "closeAll",
-    value: function closeAll() {
-      this.spoilers.forEach(function (spoiler) {
-        spoiler.classList.remove('open');
-        spoiler.querySelector('.spoiler__body').style.height = '0px';
+    key: "changeLayout",
+    value: function changeLayout(event) {
+      var clickRow = event.target.closest('.card-tower__table-row');
+      var index;
+
+      _toConsumableArray(this._rowsWrap.children).forEach(function (el, i) {
+        if (el === clickRow) index = i;
+        el.classList.remove('active');
+      });
+
+      clickRow.classList.add('active');
+
+      _toConsumableArray(this._images.children).forEach(function (el, i) {
+        i === index ? el.removeAttribute('hidden') : el.setAttribute('hidden', true);
       });
     }
   }, {
-    key: "_initialize",
-    value: function _initialize() {
+    key: "_bind",
+    value: function _bind() {
       var _this2 = this;
 
-      this.height = this.body.clientHeight;
-      this.body.style.height = '0px';
-      /** если есть this.wrap, значит включен режим аккордеона */
+      this._btnAbout.addEventListener('click', function () {
+        return _this2.showBlock(_this2._about);
+      });
 
-      if (this.wrap) this.spoilers = this.wrap.querySelectorAll('.spoiler');
-      this.spoiler.addEventListener('click', function (event) {
-        var spoiler = event.target.closest('.spoiler');
-        if (!spoiler) return;
-        /** открываем или закрываем спойлер */
+      this._btnLayouts.addEventListener('click', function () {
+        return _this2.showBlock(_this2._layouts);
+      });
 
-        var open = spoiler.classList.contains('open');
+      this._btnClose.addEventListener('click', function () {
+        return _this2.hideBlock();
+      });
 
-        if (open) {
-          _this2.close();
-        } else {
-          _this2.wrap && _this2.closeAll();
-
-          _this2.open();
-        }
+      this._rowsWrap.addEventListener('click', function (event) {
+        return _this2.changeLayout(event);
       });
     }
   }]);
 
-  return Spoiler;
+  return Layouts;
 }();
+/** Галерея внутри карточек жк */
+
+
+var GalleryCards = /*#__PURE__*/function () {
+  function GalleryCards(el) {
+    _classCallCheck(this, GalleryCards);
+
+    this._gallery = el;
+
+    this._render();
+
+    this._bind();
+  }
+
+  _createClass(GalleryCards, [{
+    key: "_render",
+    value: function _render() {
+      this._gallery.insertAdjacentHTML('beforeend', this._generateTemplate());
+    }
+  }, {
+    key: "_bind",
+    value: function _bind() {
+      var _this3 = this;
+
+      var sections = this._gallery.querySelector('.card-tower__sections');
+
+      sections.addEventListener('mouseover', function (event) {
+        var section = event.target.closest('.card-tower__section');
+        var index;
+
+        _toConsumableArray(sections.children).forEach(function (child, i) {
+          if (section === child) index = i;
+          child.classList.remove('active');
+        });
+
+        _toConsumableArray(_this3._gallery.children).forEach(function (img) {
+          return img.classList.remove('active');
+        });
+
+        section.classList.add('active');
+
+        _toConsumableArray(_this3._gallery.children)[index].classList.add('active');
+      });
+    }
+  }, {
+    key: "_generateTemplate",
+    value: function _generateTemplate() {
+      var countImg = this._gallery.childElementCount;
+      return "\n      <div class=\"card-tower__sections\">\n        ".concat(this._getTemplateSection(countImg), "\n      </div>\n    ");
+    }
+  }, {
+    key: "_getTemplateSection",
+    value: function _getTemplateSection(count) {
+      var sectionTemplate = '';
+
+      for (var i = 0; i < count; i++) {
+        sectionTemplate += '<div class="card-tower__section"></div>';
+      }
+
+      return sectionTemplate;
+    }
+  }]);
+
+  return GalleryCards;
+}();
+/** Yandex api */
+
+
+ymaps.ready(function () {
+  var myMap = new ymaps.Map('map-yandex', {
+    center: [59.93, 30.31],
+    zoom: 11
+  });
+  var arrInfo = [{
+    name: 'Ligovsky city - Второй квартал',
+    coordinates: [59.906359, 30.344947],
+    address: 'Санкт Петербург, Лиговский проспект, 232',
+    img: 'images/real-estate/1.jpg'
+  }, {
+    name: 'Ligovsky city - Первый квартал',
+    coordinates: [59.905321, 30.342359],
+    address: 'Санкт Петербург, Лиговский проспект, 271',
+    img: 'images/real-estate/2.jpg'
+  }, {
+    name: 'Golden City',
+    coordinates: [59.941475, 30.193832],
+    address: 'Санкт Петербург, ул. Челюскина, 4',
+    img: 'images/real-estate/3.jpg'
+  }, {
+    name: 'Английская миля',
+    coordinates: [59.847010, 30.113936],
+    address: 'Санкт Петербург, Петергофское ш., 78',
+    img: 'images/real-estate/4.jpg'
+  }, {
+    name: 'Grand House',
+    coordinates: [59.925398, 30.373702],
+    address: 'Санкт Петербург, Тележная ул., 17-19',
+    img: 'images/real-estate/5.jpg'
+  }, {
+    name: 'Олимп',
+    coordinates: [56.256213, 37.975039],
+    address: 'МО, г. Хотьково, ул. Михеенко, 25',
+    img: 'images/real-estate/6.jpg'
+  }, {
+    name: 'Мейн Хаус',
+    coordinates: [60.028029, 30.416183],
+    address: 'Санкт Петербург, Гражданский проспект, 107',
+    img: 'images/real-estate/7.jpg'
+  }, {
+    name: 'Твин Хаус',
+    coordinates: [59.873853, 30.367225],
+    address: 'Санкт Петербург, Будапештская, 2',
+    img: 'images/real-estate/8.jpg'
+  }];
+
+  var header = function header(img, address) {
+    return "\n    <div class=\"card-map__header\">\n      <img src=\"".concat(img, "\" alt=\"").concat(address, "\">\n    </div>\n  ");
+  };
+
+  var footer = function footer(name, address) {
+    return "\n    <div class=\"card-map__footer\">\n      <h2 class=\"card-map__title\">".concat(name, "</h2>\n      <p class=\"card-map__address\">").concat(address, "</p>\n    </div>\n  ");
+  };
+
+  arrInfo.forEach(function (_ref) {
+    var name = _ref.name,
+        coordinates = _ref.coordinates,
+        address = _ref.address,
+        img = _ref.img;
+    myMap.geoObjects.add(new ymaps.Placemark(coordinates, {
+      hintLayout: name,
+      balloonContentHeader: header(img),
+      balloonContentFooter: footer(name, address)
+    }, {
+      iconLayout: 'default#imageWithContent',
+      iconImageHref: 'images/other/point-map.png',
+      iconImageSize: [34, 43],
+      iconImageOffset: [-17, -43],
+      iconContentOffset: [17, 50]
+    }));
+  });
+});

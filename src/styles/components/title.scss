@@ -1,10 +1,24 @@
 .title {
-  font-family: 'Geometria', Arial, sans-serif;
+  margin-top: 0;
+  margin-bottom: 0;
+
   font-weight: 500;
-  font-size: 30px;
+  font-size: 24px;
   color: $first-color;
 
+  @media (min-width: 1360px) {
+    font-size: 30px;
+  }
+
   &_mb {
-    margin-bottom: 35px;
+    margin-bottom: 25px;
+
+    @media (min-width: 1360px) {
+      margin-bottom: 35px;
+    }
+  }
+
+  &_white {
+    color: white;
   }
 }

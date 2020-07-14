@@ -7,14 +7,19 @@ block header
   include layout/header
 
 block content
+  a(id='top')
   main
     include components/main-screen
     a(id='projects')
     include components/projects
+    a(id='about-us')
     include components/about-us
+    a(id='map')
     include components/map
+    a(id='rooms')
     include components/rooms
 
 block footer
   include layout/footer
+  include components/modal
 

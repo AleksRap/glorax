@@ -1,308 +1,63 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // const screenWidth = document.documentElement.clientWidth;
-  //
-  // /**
-  //  * 100vh - высота без учета панелей инструментов на мобильных
-  //  */
-  // const vh = window.innerHeight * 0.01;
-  // document.documentElement.style.setProperty('--vh', `${vh}px`);
-  //
-  // const header = document.querySelector('.header').clientHeight;
-  // document.documentElement.style.setProperty('--header', `${header}px`);
-  //
-  //
-  // /**
-  //  * Обложки статей в соотношении 3.6
-  //  */
-  // const coversArticles = document.querySelectorAll('.article__pic');
-  // if (coversArticles.length) coversArticles.forEach(cover => cover.style.height = `${cover.clientWidth / 3.6}px`);
-  //
-  // /**
-  //  * Обложки статей в соотношении 3.6
-  //  */
-  // const coversCardsArt = document.querySelectorAll('.article-card__img');
-  // if (coversCardsArt.length) coversCardsArt.forEach(cover => cover.style.height = `${cover.clientWidth / 3.6}px`);
-  //
-  // /**
-  //  * Соотношение сторон баннера акций 6:1 (ПК), 330:200 (мобилки, ниже 480px)
-  //  */
-  // const bannersStock = document.querySelectorAll('.banner-stock');
-  // screenWidth <= 480
-  //   ? bannersStock.forEach(banner => banner.style.height = `${banner.clientWidth / 1.65}px`)
-  //   : bannersStock.forEach(banner => banner.style.height = `${banner.clientWidth / 6}px`);
-  //
-  //
-  // /**
-  //  * Если видно мобильное меню
-  //  */
-  // if (screenWidth < 1200) {
-  //
-  //   /**
-  //    * Открытие мобильного меню
-  //    */
-  //   const burger = document.querySelector('.burger');
-  //   burger.addEventListener('click', function (event) {
-  //     this.classList.toggle('open');
-  //     this
-  //       .closest('.navigation')
-  //       .querySelector('.navigation__content')
-  //       .classList.toggle('open');
-  //   });
-  //
-  //   /**
-  //    * Переключение открытой навигации
-  //    */
-  //   const navigation = document.querySelector('.navigation');
-  //   const arrDropdownItem = navigation.querySelectorAll('.navigation__item');
-  //
-  //   navigation.addEventListener('click', event => {
-  //     /**
-  //      * Если клик был не по пункту с дропдауном, то выходим
-  //      */
-  //       const target = event.target.closest('.navigation__item_drop');
-  //       if (!target) return;
-  //
-  //     /**
-  //      * Если клик был по ссылке внутри дропдауна, то выходим
-  //      */
-  //     const subItem = event.target.closest('.navigation__link');
-  //     if (!subItem) return;
-  //
-  //     event.preventDefault();
-  //
-  //     const itemOpen = target.classList.contains('open');
-  //
-  //     /**
-  //      * Закрываем все пункты
-  //      */
-  //     arrDropdownItem.forEach(item => item.closest('.open') && item.classList.remove('open'));
-  //
-  //     /**
-  //      * Открываем нужный
-  //      */
-  //     !itemOpen && target.classList.add('open');
-  //   })
-  // }
-  //
-  //
-  // /** Прилипание меню после прокрутки */
-  // const firstMenu = document.querySelector('.navbar-first');
-  // const secondMenu = document.querySelector('.navbar-second');
-  // const secondMenuMb = +getComputedStyle(secondMenu).marginBottom.split('px').join('');
-  // const scrollHeight = firstMenu.clientHeight;
-  // const mb = secondMenu.clientHeight + secondMenuMb;
-  //
-  // function transferNavbarSecond() {
-  //   window.pageYOffset > scrollHeight
-  //     ? secondMenu.classList.add('navbar-second_glue')
-  //     : secondMenu.classList.remove('navbar-second_glue');
-  //
-  //   window.pageYOffset > scrollHeight
-  //     ? firstMenu.style.marginBottom = `${mb}px`
-  //     : firstMenu.style.marginBottom = '0px';
-  // }
-  //
-  // transferNavbarSecond();
-  // window.addEventListener('scroll', transferNavbarSecond);
-  //
-  //
-  // /** Инициализация слайдеров swiper */
-  // const swiperMain = new Swiper('.swiper-main', {
-  //   slidesPerView: 'auto',
-  //   initialSlide: 0,
-  //   centeredSlides: true,
-  //   spaceBetween: 30,
-  //   loop: true,
-  //   autoplay: true,
-  //   delay: 4000,
-  //   pagination: {
-  //     el: '.swiper-pagination',
-  //     clickable: true,
-  //   },
-  //   navigation: {
-  //     prevEl: '.swiper-main__prev',
-  //     nextEl: '.swiper-main__next'
-  //   },
-  //   slideToClickedSlide: true,
-  //   preloadImages: false,
-  //   lazy: true,
-  //   loadOnTransitionStart: true
-  // });
-  //
-  // const swiperSpecialist = new Swiper('.swiper-specialist', {
-  //   initialSlide: 0,
-  //   spaceBetween: 30,
-  //   centeredSlides: false,
-  //   allowTouchMove: false,
-  //   navigation: {
-  //     nextEl: '.specialists__next',
-  //     prevEl: '.specialists__prev',
-  //   },
-  //   breakpoints: {
-  //     480: {
-  //       spaceBetween: 10,
-  //       slidesPerView: 2
-  //     },
-  //     768: {
-  //       spaceBetween: 20,
-  //       slidesPerView: 3
-  //     },
-  //     992: {
-  //       slidesPerView: 4
-  //     },
-  //     1200: {
-  //       slidesPerView: 5
-  //     },
-  //     1500: {
-  //       slidesPerView: 6
-  //     }
-  //   }
-  // });
-  //
-  // const swipersComments = new Swiper('.swiper-comments', {
-  //   initialSlide: 0,
-  //   centeredSlides: true,
-  //   loop: true,
-  //   autoplay: false,
-  //   navigation: {
-  //     nextEl: '.comments__next',
-  //     prevEl: '.comments__prev',
-  //   },
-  // });
-  //
-  // const swipersComments2 = new Swiper('.swiper-comments-2', {
-  //   initialSlide: 0,
-  //   centeredSlides: true,
-  //   loop: true,
-  //   autoplay: false,
-  //   navigation: {
-  //     nextEl: '.comments__next',
-  //     prevEl: '.comments__prev',
-  //   },
-  // });
-  //
-  //
-  // /**
-  //  * После инициализации всех слайдеров с комментами скрываем их
-  //  * видны будут только те у которых есть класс .active
-  //  */
-  // const commentsWrap = document.querySelectorAll('.comments__swiper');
-  // commentsWrap.forEach(el => el.style.display = 'none');
-  //
-  //
-  // /** Табы внутри блока отзывов */
-  // const clinicWrap = document.querySelector('[data-wrap="clinic"]');
-  // const specialistWrap = document.querySelector('[data-wrap="specialist"]');
-  // const btnClinic = document.querySelector('[data-btn="clinic"]');
-  // const btnSpecialist = document.querySelector('[data-btn="specialist"]');
-  //
-  // function toggleFeedback() {
-  //   btnClinic.classList.toggle('active');
-  //   btnSpecialist.classList.toggle('active');
-  //   clinicWrap.classList.toggle('active');
-  //   specialistWrap.classList.toggle('active');
-  // }
-  //
-  // btnClinic && btnClinic.addEventListener('click', toggleFeedback);
-  // btnSpecialist && btnSpecialist.addEventListener('click', toggleFeedback);
-  //
-  //
-  // /**
-  //  * Ленивая загрузка видео
-  //  * событие скролла удаляется по достижению 50% прокрутки до видео
-  //  */
-  // const videoWrap = document.querySelector('.video');
-  //
-  // if (videoWrap) {
-  //   const video = videoWrap.querySelector('video');
-  //   const videoScrollTop = Math.ceil(video.getBoundingClientRect().top);
-  //
-  //   window.addEventListener('scroll', loadVideo);
-  //
-  //   function loadVideo() {
-  //     const scrollTop = window.pageYOffset;
-  //
-  //     if (scrollTop > videoScrollTop / 2) {
-  //       window.removeEventListener('scroll', loadVideo);
-  //
-  //       const source = video.querySelector('source');
-  //       const urlVideo = source.dataset.src;
-  //       source.setAttribute('src', urlVideo);
-  //       video.load();
-  //
-  //       /** Вешаем обработчик на воспроизведение/остановку видео */
-  //       videoWrap.addEventListener('click', async event => {
-  //
-  //         if (video.paused) {
-  //           await video.play();
-  //           videoWrap.style.background = 'url(../images/other/pattern.png) center repeat';
-  //           video.controls = true;
-  //         } else {
-  //           video.pause();
-  //           video.controls = false;
-  //         }
-  //
-  //         event.target.closest('.video').classList.toggle('play');
-  //       });
-  //     }
-  //   }
-  // }
-  //
-  //
-  // /** Календарь в модалке */
-  // $('#datepicker').datepicker({
-  //   minDate: new Date(),
-  //   onSelect: function (dateText) {
-  //     $('#appointment-date').val(dateText);
-  //   }
-  // });
-  //
-  //
-  // /** Инициализация модалок */
-  // const modalCallFeedback = new Modal({
-  //   idModal: 'modal-call-feedback',
-  //   selectorBtnOpen: '[data-btn="modal-call-feedback-btn"]'
-  // });
-  //
-  // const modalDoctorCall = new Modal({
-  //   idModal: 'modal-doctor-call',
-  //   selectorBtnOpen: '[data-btn="modal-doctor-call-btn"]'
-  // });
-  //
-  // const modalAppointment = new Modal({
-  //   idModal: 'modal-appointment',
-  //   selectorBtnOpen: '[data-btn="modal-appointment-btn"]'
-  // });
-  //
-  // const modalFeedback = new Modal({
-  //   idModal: 'modal-feedback',
-  //   selectorBtnOpen: '[data-btn="modal-feedback-btn"]'
-  // });
-  //
-  // const modalThanksFeedback = new Modal({
-  //   idModal: 'modal-thanks-feedback',
-  //   selectorBtnOpen: '[data-btn="modal-thanks-feedback-btn"]'
-  // });
-  //
-  // const modalThanksAppointment = new Modal({
-  //   idModal: 'modal-thanks-appointment',
-  //   selectorBtnOpen: '[data-btn="modal-thanks-appointment-btn"]'
-  // });
-  //
-  //
-  // /** Проверка согласия на обработку персональных данных */
-  // function checkAgree() {
-  //   const btn = this.closest('form').querySelector('.button');
-  //   btn.toggleAttribute('disabled');
-  // }
-  // document.getElementById('call-feedback-checkbox').addEventListener('change', checkAgree);
-  // document.getElementById('doctor-call-checkbox').addEventListener('change', checkAgree);
-  // document.getElementById('appointment-checkbox').addEventListener('change', checkAgree);
+
+  /** Мобильное меню */
+  const btnMobile = document.querySelector('[data-mobile-nav="open"]');
+  const btnCloseMobileMenu = document.querySelector('[data-mobile-nav="close"]');
+  const mobileMenu = document.querySelector('.nav__mobile-list-wrap');
+  btnMobile.addEventListener('click', () => {
+    mobileMenu.classList.add('open');
+  });
+  btnCloseMobileMenu.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+  });
+  mobileMenu.addEventListener('click', event => {
+    const link = event.target.closest('.nav__mobile-link');
+    if (!link) return;
+
+    mobileMenu.classList.remove('open');
+  });
+
+  /** Модалка */
+  new Modal({
+    idModal: 'modal-callback',
+    selectorBtnOpen: '.callback-btn'
+  });
+
+
+  /** Прилипание меню после прокрутки */
+  const header = document.querySelector('.header');
+  const headerHeight = header.clientHeight;
+
+  function transferNavbarSecond() {
+    window.pageYOffset > headerHeight
+      ? header.classList.add('header_color')
+      : header.classList.remove('header_color');
+  }
+
+  transferNavbarSecond();
+  window.addEventListener('scroll', transferNavbarSecond);
+
+
+  /** Инициализация слайдеров swiper */
+  new Swiper('.main-screen__swiper-container', {
+    slidesPerView: 1,
+    initialSlide: 0,
+    loop: true,
+    autoplay: true,
+    delay: 4000,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    preloadImages: false,
+    lazy: true,
+    loadOnTransitionStart: true
+  });
 
 
   /** Плавная прокрутка до якоря */
   const anchors = document.querySelectorAll('[href^="#"]');
-  const speed = 0.5;
+  const speed = 0.3;
 
   if (anchors.length) {
     anchors.forEach(anchor => {
@@ -339,31 +94,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  // /** Маска номера телефона на поля. Maskedinput */
-  // $("#call-feedback-tel").mask("+7 (999) 999-9999");
-  // $("#call-doctor-call-tel").mask("+7 (999) 999-9999");
-  // $("#call-appointment-tel").mask("+7 (999) 999-9999");
-  //
-  //
-  // /** Инициализация галереи fancybox */
-  // document.querySelector('[data-fancybox="gallery"]') && $('[data-fancybox="gallery"]').fancybox({
-  //   toolbar: false,
-  //   transitionEffect: "zoom-in-out",
-  //   loop: true
-  // });
-  //
-  //
-  // /** Спойлеры услуг */
-  // const spoilerWrap = document.querySelector('.amenities__spoilers');
-  // if (spoilerWrap) {
-  //   const spoilers = document.querySelectorAll('.spoiler');
-  //   spoilers.forEach(spoiler => {
-  //     new Spoiler({
-  //       spoiler,
-  //       wrap: spoilerWrap
-  //     })
-  //   });
-  // }
+  /** Маска номера телефона на поля. Maskedinput */
+  const input = document.querySelector('[data-input="tel"]');
+  input.addEventListener("input", mask);
+  input.addEventListener("focus", mask);
+  input.addEventListener("blur", mask);
+
+
+  /** Планировки */
+  document.querySelectorAll('.card-tower').forEach(card => new Layouts(card));
+
+  /** Галереи в карточках жк */
+  document.querySelectorAll('.card-tower__img').forEach(wrapImg => new GalleryCards(wrapImg));
 });
 
 
@@ -405,6 +147,7 @@ class ManagementEvents {
   }
 }
 
+/** Модалка */
 class Modal {
   constructor(data) {
     this.arrEvents = [];
@@ -467,53 +210,206 @@ class Modal {
   }
 }
 
-class Spoiler {
-  constructor(data) {
-    this.spoiler = data.spoiler;
-    this.body = this.spoiler.querySelector('.spoiler__body');
-    this.wrap = data.wrap;
-    this.spoilers = null;
-    this.height = null;
+/** Маска на телефон */
+function setCursorPosition(pos, elem) {
+  elem.focus();
 
-    this._initialize();
-  }
+  if (elem.setSelectionRange) {
+    elem.setSelectionRange(pos, pos);
+  } else if (elem.createTextRange) {
+    const range = elem.createTextRange();
 
-  open() {
-    this.spoiler.classList.add('open');
-    this.body.style.height = `${this.height}px`;
-  }
-
-  close() {
-    this.spoiler.classList.remove('open');
-    this.body.style.height = '0px';
-  }
-
-  closeAll() {
-    this.spoilers.forEach(spoiler => {
-      spoiler.classList.remove('open');
-      spoiler.querySelector('.spoiler__body').style.height = '0px';
-    });
-  }
-
-  _initialize() {
-    this.height = this.body.clientHeight;
-    this.body.style.height = '0px';
-
-    /** если есть this.wrap, значит включен режим аккордеона */
-    if (this.wrap) this.spoilers = this.wrap.querySelectorAll('.spoiler');
-
-    this.spoiler.addEventListener('click', event => {
-      const spoiler = event.target.closest('.spoiler');
-      if (!spoiler) return;
-
-      /** открываем или закрываем спойлер */
-      const open = spoiler.classList.contains('open');
-      if (open) {
-        this.close();
-      } else {
-        this.wrap && this.closeAll();
-        this.open();
-      }
-    });
+    range.collapse(true);
+    range.moveEnd("character", pos);
+    range.moveStart("character", pos);
+    range.select()
   }
 }
+function mask(event) {
+  const matrix = "+7 (___) ___ ____";
+  let i = 0;
+  const def = matrix.replace(/\D/g, '');
+  let val = this.value.replace(/\D/g, '');
+
+  if (def.length >= val.length) val = def;
+
+  this.value = matrix.replace(/./g, function(str) {
+    return /[_\d]/.test(str) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : str
+  });
+
+  if (event.type === "blur") {
+    if (this.value.length === 2) this.value = ""
+  } else {
+    setCursorPosition(this.value.length, this)
+  }
+}
+
+/** Планировки */
+class Layouts {
+  constructor(el) {
+    this._wrap = el;
+
+    this._body = this._wrap.querySelector('.card-tower__body');
+    this._allBlock = this._wrap.querySelectorAll('[data-block]');
+
+    this._btnAbout = this._wrap.querySelector('[data-btn="about"]');
+    this._btnLayouts = this._wrap.querySelector('[data-btn="layouts"]');
+    this._btnClose = this._wrap.querySelector('[data-btn="close"]');
+
+    this._about = this._wrap.querySelector('.card-tower__general-information');
+    this._layouts = this._wrap.querySelector('.card-tower__layouts');
+
+    this._rowsWrap = this._wrap.querySelector('.card-tower__table-row-wrap');
+
+    this._images = this._wrap.querySelector('.card-tower__table-img');
+
+    this._bind();
+  }
+
+  showBlock(el) {
+    this._body.removeAttribute('hidden');
+    this._allBlock.forEach(block => block.setAttribute('hidden', true));
+    el.removeAttribute('hidden');
+
+    switch (el) {
+      case this._about:
+        this._btnAbout.classList.add('card-tower__btn_active');
+        this._btnLayouts.classList.remove('card-tower__btn_active');
+        break;
+      default:
+        this._btnLayouts.classList.add('card-tower__btn_active');
+        this._btnAbout.classList.remove('card-tower__btn_active');
+        break
+    }
+  }
+
+  hideBlock() {
+    this._body.setAttribute('hidden', true);
+    this._allBlock.forEach(block => block.removeAttribute('hidden'));
+
+    this._btnAbout.classList.remove('card-tower__btn_active');
+    this._btnLayouts.classList.remove('card-tower__btn_active');
+  }
+
+  changeLayout(event) {
+    const clickRow = event.target.closest('.card-tower__table-row');
+    let index;
+
+    [...this._rowsWrap.children].forEach((el, i) => {
+      if (el === clickRow) index = i;
+      el.classList.remove('active');
+    });
+
+    clickRow.classList.add('active');
+
+    [...this._images.children].forEach((el, i) => {
+      i === index
+        ? el.removeAttribute('hidden')
+        : el.setAttribute('hidden', true);
+    });
+  }
+
+  _bind() {
+    this._btnAbout.addEventListener('click', () => this.showBlock(this._about));
+    this._btnLayouts.addEventListener('click', () => this.showBlock(this._layouts));
+    this._btnClose.addEventListener('click', () => this.hideBlock());
+    this._rowsWrap.addEventListener('click', event => this.changeLayout(event));
+  }
+}
+
+/** Галерея внутри карточек жк */
+class GalleryCards {
+  constructor(el) {
+    this._gallery = el;
+
+    this._render();
+    this._bind();
+  }
+
+  _render() {
+    this._gallery.insertAdjacentHTML('beforeend', this._generateTemplate());
+  }
+
+  _bind() {
+    const sections = this._gallery.querySelector('.card-tower__sections');
+    sections.addEventListener('mouseover', event => {
+      const section = event.target.closest('.card-tower__section');
+      let index;
+
+      [...sections.children].forEach((child, i) => {
+        if (section === child) index = i;
+        child.classList.remove('active');
+      });
+      [...this._gallery.children].forEach(img => img.classList.remove('active'));
+
+      section.classList.add('active');
+      [...this._gallery.children][index].classList.add('active');
+    });
+  }
+
+  _generateTemplate() {
+    const countImg = this._gallery.childElementCount;
+
+    return `
+      <div class="card-tower__sections">
+        ${this._getTemplateSection(countImg)}
+      </div>
+    `;
+  }
+
+  _getTemplateSection(count) {
+    let sectionTemplate = '';
+
+    for (let i = 0; i < count; i++) {
+      sectionTemplate += '<div class="card-tower__section"></div>'
+    }
+
+    return sectionTemplate
+  }
+}
+
+/** Yandex api */
+ymaps.ready(() => {
+  const myMap = new ymaps.Map('map-yandex', {
+    center: [59.93, 30.31],
+    zoom: 11
+  });
+
+  const arrInfo = [
+    {name: 'Ligovsky city - Второй квартал', coordinates: [59.906359, 30.344947], address: 'Санкт Петербург, Лиговский проспект, 232', img: 'images/real-estate/1.jpg'},
+    {name: 'Ligovsky city - Первый квартал', coordinates: [59.905321, 30.342359], address: 'Санкт Петербург, Лиговский проспект, 271', img: 'images/real-estate/2.jpg'},
+    {name: 'Golden City', coordinates: [59.941475, 30.193832], address: 'Санкт Петербург, ул. Челюскина, 4', img: 'images/real-estate/3.jpg'},
+    {name: 'Английская миля', coordinates: [59.847010, 30.113936], address: 'Санкт Петербург, Петергофское ш., 78', img: 'images/real-estate/4.jpg'},
+    {name: 'Grand House', coordinates: [59.925398, 30.373702], address: 'Санкт Петербург, Тележная ул., 17-19', img: 'images/real-estate/5.jpg'},
+    {name: 'Олимп', coordinates: [56.256213, 37.975039], address: 'МО, г. Хотьково, ул. Михеенко, 25', img: 'images/real-estate/6.jpg'},
+    {name: 'Мейн Хаус', coordinates: [60.028029, 30.416183], address: 'Санкт Петербург, Гражданский проспект, 107', img: 'images/real-estate/7.jpg'},
+    {name: 'Твин Хаус', coordinates: [59.873853, 30.367225], address: 'Санкт Петербург, Будапештская, 2', img: 'images/real-estate/8.jpg'}
+  ];
+
+  const header = (img, address) => `
+    <div class="card-map__header">
+      <img src="${img}" alt="${address}">
+    </div>
+  `;
+
+  const footer = (name, address) => `
+    <div class="card-map__footer">
+      <h2 class="card-map__title">${name}</h2>
+      <p class="card-map__address">${address}</p>
+    </div>
+  `;
+
+  arrInfo.forEach(({ name, coordinates, address, img }) => {
+    myMap.geoObjects.add(new ymaps.Placemark(coordinates, {
+      hintLayout: name,
+      balloonContentHeader: header(img),
+      balloonContentFooter: footer(name, address),
+    }, {
+      iconLayout: 'default#imageWithContent',
+      iconImageHref: 'images/other/point-map.png',
+      iconImageSize: [34, 43],
+      iconImageOffset: [-17, -43],
+      iconContentOffset: [17, 50]
+    }));
+  });
+});

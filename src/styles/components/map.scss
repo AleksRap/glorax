@@ -1,0 +1,23 @@
+.map {
+  width: 100%;
+  padding-top: 30px;
+  background-color: white;
+
+  @media (min-width: 1360px) {
+    padding-top: 55px;
+  }
+
+  &__info {
+    width: 100%;
+    height: 530px;
+
+    background-color: gray;
+  }
+
+  &__card {
+    width: 215px;
+    height: 224px;
+
+    background-color: red;
+  }
+}

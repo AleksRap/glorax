@@ -2,38 +2,48 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 2;
   
   width: 100%;
-  height: 90px;
+  height: 80px;
 
-  margin-top: 30px;
   display: flex;
   background-color: transparent;
 
   transition: height $time-animation-header ease-in, margin-top $time-animation-header $time-animation-header ease-in, background-color $time-animation-header ease-in;
 
-  &_color {
-    height: 120px;
-    margin-top: 0;
-    background-color: $first-color;
+  @media (min-width: 1360px) {
+    height: 90px;
+    margin-top: 30px;
+  }
 
+  &_color {
+    background-color: $first-color;
     transition: height $time-animation-header $time-animation-header ease-in, margin-top $time-animation-header ease-in, background-color $time-animation-header $time-animation-header ease-in;
+
+    @media (min-width: 1360px) {
+      height: 120px;
+      margin-top: 0;
+    }
 
     .header {
 
       &__logo-wrap {
-        width: 150px;
-        height: 150px;
-
         transition: width $time-animation-header $time-animation-header ease-in, height $time-animation-header $time-animation-header ease-in;
+
+        @media (min-width: 1360px) {
+          width: 150px;
+          height: 150px;
+        }
       }
 
       &__logo {
-        max-width: 112px;
-        max-height: 112px;
-
         transition: max-width $time-animation-header $time-animation-header ease-in, max-height $time-animation-header $time-animation-header ease-in;
+
+        @media (min-width: 1360px) {
+          max-width: 112px;
+          max-height: 112px;
+        }
       }
 
       &__nav {
@@ -51,10 +61,12 @@
   }
 
   &__logo-wrap {
-    width: 200px;
-    height: 200px;
+    flex: 0 0 auto;
 
-    margin: 10px 70px 0 85px;
+    width: 80px;
+    height: 80px;
+
+    margin: 20px 20px 0 20px;
 
     display: flex;
     justify-content: center;
@@ -63,12 +75,37 @@
     background-color: $first-color;
 
     transition: width $time-animation-header ease-in, height $time-animation-header ease-in;
+
+    @media (min-width: 768px) {
+      margin-left: 50px;
+    }
+    @media (min-width: 1360px) {
+      width: 120px;
+      height: 120px;
+
+      margin: 10px 50px 0 85px;
+    }
+    @media (min-width: 1560px) {
+      width: 200px;
+      height: 200px;
+
+      margin-right: 70px;
+    }
   }
 
   &__logo {
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 60px;
+    height: 60px;
 
     transition: max-width $time-animation-header ease-in, max-height $time-animation-header ease-in;
+
+    @media (min-width: 1360px) {
+      max-width: 100px;
+      height: 100px;
+    }
+    @media (min-width: 1560px) {
+      max-width: 150px;
+      height: 150px;
+    }
   }
 }

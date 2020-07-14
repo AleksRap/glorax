@@ -1,0 +1,116 @@
+.about-us {
+  width: 100%;
+
+  padding-top: 30px;
+  padding-bottom: 50px;
+
+  background: #1B2E50 url('../svg/pattern.svg') center repeat;
+
+  @media (min-width: 1360px) {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 40px;
+
+    color: white;
+
+    @media (min-width: 1360px) {
+      grid-template-columns: 590px 1fr;
+      grid-gap: 170px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 1.5;
+
+    @media (min-width: 1360px) {
+      font-size: 16px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 60px;
+
+    @media (min-width: 1360px) {
+      margin-bottom: 40px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    &_bag {
+
+      &::before {
+        left: 0;
+
+        width: 33px;
+        height: 46px;
+
+        background-image: url('../svg/about-us/bag.svg');
+      }
+    }
+
+    &_build {
+
+      &::before {
+        left: -4px;
+
+        width: 42px;
+        height: 47px;
+
+        background-image: url('../svg/about-us/build.svg');
+      }
+    }
+
+    &_top {
+
+      &::before {
+        left: -3px;
+
+        width: 40px;
+        height: 56px;
+
+        background-image: url('../svg/about-us/top.svg');
+      }
+    }
+  }
+
+  &__item-title {
+    margin-bottom: 3px;
+    font-size: 14px;
+
+    @media (min-width: 1360px) {
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+  }
+
+  &__item-text {
+    font-weight: 500;
+    font-size: 20px;
+
+    @media (min-width: 1360px) {
+      font-size: 24px;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.card-map {
+
+  &__header {
+    width: 100%;
+    height: 126px;
+
+    @media (min-width: 768px) {
+      max-width: 215px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__footer {
+    width: 100%;
+
+    padding: 12px;
+
+    background-color: #fff;
+
+    font-family: 'Geometria', Arial, sans-serif;
+    color: #597DA3;
+
+    @media (min-width: 768px) {
+      max-width: 215px;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 16px;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  &__address {
+    margin: 0;
+
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 300;
+  }
+}
+
+.ymaps-2-1-76-balloon__close+.ymaps-2-1-76-balloon__content {
+  margin-right: 0 !important;
+  padding: 0;
+}

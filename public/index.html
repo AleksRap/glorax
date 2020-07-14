@@ -14,7 +14,7 @@
   </head>
   <body>
     <header class="header">
-      <div class="header__logo-wrap"><a class="logo header__logo" href="#"></a></div>
+      <div class="header__logo-wrap"><a class="logo header__logo" href="#top"></a></div>
       <nav class="nav header__nav">
         <ul class="nav__list">
           <li class="nav__item"><a class="nav__link" href="#projects">Проекты</a></li>
@@ -22,13 +22,92 @@
           <li class="nav__item"><a class="nav__link" href="#map">На карте</a></li>
           <li class="nav__item"><a class="nav__link" href="#rooms">Выбор помещений</a></li>
         </ul><a class="number nav__number" href="tel:+78126034343">+7 (812) 603-43-43</a>
-            <button class="callback-btn nav__callback-btn">Заказать обратный звонок</button>
+            <button class="callback-btn nav__callback-btn"><span class="callback-btn__text">Заказать обратный звонок</span></button>
+        <button class="nav__mobile-btn" data-mobile-nav="open"><span class="nav__mobile-btn-square"></span></button>
+        <div class="nav__mobile-list-wrap">
+          <button class="nav__mobile-btn-close" data-mobile-nav="close"></button>
+          <ul class="nav__mobile-list">
+            <li class="nav__mobile-item"><a class="nav__mobile-link" href="#projects">Проекты</a></li>
+            <li class="nav__mobile-item"><a class="nav__mobile-link" href="#about-us">О компании</a></li>
+            <li class="nav__mobile-item"><a class="nav__mobile-link" href="#map">На карте</a></li>
+            <li class="nav__mobile-item"><a class="nav__mobile-link" href="#rooms">Выбор помещений</a></li>
+          </ul>
+        </div>
       </nav>
-    </header>
+    </header><a id="top"></a>
     <main>
-      <div class="main-screen"></div><a id="projects"></a>
-      <section class="projects">
-        <div class="content projects__content">
+      <div class="main-screen">
+        <div class="swiper-container main-screen__swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide main-screen__slide">
+              <div class="main-screen__img"><img class="swiper-lazy" data-src="images/slider/slide-1.jpg" alt="slide-0" src="images/other/pixel.png">
+                <div class="swiper-lazy-preloader"></div>
+              </div>
+              <div class="main-screen__wrap">
+                <section class="main-screen__content">
+                  <h2 class="main-screen__title">Ligovsky city - Второй квартал</h2>
+                  <p class="main-screen__type">Жилой комплекс</p><a class="main-screen__link" href="#rooms">Перейти к выбору помещений</a>
+                </section>
+              </div>
+            </div>
+            <div class="swiper-slide main-screen__slide">
+              <div class="main-screen__img"><img class="swiper-lazy" data-src="images/slider/slide-1.jpg" alt="slide-1" src="images/other/pixel.png">
+                <div class="swiper-lazy-preloader"></div>
+              </div>
+              <div class="main-screen__wrap">
+                <section class="main-screen__content">
+                  <h2 class="main-screen__title">Ligovsky city - Сотый квартал</h2>
+                  <p class="main-screen__type">Жилой комплекс</p><a class="main-screen__link" href="#rooms">Перейти к выбору помещений</a>
+                </section>
+              </div>
+            </div>
+            <div class="swiper-slide main-screen__slide">
+              <div class="main-screen__img"><img class="swiper-lazy" data-src="images/slider/slide-1.jpg" alt="slide-2" src="images/other/pixel.png">
+                <div class="swiper-lazy-preloader"></div>
+              </div>
+              <div class="main-screen__wrap">
+                <section class="main-screen__content">
+                  <h2 class="main-screen__title">Ligovsky city - Миллионный квартал</h2>
+                  <p class="main-screen__type">Жилой комплекс</p><a class="main-screen__link" href="#rooms">Перейти к выбору помещений</a>
+                </section>
+              </div>
+            </div>
+            <div class="swiper-slide main-screen__slide">
+              <div class="main-screen__img"><img class="swiper-lazy" data-src="images/slider/slide-1.jpg" alt="slide-3" src="images/other/pixel.png">
+                <div class="swiper-lazy-preloader"></div>
+              </div>
+              <div class="main-screen__wrap">
+                <section class="main-screen__content">
+                  <h2 class="main-screen__title">Ligovsky city - Первый квартал</h2>
+                  <p class="main-screen__type">Жилой комплекс</p><a class="main-screen__link" href="#rooms">Перейти к выбору помещений</a>
+                </section>
+              </div>
+            </div>
+            <div class="swiper-slide main-screen__slide">
+              <div class="main-screen__img"><img class="swiper-lazy" data-src="images/slider/slide-1.jpg" alt="slide-4" src="images/other/pixel.png">
+                <div class="swiper-lazy-preloader"></div>
+              </div>
+              <div class="main-screen__wrap">
+                <section class="main-screen__content">
+                  <h2 class="main-screen__title">Golden City</h2>
+                  <p class="main-screen__type">Жилой комплекс</p><a class="main-screen__link" href="#rooms">Перейти к выбору помещений</a>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination main-screen__pagination"></div>
+        </div>
+        <div class="main-screen__info">
+          <div class="main-screen__advantages">
+            <div class="main-screen__advantage main-screen__advantage_1"></div>
+            <div class="main-screen__advantage main-screen__advantage_2"></div>
+            <div class="main-screen__advantage main-screen__advantage_3"></div>
+          </div><a class="logo-m2 main-screen__logo-m2" href="#"></a>
+        </div>
+              <button class="callback-btn main-screen__callback-btn callback-btn_little"><span class="callback-btn__text">Заказать обратный звонок</span></button>
+      </div><a id="projects"></a>
+      <div class="projects">
+        <section class="content projects__content">
           <h2 class="title title_mb">Проекты</h2>
           <div class="projects__cards">
                   <div class="card-real-estate">
@@ -128,17 +207,1077 @@
                     </div>
                   </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div><a id="about-us"></a>
+      <div class="about-us">
+        <section class="content">
+          <h2 class="title title_white title_mb">О компании</h2>
+          <div class="about-us__info">
+            <div class="about-us__text">Glorax Development основана в 2014 году. Компания специализируется на строительстве жилых комплексов, коммерческой недвижимости и объектов социальной инфраструктуры. Сейчас портфель проектов насчитывает 2,5 млн кв. м, в активной стадии строительства находится порядка 600 000 кв. м. Среди регионов присутствия – Санкт-Петербург, Москва и Московская область. В 2018 году компания вошла в ТОП-5 застройщиков Санкт-Петербурга. В 2019 году – была отмечена премией «Права потребителей и качество обслуживания» в категории «Недвижимость. Городское строительство», а также получила золотой знак «Надежный застройщик России». По версии премии Proestate&Toby Awards-2019 Glorax Development признана «Лидером рынка жилой недвижимости Санкт-Петербурга».</div>
+            <div class="about-us__items">
+              <div class="about-us__item about-us__item_bag">
+                <div class="about-us__item-title">Портфель проектов</div>
+                <div class="about-us__item-text">более 2 500 000 м² </div>
+              </div>
+              <div class="about-us__item about-us__item_build">
+                <div class="about-us__item-title">Активное строительство </div>
+                <div class="about-us__item-text">600 000 м² </div>
+              </div>
+              <div class="about-us__item about-us__item_top">
+                <div class="about-us__item-title">ТОП-5 застройщиков</div>
+                <div class="about-us__item-text">Санкт-Петербурга</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div><a id="map"></a>
+      <div class="map">
+        <section class="content">
+          <h2 class="title title_mb">На карте</h2>
+          <div class="map__info" id="map-yandex"></div>
+        </section>
+      </div><a id="rooms"></a>
+      <div class="rooms">
+        <section class="content">
+          <h2 class="title title_mb">Выбор помещений</h2>
+          <div class="rooms__list">
+                  <div class="card-tower">
+                    <div class="card-tower__head">
+                      <div class="card-tower__img"><img class="active" src="images/real-estate/1.jpg" alt="Ligovsky city - Второй квартал"><img src="images/real-estate/8.jpg" alt="Ligovsky city - Второй квартал"><img src="images/real-estate/3.jpg" alt="Ligovsky city - Второй квартал"><img src="images/real-estate/4.jpg" alt="Ligovsky city - Второй квартал"><img src="images/real-estate/5.jpg" alt="Ligovsky city - Второй квартал"></div>
+                      <div class="card-tower__info">
+                        <h3 class="card-tower__name">Ligovsky city - Второй квартал</h3><span class="card-tower__type">Жилой комплекс</span>
+                        <address class="card-tower__address">Лиговский проспект, 232</address>
+                        <p class="card-tower__description">Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является</p>
+                        <div class="card-tower__btns">
+                          <button class="card-tower__btn" data-btn="about">Подробнее о комплексе</button>
+                          <button class="card-tower__btn" data-btn="layouts">Показать 16 планировок</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-tower__body" hidden>
+                      <div class="card-tower__general-information" hidden data-block>
+                        <div class="card-tower__title">О комплексе</div>
+                        <div class="card-tower__wrap">
+                          <div class="card-tower__list">
+                            <div class="card-tower__row"><span class="card-tower__row-title">Класс:</span><span class="card-tower__row-info">Бизнес класс</span></div>
+                            <div class="card-tower__row"><span class="card-tower__row-title">Сдача:</span><span class="card-tower__row-info">III кв. 2020 года</span></div>
+                            <div class="card-tower__row"><span class="card-tower__row-title">Метро:</span><span class="card-tower__row-info">Обводный канал</span></div>
+                            <div class="card-tower__row"><span class="card-tower__row-title">Цена за м<sup>2</sup>:</span><span class="card-tower__row-info">от 165 000 ₽</span></div>
+                                  <div class="social-links card-tower__social-links"><a class="social-links__link social-links__link_ig" href="#"></a><a class="social-links__link social-links__link_fb" href="#"></a><a class="social-links__link social-links__link_vk" href="#"></a><a class="social-links__link social-links__link_yt" href="#"></a></div>
+                          </div>
+                          <div class="card-tower__description-full-wrap">
+                            <div class="card-tower__description-full">Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-tower__layouts" hidden data-block>
+                        <div class="card-tower__table-head">
+                          <div class="card-tower__table-head-cell"></div>
+                          <div class="card-tower__table-head-cell">№ помещения</div>
+                          <div class="card-tower__table-head-cell">Этаж</div>
+                          <div class="card-tower__table-head-cell">Площадь, м2</div>
+                          <div class="card-tower__table-head-cell">Стоимость, ₽</div>
+                        </div>
+                        <div class="card-tower__table-body">
+                          <div class="card-tower__table-img"><img src="images/layout.jpg" alt="Планировка-0"><img src="images/layout2.jpg" alt="Планировка-1" hidden><img src="images/layout.jpg" alt="Планировка-2" hidden><img src="images/layout2.jpg" alt="Планировка-3" hidden><img src="images/layout.jpg" alt="Планировка-4" hidden><img src="images/layout2.jpg" alt="Планировка-5" hidden><img src="images/layout.jpg" alt="Планировка-6" hidden><img src="images/layout2.jpg" alt="Планировка-7" hidden><img src="images/layout.jpg" alt="Планировка-8" hidden><img src="images/layout2.jpg" alt="Планировка-9" hidden><img src="images/layout.jpg" alt="Планировка-10" hidden><img src="images/layout2.jpg" alt="Планировка-11" hidden>
+                          </div>
+                          <div class="card-tower__table-row-wrap">
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">9</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">10</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">42.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">16</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">28</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">47.1</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">30</div>
+                              <div class="card-tower__table-cell">2</div>
+                              <div class="card-tower__table-cell">53.4</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">53</div>
+                              <div class="card-tower__table-cell">3</div>
+                              <div class="card-tower__table-cell">59.8</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">9</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">10</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">42.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">16</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">28</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">47.1</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">30</div>
+                              <div class="card-tower__table-cell">2</div>
+                              <div class="card-tower__table-cell">53.4</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">53</div>
+                              <div class="card-tower__table-cell">3</div>
+                              <div class="card-tower__table-cell">59.8</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-tower__links"><a class="card-tower__link card-tower__link_layouts" href="#" download>Презентация<br>с планировками</a><a class="card-tower__link card-tower__link_order" href="#" download>Заявка<br>на бронь</a></div>
+                      </div>
+                      <button class="card-tower__minus" data-btn="close">-</button>
+                    </div>
+                  </div>
+                  <div class="card-tower">
+                    <div class="card-tower__head">
+                      <div class="card-tower__img"><img class="active" src="images/real-estate/2.jpg" alt="Ligovsky city - Первый квартал"><img src="images/real-estate/8.jpg" alt="Ligovsky city - Первый квартал"><img src="images/real-estate/3.jpg" alt="Ligovsky city - Первый квартал"><img src="images/real-estate/4.jpg" alt="Ligovsky city - Первый квартал"><img src="images/real-estate/5.jpg" alt="Ligovsky city - Первый квартал"></div>
+                      <div class="card-tower__info">
+                        <h3 class="card-tower__name">Ligovsky city - Первый квартал</h3><span class="card-tower__type">Жилой комплекс</span>
+                        <address class="card-tower__address">Лиговский проспект, 271</address>
+                        <p class="card-tower__description">Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является</p>
+                        <div class="card-tower__btns">
+                          <button class="card-tower__btn" data-btn="about">Подробнее о комплексе</button>
+                          <button class="card-tower__btn" data-btn="layouts">Показать 16 планировок</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-tower__body" hidden>
+                      <div class="card-tower__general-information" hidden data-block>
+                        <div class="card-tower__title">О комплексе</div>
+                        <div class="card-tower__wrap">
+                          <div class="card-tower__list">
+                            <div class="card-tower__row"><span class="card-tower__row-title">Класс:</span><span class="card-tower__row-info">Бизнес класс</span></div>
+                            <div class="card-tower__row"><span class="card-tower__row-title">Сдача:</span><span class="card-tower__row-info">III кв. 2020 года</span></div>
+                            <div class="card-tower__row"><span class="card-tower__row-title">Метро:</span><span class="card-tower__row-info">Обводный канал</span></div>
+                            <div class="card-tower__row"><span class="card-tower__row-title">Цена за м<sup>2</sup>:</span><span class="card-tower__row-info">от 165 000 ₽</span></div>
+                                  <div class="social-links card-tower__social-links"><a class="social-links__link social-links__link_ig" href="#"></a><a class="social-links__link social-links__link_fb" href="#"></a><a class="social-links__link social-links__link_vk" href="#"></a><a class="social-links__link social-links__link_yt" href="#"></a></div>
+                          </div>
+                          <div class="card-tower__description-full-wrap">
+                            <div class="card-tower__description-full">Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-tower__layouts" hidden data-block>
+                        <div class="card-tower__table-head">
+                          <div class="card-tower__table-head-cell"></div>
+                          <div class="card-tower__table-head-cell">№ помещения</div>
+                          <div class="card-tower__table-head-cell">Этаж</div>
+                          <div class="card-tower__table-head-cell">Площадь, м2</div>
+                          <div class="card-tower__table-head-cell">Стоимость, ₽</div>
+                        </div>
+                        <div class="card-tower__table-body">
+                          <div class="card-tower__table-img"><img src="images/layout.jpg" alt="Планировка-0"><img src="images/layout2.jpg" alt="Планировка-1" hidden><img src="images/layout.jpg" alt="Планировка-2" hidden><img src="images/layout2.jpg" alt="Планировка-3" hidden><img src="images/layout.jpg" alt="Планировка-4" hidden><img src="images/layout2.jpg" alt="Планировка-5" hidden><img src="images/layout.jpg" alt="Планировка-6" hidden><img src="images/layout2.jpg" alt="Планировка-7" hidden><img src="images/layout.jpg" alt="Планировка-8" hidden><img src="images/layout2.jpg" alt="Планировка-9" hidden><img src="images/layout.jpg" alt="Планировка-10" hidden><img src="images/layout2.jpg" alt="Планировка-11" hidden>
+                          </div>
+                          <div class="card-tower__table-row-wrap">
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">9</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">10</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">42.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">16</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">28</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">47.1</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">30</div>
+                              <div class="card-tower__table-cell">2</div>
+                              <div class="card-tower__table-cell">53.4</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">53</div>
+                              <div class="card-tower__table-cell">3</div>
+                              <div class="card-tower__table-cell">59.8</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">9</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">10</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">42.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">16</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">28</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">47.1</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">30</div>
+                              <div class="card-tower__table-cell">2</div>
+                              <div class="card-tower__table-cell">53.4</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">53</div>
+                              <div class="card-tower__table-cell">3</div>
+                              <div class="card-tower__table-cell">59.8</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-tower__links"><a class="card-tower__link card-tower__link_layouts" href="#" download>Презентация<br>с планировками</a><a class="card-tower__link card-tower__link_order" href="#" download>Заявка<br>на бронь</a></div>
+                      </div>
+                      <button class="card-tower__minus" data-btn="close">-</button>
+                    </div>
+                  </div>
+                  <div class="card-tower">
+                    <div class="card-tower__head">
+                      <div class="card-tower__img"><img class="active" src="images/real-estate/3.jpg" alt="Golden City"><img src="images/real-estate/8.jpg" alt="Golden City"><img src="images/real-estate/3.jpg" alt="Golden City"><img src="images/real-estate/4.jpg" alt="Golden City"><img src="images/real-estate/5.jpg" alt="Golden City"></div>
+                      <div class="card-tower__info">
+                        <h3 class="card-tower__name">Golden City</h3><span class="card-tower__type">Жилой комплекс</span>
+                        <address class="card-tower__address">ул. Челюскина, 4</address>
+                        <p class="card-tower__description">Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является</p>
+                        <div class="card-tower__btns">
+                          <button class="card-tower__btn" data-btn="about">Подробнее о комплексе</button>
+                          <button class="card-tower__btn" data-btn="layouts">Показать 16 планировок</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-tower__body" hidden>
+                      <div class="card-tower__general-information" hidden data-block>
+                        <div class="card-tower__title">О комплексе</div>
+                        <div class="card-tower__wrap">
+                          <div class="card-tower__list">
+                            <div class="card-tower__row"><span class="card-tower__row-title">Класс:</span><span class="card-tower__row-info">Бизнес класс</span></div>
+                            <div class="card-tower__row"><span class="card-tower__row-title">Сдача:</span><span class="card-tower__row-info">III кв. 2020 года</span></div>
+                            <div class="card-tower__row"><span class="card-tower__row-title">Метро:</span><span class="card-tower__row-info">Обводный канал</span></div>
+                            <div class="card-tower__row"><span class="card-tower__row-title">Цена за м<sup>2</sup>:</span><span class="card-tower__row-info">от 165 000 ₽</span></div>
+                                  <div class="social-links card-tower__social-links"><a class="social-links__link social-links__link_ig" href="#"></a><a class="social-links__link social-links__link_fb" href="#"></a><a class="social-links__link social-links__link_vk" href="#"></a><a class="social-links__link social-links__link_yt" href="#"></a></div>
+                          </div>
+                          <div class="card-tower__description-full-wrap">
+                            <div class="card-tower__description-full">Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-tower__layouts" hidden data-block>
+                        <div class="card-tower__table-head">
+                          <div class="card-tower__table-head-cell"></div>
+                          <div class="card-tower__table-head-cell">№ помещения</div>
+                          <div class="card-tower__table-head-cell">Этаж</div>
+                          <div class="card-tower__table-head-cell">Площадь, м2</div>
+                          <div class="card-tower__table-head-cell">Стоимость, ₽</div>
+                        </div>
+                        <div class="card-tower__table-body">
+                          <div class="card-tower__table-img"><img src="images/layout.jpg" alt="Планировка-0"><img src="images/layout2.jpg" alt="Планировка-1" hidden><img src="images/layout.jpg" alt="Планировка-2" hidden><img src="images/layout2.jpg" alt="Планировка-3" hidden><img src="images/layout.jpg" alt="Планировка-4" hidden><img src="images/layout2.jpg" alt="Планировка-5" hidden><img src="images/layout.jpg" alt="Планировка-6" hidden><img src="images/layout2.jpg" alt="Планировка-7" hidden><img src="images/layout.jpg" alt="Планировка-8" hidden><img src="images/layout2.jpg" alt="Планировка-9" hidden><img src="images/layout.jpg" alt="Планировка-10" hidden><img src="images/layout2.jpg" alt="Планировка-11" hidden>
+                          </div>
+                          <div class="card-tower__table-row-wrap">
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">9</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">10</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">42.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">16</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">28</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">47.1</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">30</div>
+                              <div class="card-tower__table-cell">2</div>
+                              <div class="card-tower__table-cell">53.4</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">53</div>
+                              <div class="card-tower__table-cell">3</div>
+                              <div class="card-tower__table-cell">59.8</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">9</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">10</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">42.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">16</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">28</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">47.1</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">30</div>
+                              <div class="card-tower__table-cell">2</div>
+                              <div class="card-tower__table-cell">53.4</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">53</div>
+                              <div class="card-tower__table-cell">3</div>
+                              <div class="card-tower__table-cell">59.8</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-tower__links"><a class="card-tower__link card-tower__link_layouts" href="#" download>Презентация<br>с планировками</a><a class="card-tower__link card-tower__link_order" href="#" download>Заявка<br>на бронь</a></div>
+                      </div>
+                      <button class="card-tower__minus" data-btn="close">-</button>
+                    </div>
+                  </div>
+                  <div class="card-tower">
+                    <div class="card-tower__head">
+                      <div class="card-tower__img"><img class="active" src="images/real-estate/4.jpg" alt="Английская миля"><img src="images/real-estate/8.jpg" alt="Английская миля"><img src="images/real-estate/3.jpg" alt="Английская миля"><img src="images/real-estate/4.jpg" alt="Английская миля"><img src="images/real-estate/5.jpg" alt="Английская миля"></div>
+                      <div class="card-tower__info">
+                        <h3 class="card-tower__name">Английская миля</h3><span class="card-tower__type">Жилой комплекс</span>
+                        <address class="card-tower__address">Петергофское ш., 78</address>
+                        <p class="card-tower__description">Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является</p>
+                        <div class="card-tower__btns">
+                          <button class="card-tower__btn" data-btn="about">Подробнее о комплексе</button>
+                          <button class="card-tower__btn" data-btn="layouts">Показать 16 планировок</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-tower__body" hidden>
+                      <div class="card-tower__general-information" hidden data-block>
+                        <div class="card-tower__title">О комплексе</div>
+                        <div class="card-tower__wrap">
+                          <div class="card-tower__list">
+                            <div class="card-tower__row"><span class="card-tower__row-title">Класс:</span><span class="card-tower__row-info">Бизнес класс</span></div>
+                            <div class="card-tower__row"><span class="card-tower__row-title">Сдача:</span><span class="card-tower__row-info">III кв. 2020 года</span></div>
+                            <div class="card-tower__row"><span class="card-tower__row-title">Метро:</span><span class="card-tower__row-info">Обводный канал</span></div>
+                            <div class="card-tower__row"><span class="card-tower__row-title">Цена за м<sup>2</sup>:</span><span class="card-tower__row-info">от 165 000 ₽</span></div>
+                                  <div class="social-links card-tower__social-links"><a class="social-links__link social-links__link_ig" href="#"></a><a class="social-links__link social-links__link_fb" href="#"></a><a class="social-links__link social-links__link_vk" href="#"></a><a class="social-links__link social-links__link_yt" href="#"></a></div>
+                          </div>
+                          <div class="card-tower__description-full-wrap">
+                            <div class="card-tower__description-full">Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-tower__layouts" hidden data-block>
+                        <div class="card-tower__table-head">
+                          <div class="card-tower__table-head-cell"></div>
+                          <div class="card-tower__table-head-cell">№ помещения</div>
+                          <div class="card-tower__table-head-cell">Этаж</div>
+                          <div class="card-tower__table-head-cell">Площадь, м2</div>
+                          <div class="card-tower__table-head-cell">Стоимость, ₽</div>
+                        </div>
+                        <div class="card-tower__table-body">
+                          <div class="card-tower__table-img"><img src="images/layout.jpg" alt="Планировка-0"><img src="images/layout2.jpg" alt="Планировка-1" hidden><img src="images/layout.jpg" alt="Планировка-2" hidden><img src="images/layout2.jpg" alt="Планировка-3" hidden><img src="images/layout.jpg" alt="Планировка-4" hidden><img src="images/layout2.jpg" alt="Планировка-5" hidden><img src="images/layout.jpg" alt="Планировка-6" hidden><img src="images/layout2.jpg" alt="Планировка-7" hidden><img src="images/layout.jpg" alt="Планировка-8" hidden><img src="images/layout2.jpg" alt="Планировка-9" hidden><img src="images/layout.jpg" alt="Планировка-10" hidden><img src="images/layout2.jpg" alt="Планировка-11" hidden>
+                          </div>
+                          <div class="card-tower__table-row-wrap">
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">9</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">10</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">42.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">16</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">28</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">47.1</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">30</div>
+                              <div class="card-tower__table-cell">2</div>
+                              <div class="card-tower__table-cell">53.4</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">53</div>
+                              <div class="card-tower__table-cell">3</div>
+                              <div class="card-tower__table-cell">59.8</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">9</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">10</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">42.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">16</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">28</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">47.1</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">30</div>
+                              <div class="card-tower__table-cell">2</div>
+                              <div class="card-tower__table-cell">53.4</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">53</div>
+                              <div class="card-tower__table-cell">3</div>
+                              <div class="card-tower__table-cell">59.8</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-tower__links"><a class="card-tower__link card-tower__link_layouts" href="#" download>Презентация<br>с планировками</a><a class="card-tower__link card-tower__link_order" href="#" download>Заявка<br>на бронь</a></div>
+                      </div>
+                      <button class="card-tower__minus" data-btn="close">-</button>
+                    </div>
+                  </div>
+                  <div class="card-tower">
+                    <div class="card-tower__head">
+                      <div class="card-tower__img"><img class="active" src="images/real-estate/5.jpg" alt="Grand House"><img src="images/real-estate/8.jpg" alt="Grand House"><img src="images/real-estate/3.jpg" alt="Grand House"><img src="images/real-estate/4.jpg" alt="Grand House"><img src="images/real-estate/5.jpg" alt="Grand House"></div>
+                      <div class="card-tower__info">
+                        <h3 class="card-tower__name">Grand House</h3><span class="card-tower__type">Жилой комплекс</span>
+                        <address class="card-tower__address">Тележная ул., 17-19</address>
+                        <p class="card-tower__description">Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является</p>
+                        <div class="card-tower__btns">
+                          <button class="card-tower__btn" data-btn="about">Подробнее о комплексе</button>
+                          <button class="card-tower__btn" data-btn="layouts">Показать 16 планировок</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-tower__body" hidden>
+                      <div class="card-tower__general-information" hidden data-block>
+                        <div class="card-tower__title">О комплексе</div>
+                        <div class="card-tower__wrap">
+                          <div class="card-tower__list">
+                            <div class="card-tower__row"><span class="card-tower__row-title">Класс:</span><span class="card-tower__row-info">Бизнес класс</span></div>
+                            <div class="card-tower__row"><span class="card-tower__row-title">Сдача:</span><span class="card-tower__row-info">III кв. 2020 года</span></div>
+                            <div class="card-tower__row"><span class="card-tower__row-title">Метро:</span><span class="card-tower__row-info">Обводный канал</span></div>
+                            <div class="card-tower__row"><span class="card-tower__row-title">Цена за м<sup>2</sup>:</span><span class="card-tower__row-info">от 165 000 ₽</span></div>
+                                  <div class="social-links card-tower__social-links"><a class="social-links__link social-links__link_ig" href="#"></a><a class="social-links__link social-links__link_fb" href="#"></a><a class="social-links__link social-links__link_vk" href="#"></a><a class="social-links__link social-links__link_yt" href="#"></a></div>
+                          </div>
+                          <div class="card-tower__description-full-wrap">
+                            <div class="card-tower__description-full">Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-tower__layouts" hidden data-block>
+                        <div class="card-tower__table-head">
+                          <div class="card-tower__table-head-cell"></div>
+                          <div class="card-tower__table-head-cell">№ помещения</div>
+                          <div class="card-tower__table-head-cell">Этаж</div>
+                          <div class="card-tower__table-head-cell">Площадь, м2</div>
+                          <div class="card-tower__table-head-cell">Стоимость, ₽</div>
+                        </div>
+                        <div class="card-tower__table-body">
+                          <div class="card-tower__table-img"><img src="images/layout.jpg" alt="Планировка-0"><img src="images/layout2.jpg" alt="Планировка-1" hidden><img src="images/layout.jpg" alt="Планировка-2" hidden><img src="images/layout2.jpg" alt="Планировка-3" hidden><img src="images/layout.jpg" alt="Планировка-4" hidden><img src="images/layout2.jpg" alt="Планировка-5" hidden><img src="images/layout.jpg" alt="Планировка-6" hidden><img src="images/layout2.jpg" alt="Планировка-7" hidden><img src="images/layout.jpg" alt="Планировка-8" hidden><img src="images/layout2.jpg" alt="Планировка-9" hidden><img src="images/layout.jpg" alt="Планировка-10" hidden><img src="images/layout2.jpg" alt="Планировка-11" hidden>
+                          </div>
+                          <div class="card-tower__table-row-wrap">
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">9</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">10</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">42.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">16</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">28</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">47.1</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">30</div>
+                              <div class="card-tower__table-cell">2</div>
+                              <div class="card-tower__table-cell">53.4</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">53</div>
+                              <div class="card-tower__table-cell">3</div>
+                              <div class="card-tower__table-cell">59.8</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">9</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">10</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">42.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">16</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">28</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">47.1</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">30</div>
+                              <div class="card-tower__table-cell">2</div>
+                              <div class="card-tower__table-cell">53.4</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">53</div>
+                              <div class="card-tower__table-cell">3</div>
+                              <div class="card-tower__table-cell">59.8</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-tower__links"><a class="card-tower__link card-tower__link_layouts" href="#" download>Презентация<br>с планировками</a><a class="card-tower__link card-tower__link_order" href="#" download>Заявка<br>на бронь</a></div>
+                      </div>
+                      <button class="card-tower__minus" data-btn="close">-</button>
+                    </div>
+                  </div>
+                  <div class="card-tower">
+                    <div class="card-tower__head">
+                      <div class="card-tower__img"><img class="active" src="images/real-estate/6.jpg" alt="Олимп"><img src="images/real-estate/8.jpg" alt="Олимп"><img src="images/real-estate/3.jpg" alt="Олимп"><img src="images/real-estate/4.jpg" alt="Олимп"><img src="images/real-estate/5.jpg" alt="Олимп"></div>
+                      <div class="card-tower__info">
+                        <h3 class="card-tower__name">Олимп</h3><span class="card-tower__type">Жилой комплекс</span>
+                        <address class="card-tower__address">МО, г. Хотьково, ул. Михеенко, 25</address>
+                        <p class="card-tower__description">Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является</p>
+                        <div class="card-tower__btns">
+                          <button class="card-tower__btn" data-btn="about">Подробнее о комплексе</button>
+                          <button class="card-tower__btn" data-btn="layouts">Показать 16 планировок</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-tower__body" hidden>
+                      <div class="card-tower__general-information" hidden data-block>
+                        <div class="card-tower__title">О комплексе</div>
+                        <div class="card-tower__wrap">
+                          <div class="card-tower__list">
+                            <div class="card-tower__row"><span class="card-tower__row-title">Класс:</span><span class="card-tower__row-info">Бизнес класс</span></div>
+                            <div class="card-tower__row"><span class="card-tower__row-title">Сдача:</span><span class="card-tower__row-info">III кв. 2020 года</span></div>
+                            <div class="card-tower__row"><span class="card-tower__row-title">Метро:</span><span class="card-tower__row-info">Обводный канал</span></div>
+                            <div class="card-tower__row"><span class="card-tower__row-title">Цена за м<sup>2</sup>:</span><span class="card-tower__row-info">от 165 000 ₽</span></div>
+                                  <div class="social-links card-tower__social-links"><a class="social-links__link social-links__link_ig" href="#"></a><a class="social-links__link social-links__link_fb" href="#"></a><a class="social-links__link social-links__link_vk" href="#"></a><a class="social-links__link social-links__link_yt" href="#"></a></div>
+                          </div>
+                          <div class="card-tower__description-full-wrap">
+                            <div class="card-tower__description-full">Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-tower__layouts" hidden data-block>
+                        <div class="card-tower__table-head">
+                          <div class="card-tower__table-head-cell"></div>
+                          <div class="card-tower__table-head-cell">№ помещения</div>
+                          <div class="card-tower__table-head-cell">Этаж</div>
+                          <div class="card-tower__table-head-cell">Площадь, м2</div>
+                          <div class="card-tower__table-head-cell">Стоимость, ₽</div>
+                        </div>
+                        <div class="card-tower__table-body">
+                          <div class="card-tower__table-img"><img src="images/layout.jpg" alt="Планировка-0"><img src="images/layout2.jpg" alt="Планировка-1" hidden><img src="images/layout.jpg" alt="Планировка-2" hidden><img src="images/layout2.jpg" alt="Планировка-3" hidden><img src="images/layout.jpg" alt="Планировка-4" hidden><img src="images/layout2.jpg" alt="Планировка-5" hidden><img src="images/layout.jpg" alt="Планировка-6" hidden><img src="images/layout2.jpg" alt="Планировка-7" hidden><img src="images/layout.jpg" alt="Планировка-8" hidden><img src="images/layout2.jpg" alt="Планировка-9" hidden><img src="images/layout.jpg" alt="Планировка-10" hidden><img src="images/layout2.jpg" alt="Планировка-11" hidden>
+                          </div>
+                          <div class="card-tower__table-row-wrap">
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">9</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">10</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">42.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">16</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">28</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">47.1</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">30</div>
+                              <div class="card-tower__table-cell">2</div>
+                              <div class="card-tower__table-cell">53.4</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">53</div>
+                              <div class="card-tower__table-cell">3</div>
+                              <div class="card-tower__table-cell">59.8</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">9</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">10</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">42.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">16</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">28</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">47.1</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">30</div>
+                              <div class="card-tower__table-cell">2</div>
+                              <div class="card-tower__table-cell">53.4</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">53</div>
+                              <div class="card-tower__table-cell">3</div>
+                              <div class="card-tower__table-cell">59.8</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-tower__links"><a class="card-tower__link card-tower__link_layouts" href="#" download>Презентация<br>с планировками</a><a class="card-tower__link card-tower__link_order" href="#" download>Заявка<br>на бронь</a></div>
+                      </div>
+                      <button class="card-tower__minus" data-btn="close">-</button>
+                    </div>
+                  </div>
+                  <div class="card-tower">
+                    <div class="card-tower__head">
+                      <div class="card-tower__img"><img class="active" src="images/real-estate/7.jpg" alt="Мейн Хаус"><img src="images/real-estate/8.jpg" alt="Мейн Хаус"><img src="images/real-estate/3.jpg" alt="Мейн Хаус"><img src="images/real-estate/4.jpg" alt="Мейн Хаус"><img src="images/real-estate/5.jpg" alt="Мейн Хаус"></div>
+                      <div class="card-tower__info">
+                        <h3 class="card-tower__name">Мейн Хаус</h3><span class="card-tower__type">Жилой комплекс</span>
+                        <address class="card-tower__address">Гражданский проспект, 107</address>
+                        <p class="card-tower__description">Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является</p>
+                        <div class="card-tower__btns">
+                          <button class="card-tower__btn" data-btn="about">Подробнее о комплексе</button>
+                          <button class="card-tower__btn" data-btn="layouts">Показать 16 планировок</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-tower__body" hidden>
+                      <div class="card-tower__general-information" hidden data-block>
+                        <div class="card-tower__title">О комплексе</div>
+                        <div class="card-tower__wrap">
+                          <div class="card-tower__list">
+                            <div class="card-tower__row"><span class="card-tower__row-title">Класс:</span><span class="card-tower__row-info">Бизнес класс</span></div>
+                            <div class="card-tower__row"><span class="card-tower__row-title">Сдача:</span><span class="card-tower__row-info">III кв. 2020 года</span></div>
+                            <div class="card-tower__row"><span class="card-tower__row-title">Метро:</span><span class="card-tower__row-info">Обводный канал</span></div>
+                            <div class="card-tower__row"><span class="card-tower__row-title">Цена за м<sup>2</sup>:</span><span class="card-tower__row-info">от 165 000 ₽</span></div>
+                                  <div class="social-links card-tower__social-links"><a class="social-links__link social-links__link_ig" href="#"></a><a class="social-links__link social-links__link_fb" href="#"></a><a class="social-links__link social-links__link_vk" href="#"></a><a class="social-links__link social-links__link_yt" href="#"></a></div>
+                          </div>
+                          <div class="card-tower__description-full-wrap">
+                            <div class="card-tower__description-full">Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-tower__layouts" hidden data-block>
+                        <div class="card-tower__table-head">
+                          <div class="card-tower__table-head-cell"></div>
+                          <div class="card-tower__table-head-cell">№ помещения</div>
+                          <div class="card-tower__table-head-cell">Этаж</div>
+                          <div class="card-tower__table-head-cell">Площадь, м2</div>
+                          <div class="card-tower__table-head-cell">Стоимость, ₽</div>
+                        </div>
+                        <div class="card-tower__table-body">
+                          <div class="card-tower__table-img"><img src="images/layout.jpg" alt="Планировка-0"><img src="images/layout2.jpg" alt="Планировка-1" hidden><img src="images/layout.jpg" alt="Планировка-2" hidden><img src="images/layout2.jpg" alt="Планировка-3" hidden><img src="images/layout.jpg" alt="Планировка-4" hidden><img src="images/layout2.jpg" alt="Планировка-5" hidden><img src="images/layout.jpg" alt="Планировка-6" hidden><img src="images/layout2.jpg" alt="Планировка-7" hidden><img src="images/layout.jpg" alt="Планировка-8" hidden><img src="images/layout2.jpg" alt="Планировка-9" hidden><img src="images/layout.jpg" alt="Планировка-10" hidden><img src="images/layout2.jpg" alt="Планировка-11" hidden>
+                          </div>
+                          <div class="card-tower__table-row-wrap">
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">9</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">10</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">42.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">16</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">28</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">47.1</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">30</div>
+                              <div class="card-tower__table-cell">2</div>
+                              <div class="card-tower__table-cell">53.4</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">53</div>
+                              <div class="card-tower__table-cell">3</div>
+                              <div class="card-tower__table-cell">59.8</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">9</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">10</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">42.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">16</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">28</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">47.1</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">30</div>
+                              <div class="card-tower__table-cell">2</div>
+                              <div class="card-tower__table-cell">53.4</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">53</div>
+                              <div class="card-tower__table-cell">3</div>
+                              <div class="card-tower__table-cell">59.8</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-tower__links"><a class="card-tower__link card-tower__link_layouts" href="#" download>Презентация<br>с планировками</a><a class="card-tower__link card-tower__link_order" href="#" download>Заявка<br>на бронь</a></div>
+                      </div>
+                      <button class="card-tower__minus" data-btn="close">-</button>
+                    </div>
+                  </div>
+                  <div class="card-tower">
+                    <div class="card-tower__head">
+                      <div class="card-tower__img"><img class="active" src="images/real-estate/8.jpg" alt="Твин Хаус"><img src="images/real-estate/8.jpg" alt="Твин Хаус"><img src="images/real-estate/3.jpg" alt="Твин Хаус"><img src="images/real-estate/4.jpg" alt="Твин Хаус"><img src="images/real-estate/5.jpg" alt="Твин Хаус"></div>
+                      <div class="card-tower__info">
+                        <h3 class="card-tower__name">Твин Хаус</h3><span class="card-tower__type">Жилой комплекс</span>
+                        <address class="card-tower__address">Будапештская, 2</address>
+                        <p class="card-tower__description">Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является</p>
+                        <div class="card-tower__btns">
+                          <button class="card-tower__btn" data-btn="about">Подробнее о комплексе</button>
+                          <button class="card-tower__btn" data-btn="layouts">Показать 16 планировок</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-tower__body" hidden>
+                      <div class="card-tower__general-information" hidden data-block>
+                        <div class="card-tower__title">О комплексе</div>
+                        <div class="card-tower__wrap">
+                          <div class="card-tower__list">
+                            <div class="card-tower__row"><span class="card-tower__row-title">Класс:</span><span class="card-tower__row-info">Бизнес класс</span></div>
+                            <div class="card-tower__row"><span class="card-tower__row-title">Сдача:</span><span class="card-tower__row-info">III кв. 2020 года</span></div>
+                            <div class="card-tower__row"><span class="card-tower__row-title">Метро:</span><span class="card-tower__row-info">Обводный канал</span></div>
+                            <div class="card-tower__row"><span class="card-tower__row-title">Цена за м<sup>2</sup>:</span><span class="card-tower__row-info">от 165 000 ₽</span></div>
+                                  <div class="social-links card-tower__social-links"><a class="social-links__link social-links__link_ig" href="#"></a><a class="social-links__link social-links__link_fb" href="#"></a><a class="social-links__link social-links__link_vk" href="#"></a><a class="social-links__link social-links__link_yt" href="#"></a></div>
+                          </div>
+                          <div class="card-tower__description-full-wrap">
+                            <div class="card-tower__description-full">Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является Ligovsky City – масштабный проект, реализуемый компанией Glorax Development в рамках программы редевелопмента территорий исторического центра Санкт-Петербурга. Все кварталы проекта будут реализованы в рамках единой концепции, предусматривающей создание новой среды с современным жильем, собственной инфраструктурой и комплексным благоустройством территории.
+ Первый квартал – знаковый во всех отношениях проект как для компании, так и для Санкт-Петербурга. Это первый жилой комплекс бизнес-класса, который построен в рамках реновации исторического центра города. Но дал новый импульс развития Фрунзенскому району Северной столицы. Собственная инфраструктура, удобная транспортная доступность, жилые и коммерческие помещения бизнес-класса образуют комплекс преимуществ «города в городе». Квартал является</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-tower__layouts" hidden data-block>
+                        <div class="card-tower__table-head">
+                          <div class="card-tower__table-head-cell"></div>
+                          <div class="card-tower__table-head-cell">№ помещения</div>
+                          <div class="card-tower__table-head-cell">Этаж</div>
+                          <div class="card-tower__table-head-cell">Площадь, м2</div>
+                          <div class="card-tower__table-head-cell">Стоимость, ₽</div>
+                        </div>
+                        <div class="card-tower__table-body">
+                          <div class="card-tower__table-img"><img src="images/layout.jpg" alt="Планировка-0"><img src="images/layout2.jpg" alt="Планировка-1" hidden><img src="images/layout.jpg" alt="Планировка-2" hidden><img src="images/layout2.jpg" alt="Планировка-3" hidden><img src="images/layout.jpg" alt="Планировка-4" hidden><img src="images/layout2.jpg" alt="Планировка-5" hidden><img src="images/layout.jpg" alt="Планировка-6" hidden><img src="images/layout2.jpg" alt="Планировка-7" hidden><img src="images/layout.jpg" alt="Планировка-8" hidden><img src="images/layout2.jpg" alt="Планировка-9" hidden><img src="images/layout.jpg" alt="Планировка-10" hidden><img src="images/layout2.jpg" alt="Планировка-11" hidden>
+                          </div>
+                          <div class="card-tower__table-row-wrap">
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">9</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">10</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">42.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">16</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">28</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">47.1</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">30</div>
+                              <div class="card-tower__table-cell">2</div>
+                              <div class="card-tower__table-cell">53.4</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">53</div>
+                              <div class="card-tower__table-cell">3</div>
+                              <div class="card-tower__table-cell">59.8</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">9</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">10</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">42.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">16</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">41.5</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">28</div>
+                              <div class="card-tower__table-cell">1</div>
+                              <div class="card-tower__table-cell">47.1</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">30</div>
+                              <div class="card-tower__table-cell">2</div>
+                              <div class="card-tower__table-cell">53.4</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                            <div class="card-tower__table-row">
+                              <div class="card-tower__table-cell">53</div>
+                              <div class="card-tower__table-cell">3</div>
+                              <div class="card-tower__table-cell">59.8</div>
+                              <div class="card-tower__table-cell">по запроcу</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-tower__links"><a class="card-tower__link card-tower__link_layouts" href="#" download>Презентация<br>с планировками</a><a class="card-tower__link card-tower__link_order" href="#" download>Заявка<br>на бронь</a></div>
+                      </div>
+                      <button class="card-tower__minus" data-btn="close">-</button>
+                    </div>
+                  </div>
+          </div>
+        </section>
+      </div>
     </main>
     <footer class="footer">
-      <div class="content footer__content"><a class="logo footer__logo" href="#"></a><a class="logo-m2 footer__logo-m2" href="#"></a>
+      <div class="content footer__content">
+        <div class="footer__logos"><a class="logo footer__logo" href="#top"></a><a class="logo-m2 footer__logo-m2" href="#"></a></div>
         <div class="footer__info"><a class="number footer__number" href="tel:+78126034343">+7 (812) 603-43-43</a>
-              <button class="callback-btn footer__callback-btn">Заказать обратный звонок</button>
-          <div class="social-links"><a class="social-links__link social-links__link_ig" href="#"></a><a class="social-links__link social-links__link_fb" href="#"></a><a class="social-links__link social-links__link_vk" href="#"></a><a class="social-links__link social-links__link_yt" href="#"></a></div>
+              <button class="callback-btn footer__callback-btn"><span class="callback-btn__text">Заказать обратный звонок</span></button>
+              <div class="social-links footer__social-links"><a class="social-links__link social-links__link_ig" href="#"></a><a class="social-links__link social-links__link_fb" href="#"></a><a class="social-links__link social-links__link_vk" href="#"></a><a class="social-links__link social-links__link_yt" href="#"></a></div>
         </div>
       </div>
     </footer>
+    <div class="modal" id="modal-callback">
+      <div class="modal__window" data-modal="window">
+        <button class="modal__btn-close" type="button" data-modal="close"></button>
+        <h5 class="modal__title">Заказать обратный звонок</h5>
+        <div class="modal__body">
+          <form class="modal__form">
+            <p class="modal__description">Оставьте ваши координаты и наш менеджер свяжется с Вами, чтобы помочь с выбором и ответить на все вопросы.</p>
+            <input class="modal__input" type="text" placeholder="Ваше имя">
+            <input class="modal__input" type="text" placeholder="Телефон" data-input="tel">
+            <div class="modal__select">
+              <select>
+                <option selected>Выберите объект</option>
+                <option>Объект 1</option>
+                <option>Объект 2</option>
+                <option>Объект 3</option>
+              </select>
+            </div>
+            <div class="modal__select">
+              <select>
+                <option selected>Удобное время</option>
+                <option>Время 1</option>
+                <option>Время 2</option>
+                <option>Время 3</option>
+              </select>
+            </div>
+            <p class="modal__description">Нажимая кнопку «Отправить», Вы подтверждаете свое <a class="modal__link" href="#"> согласие</a>  на обработку персональных данных</p>
+            <button class="modal__btn" type="button">Отправить заявку</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;amp;apikey=dfabb26c-6d20-443e-b7ec-c4095988e380"></script>
     <script src="js/libs.js" defer></script>
     <script src="js/script.js" defer></script>
   </body>

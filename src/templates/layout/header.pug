@@ -3,23 +3,35 @@ include ../mixins/callback-btn
 
 header.header
   .header__logo-wrap
-    a.logo.header__logo(href='#')
+    a.logo.header__logo(href='#top')
   nav.nav.header__nav
-    ul.nav__list
-      -
-        items = [
-          {name: 'Проекты', url: '#projects'},
-          {name: 'О компании', url: '#about-us'},
-          {name: 'На карте', url: '#map'},
-          {name: 'Выбор помещений', url: '#rooms'}
-        ]
+    -
+      items = [
+        {name: 'Проекты', url: '#projects'},
+        {name: 'О компании', url: '#about-us'},
+        {name: 'На карте', url: '#map'},
+        {name: 'Выбор помещений', url: '#rooms'}
+      ]
 
+    ul.nav__list
       each item in items
         li.nav__item
           a.nav__link(href=item.url)=item.name
 
     +number('nav')
     +callback-btn('nav')
+
+    button.nav__mobile-btn(data-mobile-nav="open")
+      span.nav__mobile-btn-square
+
+    .nav__mobile-list-wrap
+      button.nav__mobile-btn-close(data-mobile-nav="close")
+      ul.nav__mobile-list
+        each item in items
+          li.nav__mobile-item
+            a.nav__mobile-link(href=item.url)=item.name
+
+
 
 
 

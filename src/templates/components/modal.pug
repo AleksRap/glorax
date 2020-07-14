@@ -1,0 +1,26 @@
+#modal-callback.modal
+  .modal__window(data-modal="window")
+    button.modal__btn-close(type="button" data-modal="close")
+    h5.modal__title Заказать обратный звонок
+    .modal__body
+      form.modal__form
+        p.modal__description Оставьте ваши координаты и наш менеджер свяжется с Вами, чтобы помочь с выбором и ответить на все вопросы.
+        input.modal__input(type="text" placeholder="Ваше имя")
+        input.modal__input(type="text" placeholder="Телефон" data-input="tel")
+        .modal__select
+          select
+            option(selected) Выберите объект
+            option Объект 1
+            option Объект 2
+            option Объект 3
+        .modal__select
+          select
+            option(selected) Удобное время
+            option Время 1
+            option Время 2
+            option Время 3
+        p.modal__description
+          | Нажимая кнопку «Отправить», Вы подтверждаете свое 
+          a.modal__link(href='#')  согласие
+          |  на обработку персональных данных
+        button.modal__btn(type="button") Отправить заявку

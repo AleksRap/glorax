@@ -1,0 +1,97 @@
+include social-links
+
+mixin card-tower(data)
+  .card-tower
+    .card-tower__head
+      .card-tower__img
+        img.active(src=data.img alt=data.name)
+        img(src='images/real-estate/8.jpg' alt=data.name)
+        img(src='images/real-estate/3.jpg' alt=data.name)
+        img(src='images/real-estate/4.jpg' alt=data.name)
+        img(src='images/real-estate/5.jpg' alt=data.name)
+      .card-tower__info
+        h3.card-tower__name=data.name
+        span.card-tower__type=data.type
+        address.card-tower__address=data.address
+        p.card-tower__description=data.description
+        .card-tower__btns
+          button.card-tower__btn(data-btn="about") Подробнее о комплексе
+          button.card-tower__btn(data-btn="layouts") Показать 16 планировок
+
+    .card-tower__body(hidden)
+      .card-tower__general-information(hidden data-block)
+        .card-tower__title О комплексе
+        .card-tower__wrap
+          .card-tower__list
+            .card-tower__row
+              span.card-tower__row-title Класс:
+              span.card-tower__row-info=data.classObj
+            .card-tower__row
+              span.card-tower__row-title Сдача:
+              span.card-tower__row-info=data.dateEnd
+            .card-tower__row
+              span.card-tower__row-title Метро:
+              span.card-tower__row-info=data.metro
+            .card-tower__row
+              span.card-tower__row-title
+                | Цена за м
+                sup 2
+                | :
+              span.card-tower__row-info=data.price
+            +social-links('card-tower')
+
+          .card-tower__description-full-wrap
+            .card-tower__description-full=data.description
+          
+      .card-tower__layouts(hidden data-block)
+        .card-tower__table-head
+          .card-tower__table-head-cell
+          .card-tower__table-head-cell № помещения
+          .card-tower__table-head-cell Этаж
+          .card-tower__table-head-cell Площадь, м2
+          .card-tower__table-head-cell Стоимость, ₽
+
+        .card-tower__table-body
+          -
+            layouts = [
+              {number: 9, floor: 1, square: 41.5, price: 'по запроcу', img: 'images/layout.jpg', active: true},
+              {number: 10, floor: 1, square: 42.5, price: 'по запроcу', img: 'images/layout2.jpg'},
+              {number: 16, floor: 1, square: 41.5, price: 'по запроcу', img: 'images/layout.jpg'},
+              {number: 28, floor: 1, square: 47.1, price: 'по запроcу', img: 'images/layout2.jpg'},
+              {number: 30, floor: 2, square: 53.4, price: 'по запроcу', img: 'images/layout.jpg'},
+              {number: 53, floor: 3, square: 59.8, price: 'по запроcу', img: 'images/layout2.jpg'},
+              {number: 9, floor: 1, square: 41.5, price: 'по запроcу', img: 'images/layout.jpg'},
+              {number: 10, floor: 1, square: 42.5, price: 'по запроcу', img: 'images/layout2.jpg'},
+              {number: 16, floor: 1, square: 41.5, price: 'по запроcу', img: 'images/layout.jpg'},
+              {number: 28, floor: 1, square: 47.1, price: 'по запроcу', img: 'images/layout2.jpg'},
+              {number: 30, floor: 2, square: 53.4, price: 'по запроcу', img: 'images/layout.jpg'},
+              {number: 53, floor: 3, square: 59.8, price: 'по запроcу', img: 'images/layout2.jpg'}
+            ]
+
+          .card-tower__table-img
+            each layout, index in layouts
+              if layout.active
+                img(src=layout.img alt=`Планировка-${index}`)
+              else
+                img(src=layout.img alt=`Планировка-${index}` hidden)
+
+          .card-tower__table-row-wrap
+            each layout in layouts
+              .card-tower__table-row
+                .card-tower__table-cell=layout.number
+                .card-tower__table-cell=layout.floor
+                .card-tower__table-cell=layout.square
+                .card-tower__table-cell=layout.price
+
+        .card-tower__links
+          a.card-tower__link.card-tower__link_layouts(href='#' download)
+            | Презентация
+            br
+            | с планировками
+          a.card-tower__link.card-tower__link_order(href='#' download)
+            | Заявка
+            br
+            | на бронь
+
+        
+      button.card-tower__minus(data-btn="close") -
