@@ -487,6 +487,7 @@ body {
     transition: opacity 0.5s 0.25s ease-in; }
   .card-real-estate.open .card-real-estate__link {
     position: relative;
+    z-index: initial;
     opacity: 1;
     transition: opacity 0.5s 0.25s ease-in; }
   @media (min-width: 1000px) {
@@ -504,6 +505,7 @@ body {
       transition: opacity 0.5s 0.25s ease-in; }
     .card-real-estate:hover .card-real-estate__link {
       position: relative;
+      z-index: initial;
       opacity: 1;
       transition: opacity 0.5s 0.25s ease-in; } }
   .card-real-estate__img {
@@ -569,6 +571,7 @@ body {
     display: inline;
     position: absolute;
     opacity: 0;
+    z-index: -1;
     margin-top: 11px;
     text-decoration: none;
     color: #597DA3; }
@@ -981,12 +984,16 @@ body {
         flex-direction: row;
         padding-left: 380px; } }
   .card-tower__link {
+    cursor: pointer;
     position: relative;
     height: 42px;
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-    padding-left: 70px;
+    padding: 0 0 0 70px;
+    background-color: transparent;
+    border: none;
+    outline: none;
     text-decoration: none;
     line-height: 1.2;
     color: white; }

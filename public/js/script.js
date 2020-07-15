@@ -50,27 +50,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   new Modal({
     idModal: 'modal-callback',
-    selectorBtnOpen: '.callback-btn'
+    selectorBtnOpen: '[data-open-modal]'
   });
   /** Открытие/закрытие карточек проектов на мобильных */
 
   if (screenWidth < 1000) {
     var cards = document.querySelector('.projects__cards');
     cards.addEventListener('click', function (event) {
-      var btnCard = event.target.closest('[data-btn-card="toggle"]');
-      if (!btnCard) return;
-      btnCard.classList.toggle('open');
-      btnCard.closest('.card-real-estate').classList.toggle('open');
-    });
-    cards.addEventListener('click', function (event) {
       var card = event.target.closest('.card-real-estate');
-      var btnCard = event.target.closest('[data-btn-card="toggle"]');
-      if (!card || btnCard) return;
-
-      if (card.classList.contains('open')) {
-        card.classList.remove('open');
-        card.querySelector('[data-btn-card="toggle"]').classList.remove('open');
-      }
+      if (!card) return;
+      var cardBtn = card.querySelector('[data-btn-card="toggle"]');
+      card.classList.toggle('open');
+      cardBtn.classList.toggle('open');
     });
   }
   /** Прилипание меню после прокрутки */
