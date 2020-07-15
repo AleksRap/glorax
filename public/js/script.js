@@ -108,25 +108,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (anchors.length) {
     anchors.forEach(function (anchor) {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+      anchor.addEventListener('click', function (event) {
+        event.preventDefault();
         var yOffset = window.pageYOffset;
-        var hash = e.target.href.replace(/[^#]*(.*)/, '$1');
+        var hash = event.target.href.replace(/[^#]*(.*)/, '$1');
         var topPosition = document.querySelector(hash).getBoundingClientRect().top;
-        var start = null;
+        var startTimestamp = null;
         requestAnimationFrame(step);
 
-        function step(time) {
-          if (start === null) start = time;
-          var progress = time - start;
-          var directionScroll = topPosition < 0 ? Math.max(yOffset - progress / speed, yOffset + topPosition - headerHeight - 20) : Math.min(yOffset + progress / speed, yOffset + topPosition - headerHeight - 20);
+        function step(timestamp) {
+          if (startTimestamp === null) startTimestamp = timestamp;
+          var currentTimestamp = timestamp - startTimestamp;
+          var headerHeight = document.querySelector('.header').clientHeight;
+          var stopPosition = yOffset + topPosition - headerHeight;
+          var directionScroll = topPosition < 0 ? Math.max(yOffset - currentTimestamp / speed, stopPosition) : Math.min(yOffset + currentTimestamp / speed, stopPosition);
           window.scrollTo(0, directionScroll);
-
-          if (directionScroll !== yOffset + topPosition) {
-            requestAnimationFrame(step);
-          } else {
-            location.hash = hash;
-          }
+          directionScroll !== stopPosition && requestAnimationFrame(step);
         }
       });
     });
@@ -505,64 +502,73 @@ ymaps.ready(function () {
     zoom: 11
   });
   var arrInfo = [{
+    id: 'ligovsky-2',
     name: 'Ligovsky city - Второй квартал',
     coordinates: [59.906359, 30.344947],
     address: 'Санкт Петербург, Лиговский проспект, 232',
     img: 'images/real-estate/1.jpg'
   }, {
+    id: 'ligovsky-1',
     name: 'Ligovsky city - Первый квартал',
     coordinates: [59.905321, 30.342359],
     address: 'Санкт Петербург, Лиговский проспект, 271',
     img: 'images/real-estate/2.jpg'
   }, {
+    id: 'golden',
     name: 'Golden City',
     coordinates: [59.941475, 30.193832],
     address: 'Санкт Петербург, ул. Челюскина, 4',
     img: 'images/real-estate/3.jpg'
   }, {
+    id: 'england',
     name: 'Английская миля',
     coordinates: [59.847010, 30.113936],
     address: 'Санкт Петербург, Петергофское ш., 78',
     img: 'images/real-estate/4.jpg'
   }, {
+    id: 'grand',
     name: 'Grand House',
     coordinates: [59.925398, 30.373702],
     address: 'Санкт Петербург, Тележная ул., 17-19',
     img: 'images/real-estate/5.jpg'
   }, {
+    id: 'olymp',
     name: 'Олимп',
     coordinates: [56.256213, 37.975039],
     address: 'МО, г. Хотьково, ул. Михеенко, 25',
     img: 'images/real-estate/6.jpg'
   }, {
+    id: 'main',
     name: 'Мейн Хаус',
     coordinates: [60.028029, 30.416183],
     address: 'Санкт Петербург, Гражданский проспект, 107',
     img: 'images/real-estate/7.jpg'
   }, {
+    id: 'twin',
     name: 'Твин Хаус',
     coordinates: [59.873853, 30.367225],
     address: 'Санкт Петербург, Будапештская, 2',
     img: 'images/real-estate/8.jpg'
   }];
 
-  var header = function header(img, address) {
-    return "\n    <div class=\"card-map__header\">\n      <img src=\"".concat(img, "\" alt=\"").concat(address, "\">\n    </div>\n  ");
+  var header = function header(img, address, id) {
+    return "\n    <a class=\"card-map__header\" href=\"#".concat(id, "\">\n      <img src=\"").concat(img, "\" alt=\"").concat(address, "\">\n    </a>\n  ");
   };
 
-  var footer = function footer(name, address) {
-    return "\n    <div class=\"card-map__footer\">\n      <h2 class=\"card-map__title\">".concat(name, "</h2>\n      <p class=\"card-map__address\">").concat(address, "</p>\n    </div>\n  ");
+  var footer = function footer(name, address, id) {
+    return "\n    <a class=\"card-map__footer\" href=\"#".concat(id, "\">\n      <h2 class=\"card-map__title\">").concat(name, "</h2>\n      <p class=\"card-map__address\">").concat(address, "</p>\n    </a>\n  ");
   };
 
   arrInfo.forEach(function (_ref) {
     var name = _ref.name,
         coordinates = _ref.coordinates,
         address = _ref.address,
-        img = _ref.img;
+        img = _ref.img,
+        id = _ref.id;
     myMap.geoObjects.add(new ymaps.Placemark(coordinates, {
       hintLayout: name,
-      balloonContentHeader: header(img),
-      balloonContentFooter: footer(name, address)
+      balloonContentHeader: header(img, id),
+      balloonContentFooter: footer(name, address, id)
     }, {
       iconLayout: 'default#imageWithContent',
       iconImageHref: 'images/other/point-map.png',

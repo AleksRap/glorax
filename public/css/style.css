@@ -1026,6 +1026,7 @@ body {
     outline: none; }
 
 .card-map__header {
+  display: block;
   width: 100%;
   height: 126px; }
   @media (min-width: 768px) {
@@ -1038,10 +1039,12 @@ body {
     object-position: center; }
 
 .card-map__footer {
+  display: block;
   width: 100%;
   padding: 12px;
   background-color: #fff;
   font-family: 'Geometria', Arial, sans-serif;
+  text-decoration: none;
   color: #597DA3; }
   @media (min-width: 768px) {
     .card-map__footer {
