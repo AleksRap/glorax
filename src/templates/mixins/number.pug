@@ -1,3 +1,5 @@
-mixin number(className)
+mixin number(className, mod)
   - var cls = className ? `${className}__number` : '';
-  a.number(href='tel:+78126034343', class=cls) +7 (812) 603-43-43
+  - var modCls = mod ? ` ${className}__number_${mod}` : '';
+
+  a.number(href='tel:+78126034343', class=cls + modCls) +7 (812) 603-43-43

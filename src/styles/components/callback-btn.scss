@@ -6,7 +6,7 @@
   max-width: 250px;
   height: 50px;
 
-  padding: 17px 17px 17px 42px;
+  padding: 5px 17px 5px 42px;
 
   border: none;
   outline: none;
@@ -37,28 +37,5 @@
     height: 20px;
 
     background: url('../svg/icons/phone.svg') center/contain no-repeat;
-  }
-
-  &_little {
-    width: 50px;
-    padding: 0;
-
-    .callback-btn {
-
-      &__text {
-        display: none;
-      }
-    }
-
-    &::before {
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin: auto;
-
-      width: 30px;
-      height: 30px;
-    }
   }
 }

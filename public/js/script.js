@@ -19,9 +19,12 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 document.addEventListener('DOMContentLoaded', function () {
+  var screenWidth = document.documentElement.clientWidth;
   /** Мобильное меню */
+
   var btnMobile = document.querySelector('[data-mobile-nav="open"]');
   var btnCloseMobileMenu = document.querySelector('[data-mobile-nav="close"]');
+  var btnModalMobile = document.querySelector('.nav__callback-btn_mobile');
   var mobileMenu = document.querySelector('.nav__mobile-list-wrap');
   btnMobile.addEventListener('click', function () {
     mobileMenu.classList.add('open');
@@ -29,9 +32,18 @@ document.addEventListener('DOMContentLoaded', function () {
   btnCloseMobileMenu.addEventListener('click', function () {
     mobileMenu.classList.remove('open');
   });
+  btnModalMobile.addEventListener('click', function () {
+    mobileMenu.classList.remove('open');
+  });
   mobileMenu.addEventListener('click', function (event) {
     var link = event.target.closest('.nav__mobile-link');
     if (!link) return;
+    mobileMenu.classList.remove('open');
+  });
+  window.addEventListener('click', function (event) {
+    var link = event.target.closest('.nav__mobile-list-wrap');
+    var btnMobile = event.target.closest('[data-mobile-nav="open"]');
+    if (link || btnMobile) return;
     mobileMenu.classList.remove('open');
   });
   /** Модалка */
@@ -40,7 +52,29 @@ document.addEventListener('DOMContentLoaded', function () {
     idModal: 'modal-callback',
     selectorBtnOpen: '.callback-btn'
   });
+  /** Открытие/закрытие карточек проектов на мобильных */
+
+  if (screenWidth < 1000) {
+    var cards = document.querySelector('.projects__cards');
+    cards.addEventListener('click', function (event) {
+      var btnCard = event.target.closest('[data-btn-card="toggle"]');
+      if (!btnCard) return;
+      btnCard.classList.toggle('open');
+      btnCard.closest('.card-real-estate').classList.toggle('open');
+    });
+    cards.addEventListener('click', function (event) {
+      var card = event.target.closest('.card-real-estate');
+      var btnCard = event.target.closest('[data-btn-card="toggle"]');
+      if (!card || btnCard) return;
+
+      if (card.classList.contains('open')) {
+        card.classList.remove('open');
+        card.querySelector('[data-btn-card="toggle"]').classList.remove('open');
+      }
+    });
+  }
   /** Прилипание меню после прокрутки */
+
 
   var header = document.querySelector('.header');
   var headerHeight = header.clientHeight;
@@ -85,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
         function step(time) {
           if (start === null) start = time;
           var progress = time - start;
-          var directionScroll = topPosition < 0 ? Math.max(yOffset - progress / speed, yOffset + topPosition) : Math.min(yOffset + progress / speed, yOffset + topPosition);
+          var directionScroll = topPosition < 0 ? Math.max(yOffset - progress / speed, yOffset + topPosition - headerHeight - 20) : Math.min(yOffset + progress / speed, yOffset + topPosition - headerHeight - 20);
           window.scrollTo(0, directionScroll);
 
           if (directionScroll !== yOffset + topPosition) {
@@ -348,6 +382,7 @@ var Layouts = /*#__PURE__*/function () {
     key: "changeLayout",
     value: function changeLayout(event) {
       var clickRow = event.target.closest('.card-tower__table-row');
+      if (!clickRow) return;
       var index;
 
       _toConsumableArray(this._rowsWrap.children).forEach(function (el, i) {
@@ -378,7 +413,7 @@ var Layouts = /*#__PURE__*/function () {
         return _this2.hideBlock();
       });
 
-      this._rowsWrap.addEventListener('click', function (event) {
+      this._rowsWrap.addEventListener('mouseover', function (event) {
         return _this2.changeLayout(event);
       });
     }

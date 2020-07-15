@@ -211,6 +211,7 @@
     outline: none;
     border: none;
     border-bottom: 8px solid transparent;
+    transition: border $time-opacity-animation-on-off ease-in;
 
     font-size: 14px;
     color: #343A42;
@@ -223,8 +224,14 @@
       margin-right: 0;
     }
 
+    &:hover {
+      border-bottom: 8px solid #1B2E50;
+      transition: border $time-opacity-animation-on-off ease-in;
+    }
+
     &_active {
       border-bottom: 8px solid #1B2E50;
+      transition: border $time-opacity-animation-on-off ease-in;
     }
   }
 

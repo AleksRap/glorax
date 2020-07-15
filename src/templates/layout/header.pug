@@ -26,6 +26,8 @@ header.header
 
     .nav__mobile-list-wrap
       button.nav__mobile-btn-close(data-mobile-nav="close")
+      +number('nav', 'mobile')
+      +callback-btn('nav', 'mobile')
       ul.nav__mobile-list
         each item in items
           li.nav__mobile-item

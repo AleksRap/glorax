@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const screenWidth = document.documentElement.clientWidth;
 
   /** Мобильное меню */
   const btnMobile = document.querySelector('[data-mobile-nav="open"]');
   const btnCloseMobileMenu = document.querySelector('[data-mobile-nav="close"]');
+  const btnModalMobile = document.querySelector('.nav__callback-btn_mobile');
   const mobileMenu = document.querySelector('.nav__mobile-list-wrap');
   btnMobile.addEventListener('click', () => {
     mobileMenu.classList.add('open');
@@ -10,9 +12,19 @@ document.addEventListener('DOMContentLoaded', () => {
   btnCloseMobileMenu.addEventListener('click', () => {
     mobileMenu.classList.remove('open');
   });
+  btnModalMobile.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+  });
   mobileMenu.addEventListener('click', event => {
     const link = event.target.closest('.nav__mobile-link');
     if (!link) return;
+
+    mobileMenu.classList.remove('open');
+  });
+  window.addEventListener('click', event => {
+    const link = event.target.closest('.nav__mobile-list-wrap');
+    const btnMobile = event.target.closest('[data-mobile-nav="open"]');
+    if (link || btnMobile) return;
 
     mobileMenu.classList.remove('open');
   });
@@ -23,6 +35,31 @@ document.addEventListener('DOMContentLoaded', () => {
     idModal: 'modal-callback',
     selectorBtnOpen: '.callback-btn'
   });
+
+
+  /** Открытие/закрытие карточек проектов на мобильных */
+  if (screenWidth < 1000) {
+    const cards = document.querySelector('.projects__cards');
+    cards.addEventListener('click', event => {
+      const btnCard = event.target.closest('[data-btn-card="toggle"]');
+      if (!btnCard) return;
+
+      btnCard.classList.toggle('open');
+      btnCard.closest('.card-real-estate').classList.toggle('open');
+    });
+
+
+    cards.addEventListener('click', event => {
+      const card = event.target.closest('.card-real-estate');
+      const btnCard = event.target.closest('[data-btn-card="toggle"]');
+      if (!card || btnCard) return;
+
+      if (card.classList.contains('open')) {
+        card.classList.remove('open');
+        card.querySelector('[data-btn-card="toggle"]').classList.remove('open');
+      }
+    })
+  }
 
 
   /** Прилипание меню после прокрутки */
@@ -79,8 +116,8 @@ document.addEventListener('DOMContentLoaded', () => {
           const progress = time - start
           const directionScroll =
             topPosition < 0
-              ? Math.max(yOffset - progress/speed, yOffset + topPosition)
-              : Math.min(yOffset + progress/speed, yOffset + topPosition);
+              ? Math.max(yOffset - progress/speed, yOffset + topPosition - headerHeight - 20)
+              : Math.min(yOffset + progress/speed, yOffset + topPosition - headerHeight - 20);
 
           window.scrollTo(0, directionScroll);
 
@@ -295,6 +332,7 @@ class Layouts {
 
   changeLayout(event) {
     const clickRow = event.target.closest('.card-tower__table-row');
+    if (!clickRow) return;
     let index;
 
     [...this._rowsWrap.children].forEach((el, i) => {
@@ -315,7 +353,7 @@ class Layouts {
     this._btnAbout.addEventListener('click', () => this.showBlock(this._about));
     this._btnLayouts.addEventListener('click', () => this.showBlock(this._layouts));
     this._btnClose.addEventListener('click', () => this.hideBlock());
-    this._rowsWrap.addEventListener('click', event => this.changeLayout(event));
+    this._rowsWrap.addEventListener('mouseover', event => this.changeLayout(event));
   }
 }
 

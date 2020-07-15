@@ -1,6 +1,6 @@
 mixin callback-btn(className, mod)
   - var cls = className ? `${className}__callback-btn` : '';
-  - var clsMod = mod ? ` callback-btn_${mod}` : '';
+  - var clsMod = mod ? ` ${className}__callback-btn_${mod}` : '';
 
   button.callback-btn(class=cls + clsMod)
     span.callback-btn__text Заказать обратный звонок

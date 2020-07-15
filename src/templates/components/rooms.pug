@@ -8,6 +8,7 @@ include ../mixins/card-tower
       -
         list = [
           {
+            id: 'ligovsky-2',
             name: 'Ligovsky city - Второй квартал',
             img: 'images/real-estate/1.jpg',
             type: 'Жилой комплекс',
@@ -16,9 +17,9 @@ include ../mixins/card-tower
             classObj: 'Бизнес класс',
             dateEnd: 'III кв. 2020 года',
             metro: 'Обводный канал',
-            price: 'от 165 000 ₽',
-            url: '#'
+            price: 'от 165 000 ₽'
           }, {
+            id: 'ligovsky-1',
             name: 'Ligovsky city - Первый квартал',
             img: 'images/real-estate/2.jpg',
             type: 'Жилой комплекс',
@@ -27,9 +28,9 @@ include ../mixins/card-tower
             classObj: 'Бизнес класс',
             dateEnd: 'III кв. 2020 года',
             metro: 'Обводный канал',
-            price: 'от 165 000 ₽',
-            url: '#'
+            price: 'от 165 000 ₽'
           }, {
+            id: 'golden',
             name: 'Golden City',
             img: 'images/real-estate/3.jpg',
             type: 'Жилой комплекс',
@@ -38,9 +39,9 @@ include ../mixins/card-tower
             classObj: 'Бизнес класс',
             dateEnd: 'III кв. 2020 года',
             metro: 'Обводный канал',
-            price: 'от 165 000 ₽',
-            url: '#'
+            price: 'от 165 000 ₽'
           }, {
+            id: 'england',
             name: 'Английская миля',
             img: 'images/real-estate/4.jpg',
             type: 'Жилой комплекс',
@@ -49,9 +50,9 @@ include ../mixins/card-tower
             classObj: 'Бизнес класс',
             dateEnd: 'III кв. 2020 года',
             metro: 'Обводный канал',
-            price: 'от 165 000 ₽',
-            url: '#'
+            price: 'от 165 000 ₽'
           }, {
+            id: 'grand',
             name: 'Grand House',
             img: 'images/real-estate/5.jpg',
             type: 'Жилой комплекс',
@@ -60,9 +61,9 @@ include ../mixins/card-tower
             classObj: 'Бизнес класс',
             dateEnd: 'III кв. 2020 года',
             metro: 'Обводный канал',
-            price: 'от 165 000 ₽',
-            url: '#'
+            price: 'от 165 000 ₽'
           }, {
+            id: 'olymp',
             name: 'Олимп',
             img: 'images/real-estate/6.jpg',
             type: 'Жилой комплекс',
@@ -71,9 +72,9 @@ include ../mixins/card-tower
             classObj: 'Бизнес класс',
             dateEnd: 'III кв. 2020 года',
             metro: 'Обводный канал',
-            price: 'от 165 000 ₽',
-            url: '#'
+            price: 'от 165 000 ₽'
           }, {
+            id: 'main',
             name: 'Мейн Хаус',
             img: 'images/real-estate/7.jpg',
             type: 'Жилой комплекс',
@@ -82,9 +83,9 @@ include ../mixins/card-tower
             classObj: 'Бизнес класс',
             dateEnd: 'III кв. 2020 года',
             metro: 'Обводный канал',
-            price: 'от 165 000 ₽',
-            url: '#'
+            price: 'от 165 000 ₽'
           }, {
+            id: 'twin',
             name: 'Твин Хаус',
             img: 'images/real-estate/8.jpg',
             type: 'Жилой комплекс',
@@ -93,10 +94,10 @@ include ../mixins/card-tower
             classObj: 'Бизнес класс',
             dateEnd: 'III кв. 2020 года',
             metro: 'Обводный канал',
-            price: 'от 165 000 ₽',
-            url: '#'
+            price: 'от 165 000 ₽'
           }
         ]
 
       each item in list
+        a(id=item.id)
         +card-tower(item)

@@ -9,8 +9,8 @@
   background-color: $first-color;
 
   @media (min-width: 1360px) {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   &__content {
@@ -27,6 +27,7 @@
 
     @media (min-width: 768px) {
       width: 420px;
+      margin-bottom: 0;
     }
   }
 
