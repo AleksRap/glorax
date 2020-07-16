@@ -9,8 +9,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="images/other/favicon.ico">
     <link rel="apple-touch-icon" href="images/other/favicon.ico">
     <title>Главная</title>
-    <link rel="stylesheet" type="text/css" href="css/libs.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/libs.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.min.css">
   </head>
   <body>
     <header class="header">
@@ -24,7 +24,7 @@
         </ul><a class="number nav__number" href="tel:+78126034343">+7 (812) 603-43-43</a>
             <button class="callback-btn nav__callback-btn" data-open-modal><span class="callback-btn__text">Заказать обратный звонок</span></button>
         <button class="nav__mobile-btn" data-mobile-nav="open"><span class="nav__mobile-btn-square"></span></button>
-        <div class="nav__mobile-list-wrap">
+        <nav class="nav__mobile-list-wrap">
           <button class="nav__mobile-btn-close" data-mobile-nav="close"></button><a class="number nav__number nav__number_mobile" href="tel:+78126034343">+7 (812) 603-43-43</a>
               <button class="callback-btn nav__callback-btn nav__callback-btn_mobile" data-open-modal><span class="callback-btn__text">Заказать обратный звонок</span></button>
           <ul class="nav__mobile-list">
@@ -33,7 +33,7 @@
             <li class="nav__mobile-item"><a class="nav__mobile-link" href="#map">На карте</a></li>
             <li class="nav__mobile-item"><a class="nav__mobile-link" href="#rooms">Выбор помещений</a></li>
           </ul>
-        </div>
+        </nav>
       </nav>
     </header><a id="top"></a>
     <main>
@@ -47,7 +47,7 @@
               <div class="main-screen__wrap">
                 <section class="main-screen__content">
                   <h2 class="main-screen__title">Ligovsky city - Второй квартал</h2>
-                  <p class="main-screen__type">Жилой комплекс</p><a class="main-screen__link" href="#rooms">Перейти к выбору помещений</a>
+                  <p class="main-screen__type">Жилой комплекс</p><a class="main-screen__link" href="#ligovsky-2">Перейти к выбору помещений</a>
                 </section>
               </div>
             </div>
@@ -57,8 +57,8 @@
               </div>
               <div class="main-screen__wrap">
                 <section class="main-screen__content">
-                  <h2 class="main-screen__title">Ligovsky city - Сотый квартал</h2>
-                  <p class="main-screen__type">Жилой комплекс</p><a class="main-screen__link" href="#rooms">Перейти к выбору помещений</a>
+                  <h2 class="main-screen__title">Ligovsky city - Первый квартал</h2>
+                  <p class="main-screen__type">Жилой комплекс</p><a class="main-screen__link" href="#ligovsky-1">Перейти к выбору помещений</a>
                 </section>
               </div>
             </div>
@@ -68,8 +68,8 @@
               </div>
               <div class="main-screen__wrap">
                 <section class="main-screen__content">
-                  <h2 class="main-screen__title">Ligovsky city - Миллионный квартал</h2>
-                  <p class="main-screen__type">Жилой комплекс</p><a class="main-screen__link" href="#rooms">Перейти к выбору помещений</a>
+                  <h2 class="main-screen__title">Golden City</h2>
+                  <p class="main-screen__type">Жилой комплекс</p><a class="main-screen__link" href="#golden">Перейти к выбору помещений</a>
                 </section>
               </div>
             </div>
@@ -79,8 +79,8 @@
               </div>
               <div class="main-screen__wrap">
                 <section class="main-screen__content">
-                  <h2 class="main-screen__title">Ligovsky city - Первый квартал</h2>
-                  <p class="main-screen__type">Жилой комплекс</p><a class="main-screen__link" href="#rooms">Перейти к выбору помещений</a>
+                  <h2 class="main-screen__title">Английская миля</h2>
+                  <p class="main-screen__type">Жилой комплекс</p><a class="main-screen__link" href="#england">Перейти к выбору помещений</a>
                 </section>
               </div>
             </div>
@@ -90,8 +90,41 @@
               </div>
               <div class="main-screen__wrap">
                 <section class="main-screen__content">
-                  <h2 class="main-screen__title">Golden City</h2>
-                  <p class="main-screen__type">Жилой комплекс</p><a class="main-screen__link" href="#rooms">Перейти к выбору помещений</a>
+                  <h2 class="main-screen__title">Grand House</h2>
+                  <p class="main-screen__type">Жилой комплекс</p><a class="main-screen__link" href="#grand">Перейти к выбору помещений</a>
+                </section>
+              </div>
+            </div>
+            <div class="swiper-slide main-screen__slide">
+              <div class="main-screen__img"><img class="swiper-lazy" data-src="images/slider/slide-1.jpg" alt="slide-5" src="images/other/pixel.png">
+                <div class="swiper-lazy-preloader"></div>
+              </div>
+              <div class="main-screen__wrap">
+                <section class="main-screen__content">
+                  <h2 class="main-screen__title">Олимп</h2>
+                  <p class="main-screen__type">Жилой комплекс</p><a class="main-screen__link" href="#olymp">Перейти к выбору помещений</a>
+                </section>
+              </div>
+            </div>
+            <div class="swiper-slide main-screen__slide">
+              <div class="main-screen__img"><img class="swiper-lazy" data-src="images/slider/slide-1.jpg" alt="slide-6" src="images/other/pixel.png">
+                <div class="swiper-lazy-preloader"></div>
+              </div>
+              <div class="main-screen__wrap">
+                <section class="main-screen__content">
+                  <h2 class="main-screen__title">Мейн Хаус</h2>
+                  <p class="main-screen__type">Жилой комплекс</p><a class="main-screen__link" href="#main">Перейти к выбору помещений</a>
+                </section>
+              </div>
+            </div>
+            <div class="swiper-slide main-screen__slide">
+              <div class="main-screen__img"><img class="swiper-lazy" data-src="images/slider/slide-1.jpg" alt="slide-7" src="images/other/pixel.png">
+                <div class="swiper-lazy-preloader"></div>
+              </div>
+              <div class="main-screen__wrap">
+                <section class="main-screen__content">
+                  <h2 class="main-screen__title">Твин Хаус</h2>
+                  <p class="main-screen__type">Жилой комплекс</p><a class="main-screen__link" href="#twin">Перейти к выбору помещений</a>
                 </section>
               </div>
             </div>
@@ -1270,25 +1303,30 @@
         <div class="modal__body">
           <form class="modal__form">
             <p class="modal__description">Оставьте ваши координаты и наш менеджер свяжется с Вами, чтобы помочь с выбором и ответить на все вопросы.</p>
-            <input class="modal__input" type="text" placeholder="Ваше имя">
-            <input class="modal__input" type="text" placeholder="Телефон" data-input="tel">
+            <input class="modal__input" type="text" placeholder="Ваше имя" required>
+            <input class="modal__input" type="text" placeholder="Телефон" data-input="tel" required>
             <div class="modal__select">
-              <select>
-                <option selected>Выберите объект</option>
-                <option>Объект 1</option>
-                <option>Объект 2</option>
-                <option>Объект 3</option>
+              <select required>
+                <option value="">Ligovsky city - Второй квартал</option>
+                <option value="">Ligovsky city - Первый квартал</option>
+                <option value="">Golden City</option>
+                <option value="">Английская миля</option>
+                <option value="">Grand House</option>
+                <option value="">Олимп</option>
+                <option value="">Мейн Хаус</option>
+                <option value="">Твин Хаус</option>
               </select>
             </div>
             <input class="modal__input" type="text" placeholder="Удобное время">
             <p class="modal__description">Нажимая кнопку «Отправить», Вы подтверждаете свое <a class="modal__link" href="#"> согласие</a>  на обработку персональных данных</p>
-            <button class="modal__btn" type="button">Отправить заявку</button>
+            <button class="modal__btn">Отправить заявку</button>
           </form>
         </div>
       </div>
     </div>
+    <div id="json" hidden></div>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;amp;apikey=dfabb26c-6d20-443e-b7ec-c4095988e380"></script>
-    <script src="js/libs.js" defer></script>
-    <script src="js/script.js" defer></script>
+    <script src="js/libs.min.js" defer></script>
+    <script src="js/script.min.js" defer></script>
   </body>
 </html>

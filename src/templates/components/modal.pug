@@ -5,17 +5,28 @@
     .modal__body
       form.modal__form
         p.modal__description Оставьте ваши координаты и наш менеджер свяжется с Вами, чтобы помочь с выбором и ответить на все вопросы.
-        input.modal__input(type="text" placeholder="Ваше имя")
-        input.modal__input(type="text" placeholder="Телефон" data-input="tel")
+        input.modal__input(type="text" placeholder="Ваше имя" required)
+        input.modal__input(type="text" placeholder="Телефон" data-input="tel" required)
         .modal__select
-          select
-            option(selected) Выберите объект
-            option Объект 1
-            option Объект 2
-            option Объект 3
+          select(required)
+            -
+              arrRealEstate = [
+                {name: 'Ligovsky city - Второй квартал', value: ''},
+                {name: 'Ligovsky city - Первый квартал', value: ''},
+                {name: 'Golden City', value: ''},
+                {name: 'Английская миля', value: ''},
+                {name: 'Grand House', value: ''},
+                {name: 'Олимп', value: ''},
+                {name: 'Мейн Хаус', value: ''},
+                {name: 'Твин Хаус', value: ''}
+              ]
+
+            each obj in arrRealEstate
+              option(value=obj.value)=obj.name
+
         input.modal__input(type="text" placeholder="Удобное время")
         p.modal__description
           | Нажимая кнопку «Отправить», Вы подтверждаете свое 
           a.modal__link(href='#')  согласие
           |  на обработку персональных данных
-        button.modal__btn(type="button") Отправить заявку
+        button.modal__btn Отправить заявку

@@ -7,23 +7,43 @@ include ../mixins/callback-btn
         arrInfo = [{
           title: 'Ligovsky city - Второй квартал',
           type: 'Жилой комплекс',
-          img: 'images/slider/slide-1.jpg'
-        }, {
-          title: 'Ligovsky city - Сотый квартал',
-          type: 'Жилой комплекс',
-          img: 'images/slider/slide-1.jpg'
-        }, {
-          title: 'Ligovsky city - Миллионный квартал',
-          type: 'Жилой комплекс',
-          img: 'images/slider/slide-1.jpg'
+          img: 'images/slider/slide-1.jpg',
+          url: '#ligovsky-2'
         }, {
           title: 'Ligovsky city - Первый квартал',
           type: 'Жилой комплекс',
-          img: 'images/slider/slide-1.jpg'
+          img: 'images/slider/slide-1.jpg',
+          url: '#ligovsky-1'
         }, {
           title: 'Golden City',
           type: 'Жилой комплекс',
-          img: 'images/slider/slide-1.jpg'
+          img: 'images/slider/slide-1.jpg',
+          url: '#golden'
+        }, {
+          title: 'Английская миля',
+          type: 'Жилой комплекс',
+          img: 'images/slider/slide-1.jpg',
+          url: '#england'
+        }, {
+          title: 'Grand House',
+          type: 'Жилой комплекс',
+          img: 'images/slider/slide-1.jpg',
+          url: '#grand'
+        }, {
+          title: 'Олимп',
+          type: 'Жилой комплекс',
+          img: 'images/slider/slide-1.jpg',
+          url: '#olymp'
+        }, {
+          title: 'Мейн Хаус',
+          type: 'Жилой комплекс',
+          img: 'images/slider/slide-1.jpg',
+          url: '#main'
+        }, {
+          title: 'Твин Хаус',
+          type: 'Жилой комплекс',
+          img: 'images/slider/slide-1.jpg',
+          url: '#twin'
         }];
 
       each item, index in arrInfo
@@ -35,7 +55,7 @@ include ../mixins/callback-btn
             section.main-screen__content
               h2.main-screen__title=item.title
               p.main-screen__type=item.type
-              a.main-screen__link(href="#rooms") Перейти к выбору помещений
+              a.main-screen__link(href=item.url) Перейти к выбору помещений
 
     .swiper-pagination.main-screen__pagination
 

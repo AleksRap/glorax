@@ -1,11 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
   const screenWidth = document.documentElement.clientWidth;
 
+
+  /** Выделение пунктов меню в зависимости от позиции скролла */
+  const arrIdAnchor = ['projects', 'about-us', 'map', 'rooms'];
+  const arrMenuItems = document.querySelectorAll('.nav__item');
+  const arrMobileMenuItems = document.querySelectorAll('.nav__mobile-item');
+  const arrYPositionAnchor = arrIdAnchor.map(id => {
+    const headerHeight = document.querySelector('.header').clientHeight;
+    return window.pageYOffset + document.querySelector(`#${id}`).getBoundingClientRect().top - headerHeight;
+  });
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = document.documentElement.scrollTop;
+    let index = null;
+
+    for (let i = 0; i < arrYPositionAnchor.length; i ++) {
+      const lastAnchor = arrYPositionAnchor[i + 1] || document.body.scrollHeight;
+
+      if (currentScroll >= arrYPositionAnchor[i] && currentScroll < lastAnchor) {
+        index = i;
+        break;
+      }
+    }
+
+    for (let i = 0; i < arrMenuItems.length; i++) {
+      arrMenuItems[i].classList.remove('select');
+      arrMobileMenuItems[i].classList.remove('select');
+    }
+
+    if (index !== null) {
+      arrMenuItems[index].classList.add('select');
+      arrMobileMenuItems[index].classList.add('select');
+    }
+  });
+
+
   /** Мобильное меню */
   const btnMobile = document.querySelector('[data-mobile-nav="open"]');
   const btnCloseMobileMenu = document.querySelector('[data-mobile-nav="close"]');
   const btnModalMobile = document.querySelector('.nav__callback-btn_mobile');
   const mobileMenu = document.querySelector('.nav__mobile-list-wrap');
+
   btnMobile.addEventListener('click', () => {
     mobileMenu.classList.add('open');
   });
@@ -72,8 +108,10 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 1,
     initialSlide: 0,
     loop: true,
-    autoplay: true,
-    delay: 4000,
+    autoplay: {
+      delay: 6000,
+    },
+    speed: 1500,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
@@ -265,8 +303,8 @@ function mask(event) {
     return /[_\d]/.test(str) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : str
   });
 
-  if (event.type === "blur") {
-    if (this.value.length === 2) this.value = ""
+  if (event.type === 'blur') {
+    if (this.value.length === 2) this.value = ''
   } else {
     setCursorPosition(this.value.length, this)
   }
@@ -276,6 +314,7 @@ function mask(event) {
 class Layouts {
   constructor(el) {
     this._wrap = el;
+    this._allCards = document.querySelectorAll('.card-tower');
 
     this._body = this._wrap.querySelector('.card-tower__body');
     this._allBlock = this._wrap.querySelectorAll('[data-block]');
@@ -295,6 +334,8 @@ class Layouts {
   }
 
   showBlock(el) {
+    this._closeAllCards();
+
     this._body.removeAttribute('hidden');
     this._allBlock.forEach(block => block.setAttribute('hidden', true));
     el.removeAttribute('hidden');
@@ -307,7 +348,7 @@ class Layouts {
       default:
         this._btnLayouts.classList.add('card-tower__btn_active');
         this._btnAbout.classList.remove('card-tower__btn_active');
-        break
+        break;
     }
   }
 
@@ -338,9 +379,24 @@ class Layouts {
     });
   }
 
+  _closeAllCards() {
+    this._allCards.forEach(card => {
+      card.querySelector('.card-tower__body').setAttribute('hidden', true);
+      const btns = card.querySelectorAll('.card-tower__btn');
+
+      btns.forEach(btn => btn.classList.remove('card-tower__btn_active'));
+    });
+  }
+
+  _toggleBlock(event, el) {
+    event.target.closest('.card-tower__btn').classList.contains('card-tower__btn_active')
+      ? this.hideBlock()
+      : this.showBlock(el);
+  }
+
   _bind() {
-    this._btnAbout.addEventListener('click', () => this.showBlock(this._about));
-    this._btnLayouts.addEventListener('click', () => this.showBlock(this._layouts));
+    this._btnAbout.addEventListener('click', event => this._toggleBlock(event, this._about));
+    this._btnLayouts.addEventListener('click', event => this._toggleBlock(event, this._layouts));
     this._btnClose.addEventListener('click', () => this.hideBlock());
     this._rowsWrap.addEventListener('mouseover', event => this.changeLayout(event));
   }
@@ -410,16 +466,7 @@ ymaps.ready(() => {
     zoom: 11
   });
 
-  const arrInfo = [
-    {id: 'ligovsky-2', name: 'Ligovsky city - Второй квартал', coordinates: [59.906359, 30.344947], address: 'Санкт Петербург, Лиговский проспект, 232', img: 'images/real-estate/1.jpg'},
-    {id: 'ligovsky-1', name: 'Ligovsky city - Первый квартал', coordinates: [59.905321, 30.342359], address: 'Санкт Петербург, Лиговский проспект, 271', img: 'images/real-estate/2.jpg'},
-    {id: 'golden', name: 'Golden City', coordinates: [59.941475, 30.193832], address: 'Санкт Петербург, ул. Челюскина, 4', img: 'images/real-estate/3.jpg'},
-    {id: 'england', name: 'Английская миля', coordinates: [59.847010, 30.113936], address: 'Санкт Петербург, Петергофское ш., 78', img: 'images/real-estate/4.jpg'},
-    {id: 'grand', name: 'Grand House', coordinates: [59.925398, 30.373702], address: 'Санкт Петербург, Тележная ул., 17-19', img: 'images/real-estate/5.jpg'},
-    {id: 'olymp', name: 'Олимп', coordinates: [56.256213, 37.975039], address: 'МО, г. Хотьково, ул. Михеенко, 25', img: 'images/real-estate/6.jpg'},
-    {id: 'main', name: 'Мейн Хаус', coordinates: [60.028029, 30.416183], address: 'Санкт Петербург, Гражданский проспект, 107', img: 'images/real-estate/7.jpg'},
-    {id: 'twin', name: 'Твин Хаус', coordinates: [59.873853, 30.367225], address: 'Санкт Петербург, Будапештская, 2', img: 'images/real-estate/8.jpg'}
-  ];
+  const arrInfo = JSON.parse(document.getElementById('json').textContent);
 
   const header = (img, address, id) => `
     <a class="card-map__header" href="#${id}">

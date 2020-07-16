@@ -13,18 +13,14 @@
   transition: height $time-animation-header ease-in, margin-top $time-animation-header $time-animation-header ease-in, background-color $time-animation-header ease-in;
 
   @media (min-width: 1360px) {
-    height: 90px;
-    margin-top: 30px;
+    height: 120px;
   }
 
   &_color {
     background-color: $first-color;
     transition: height $time-animation-header $time-animation-header ease-in, margin-top $time-animation-header ease-in, background-color $time-animation-header $time-animation-header ease-in;
 
-    @media (min-width: 1360px) {
-      height: 120px;
-      margin-top: 0;
-    }
+
 
     .header {
 
