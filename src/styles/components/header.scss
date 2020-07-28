@@ -20,25 +20,26 @@
     background-color: $first-color;
     transition: height $time-animation-header $time-animation-header ease-in, margin-top $time-animation-header ease-in, background-color $time-animation-header $time-animation-header ease-in;
 
-
-
     .header {
 
       &__logo-wrap {
-        transition: width $time-animation-header $time-animation-header ease-in, height $time-animation-header $time-animation-header ease-in;
+        transition: width $time-animation-header $time-animation-header ease-in, height $time-animation-header $time-animation-header ease-in, margin-right $time-animation-header $time-animation-header ease-in;
 
         @media (min-width: 1360px) {
           width: 150px;
           height: 150px;
         }
+        @media (min-width: 1560px) {
+          margin-right: 118px;
+        }
       }
 
       &__logo {
-        transition: max-width $time-animation-header $time-animation-header ease-in, max-height $time-animation-header $time-animation-header ease-in;
+        transition: max-width $time-animation-header $time-animation-header ease-in, height $time-animation-header $time-animation-header ease-in;
 
         @media (min-width: 1360px) {
           max-width: 112px;
-          max-height: 112px;
+          height: 112px;
         }
       }
 
@@ -70,7 +71,7 @@
 
     background-color: $first-color;
 
-    transition: width $time-animation-header ease-in, height $time-animation-header ease-in;
+    transition: width $time-animation-header ease-in, height $time-animation-header ease-in, margin-right $time-animation-header $time-animation-header / 2 ease-in;
 
     @media (min-width: 768px) {
       margin-left: 50px;
@@ -79,13 +80,13 @@
       width: 120px;
       height: 120px;
 
-      margin: 10px 50px 0 85px;
+      margin: 40px 30px 0 72px;
     }
     @media (min-width: 1560px) {
       width: 200px;
       height: 200px;
 
-      margin-right: 70px;
+      margin: 40px 70px 0 85px;
     }
   }
 
@@ -93,11 +94,11 @@
     max-width: 60px;
     height: 60px;
 
-    transition: max-width $time-animation-header ease-in, max-height $time-animation-header ease-in;
+    transition: max-width $time-animation-header ease-in, height $time-animation-header ease-in;
 
     @media (min-width: 1360px) {
-      max-width: 100px;
-      height: 100px;
+      max-width: 87px;
+      height: 87px;
     }
     @media (min-width: 1560px) {
       max-width: 150px;

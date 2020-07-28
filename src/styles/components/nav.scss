@@ -8,7 +8,6 @@
 
   @media (min-width: 1360px) {
     padding-right: 85px;
-    align-items: center;
   }
 
   &::after {
@@ -32,8 +31,7 @@
       @include clearList();
 
       display: flex;
-      align-items:center;
-
+      align-items: flex-end;
       height: 100%;
     }
   }
@@ -41,8 +39,8 @@
   &__item {
 
     @media (min-width: 1360px) {
-      height: 100%;
       margin-right: 20px;
+      padding-bottom: 35px;
 
       display: flex;
       align-items:center;
@@ -64,14 +62,11 @@
   &__link {
 
     @media (min-width: 1360px) {
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 500;
       text-decoration: none;
       color: white;
       transition: color $time-opacity-animation-on-off ease-in;
-    }
-    @media (min-width: 1560px) {
-      font-size: 18px;
     }
 
     &:hover {
@@ -84,15 +79,13 @@
   }
 
   &__number {
-    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 20px;
-    font-size: 14px;
+    font-size: 18px;
 
-    @media (min-width: 768px) {
-      font-size: 18px;
-    }
     @media (min-width: 1360px) {
-      margin-bottom: 0;
+      margin-left: auto;
+      margin-bottom: 35px;
       font-size: 20px;
     }
     @media (min-width: 1560px) {
@@ -112,6 +105,7 @@
       display: initial;
 
       margin-left: 35px;
+      margin-bottom: 21px;
       max-width: 250px;
     }
     @media (min-width: 1560px) {
@@ -145,7 +139,7 @@
 
     margin-left: 20px;
     margin-right: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 23px;
     padding: 0;
 
     background-color: transparent;

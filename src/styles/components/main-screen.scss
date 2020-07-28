@@ -3,7 +3,7 @@
   flex: 1 1 auto;
 
   width: 100%;
-  height: 360px;
+  height: 400px;
 
   @media (min-width: 768px) {
     height: 480px;
@@ -56,7 +56,7 @@
   &__content {
     position: absolute;
     left: 20px;
-    bottom: 60px;
+    bottom: 73px;
 
     max-width: 580px;
     width: 100%;
@@ -73,7 +73,7 @@
     }
     @media (min-width: 1560px) {
       left: 350px;
-      bottom: 180px;
+      bottom: 165px;
     }
   }
 
@@ -87,19 +87,19 @@
 
     @media (min-width: 1360px) {
       font-size: 68px;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
   }
 
   &__type {
     margin-top: 0;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 
     font-size: 20px;
     font-weight: 500;
 
     @media (min-width: 1360px) {
-      margin-bottom: 65px;
+      margin-bottom: 55px;
       font-size: 24px;
     }
   }
@@ -109,7 +109,6 @@
     justify-content: center;
     align-items: center;
 
-    max-width: 300px;
     width: calc(100% - 40px);
     height: 50px;
 
@@ -120,6 +119,9 @@
     text-transform: uppercase;
     text-decoration: none;
 
+    @media (min-width: 768px) {
+      max-width: 300px;
+    }
     @media (min-width: 1360px) {
       width: 100%;
     }
@@ -139,7 +141,7 @@
     @media (min-width: 768px) {
       bottom: 40px !important;
     }
-    @media (min-width: 1360px) {
+    @media (min-width: 1560px) {
       bottom: 60px !important;
     }
   }
@@ -165,33 +167,47 @@
 
     @media (min-width: 1360px) {
       position: absolute;
-      left: 90px;
-      bottom: 35px;
+      left: 72px;
+      bottom: 0;
       z-index: 1;
 
       width: 177px;
-      height: 420px;
+      height: 100%;
 
       display: flex;
       flex-direction: column;
     }
     @media (min-width: 1560px) {
-      height: 600px;
+      left: 85px;
+      flex: 1 1 auto;
     }
   }
 
   &__logo-m2 {
 
     @media (min-width: 1360px) {
-      height: 132px;
+      max-width: 165px;
+      height: 120px;
+
       margin-top: auto;
+      margin-bottom: 52px;
+
+      flex: 0 0 auto;
+    }
+    @media (min-width: 1560px) {
+      height: 132px;
+      margin-bottom: 30px;
     }
   }
 
   &__advantages {
 
     @media (min-width: 1360px) {
+      margin-top: 210px;
       margin-bottom: 30px;
+    }
+    @media (min-width: 1560px) {
+      margin-top: 265px;
     }
   }
 
@@ -201,7 +217,7 @@
       width: 70px;
       height: 70px;
 
-      margin-bottom: 10px;
+      margin-bottom: 7px;
 
       background-repeat: no-repeat;
       background-size: contain;
@@ -210,6 +226,8 @@
     @media (min-width: 1560px) {
       width: 100px;
       height: 100px;
+
+      margin-bottom: 18px;
     }
 
     &:last-child {
