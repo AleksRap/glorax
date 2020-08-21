@@ -115,10 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
-    },
-    preloadImages: false,
-    lazy: true,
-    loadOnTransitionStart: true
+    }
   });
 
 

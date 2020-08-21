@@ -49,8 +49,7 @@ include ../mixins/callback-btn
       each item, index in arrInfo
         .swiper-slide.main-screen__slide
           .main-screen__img
-            img.swiper-lazy(data-src=item.img alt=`slide-${index}` src='images/other/pixel.png')
-            .swiper-lazy-preloader
+            img(src=item.img alt=`slide-${index}`)
           .main-screen__wrap
             section.main-screen__content
               h2.main-screen__title=item.title
