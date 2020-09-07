@@ -34,16 +34,15 @@ include ../mixins/callback-btn
         .swiper-slide.main-screen__slide
           .main-screen__img
             img(src=item.img alt=`slide-${index}`)
-          .main-screen__wrap
-            .main-screen__content
-              a.main-screen__link(href=item.url) Перейти к выбору помещений
+
 
     section.main-screen__content-fixed
       h2.main-screen__title Коммерческие помещения<br>от застройщика
+      a.main-screen__link(href='#rooms') Перейти к выбору помещений
 
     .swiper-pagination.main-screen__pagination
 
   .main-screen__info
-    a.logo-m2.main-screen__logo-m2(href='#')
+    .logo-m2.main-screen__logo-m2
 
   +callback-btn('main-screen', 'little')

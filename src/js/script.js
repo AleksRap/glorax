@@ -555,6 +555,9 @@ class GalleryCards {
       section.classList.add('active');
       [...this._gallery.children][index].classList.add('active');
     });
+    sections.addEventListener('mouseout', () => {
+      [...sections.children].forEach(child => child.classList.remove('active'));
+    });
   }
 
   _generateTemplate() {
