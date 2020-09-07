@@ -12,6 +12,8 @@ const {
 } 			            = require('gulp-load-plugins')();
 const gulpif        = require('gulp-if');
 const args          = require('yargs').argv;
+const hash          = require('gulp-hash-filename');
+const filenames     = require('gulp-filenames');
 
 
 module.exports = function jsLibs(done) {
@@ -31,7 +33,11 @@ module.exports = function jsLibs(done) {
           basepath: './node_modules/'
         }))                                                                  // Инклудим модули библиотек
         .pipe(gulpif((env === 'prod'), uglify()))                            // Если prod === true, то минифицируем либы
+        .pipe(gulpif((env === 'prod'), hash({
+          format: "{name}.{hash}{ext}"
+        })))                                                                 // Если prod === true, то добавляем хэш
         .pipe(gulpif((env === 'prod'), rename({suffix: '.min'})))            // Если prod === true, то добавляем суффикс min
+        .pipe(filenames('libs-script'))                                // Получаем название файла для замены ссылок в html
         .pipe(gulpif((env === 'prod'), sourcemaps.write('.')))               // Если prod === true, то добавляем map файл
         .pipe(dest(config.dist.scripts))                                     // Выгружаем в папку public/scripts
     }

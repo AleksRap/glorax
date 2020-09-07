@@ -3,7 +3,6 @@
   position: relative;
 
   width: 100%;
-  max-width: 250px;
   height: 50px;
 
   padding: 5px 17px 5px 42px;
@@ -22,6 +21,16 @@
 
   transition: opacity $time-opacity-animation-on-off ease-in;
 
+  @media (min-width: 1360px) {
+    height: 40px;
+    font-size: 12px;
+  }
+  @media (min-width: 1900px) {
+    height: 50px;
+    max-width: 250px;
+    font-size: 14px;
+  }
+
   &:active {
     opacity: $opacity-animation-on-off;
     transition: opacity $time-opacity-animation-on-off ease-in;
@@ -37,5 +46,12 @@
     height: 20px;
 
     background: url('../svg/icons/phone.svg') center/contain no-repeat;
+
+    @media (min-width: 1360px) {
+      top: 12px;
+    }
+    @media (min-width: 1900px) {
+      top: 17px;
+    }
   }
 }

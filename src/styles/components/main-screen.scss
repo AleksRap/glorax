@@ -13,6 +13,7 @@
   }
 
   &__swiper-container {
+    position: relative;
     width: 100%;
     height: 100%;
   }
@@ -68,12 +69,38 @@
       bottom: 135px;
     }
     @media (min-width: 1360px) {
-      left: 300px;
-      bottom: 120px;
+      left: 190px;
+      bottom: 150px;
     }
-    @media (min-width: 1560px) {
+    @media (min-width: 1536px) {
+      left: 254px;
+      bottom: 170px;
+    }
+    @media (min-width: 1900px) {
       left: 350px;
-      bottom: 165px;
+    }
+  }
+
+  &__content-fixed {
+    position: absolute;
+    bottom: 150px;
+    left: 20px;
+    z-index: 1;
+
+    @media (min-width: 768px) {
+      left: 50px;
+      bottom: 200px;
+    }
+    @media (min-width: 1360px) {
+      left: 190px;
+      bottom: 210px;
+    }
+    @media (min-width: 1536px) {
+      left: 254px;
+      bottom: 225px;
+    }
+    @media (min-width: 1900px) {
+      left: 350px;
     }
   }
 
@@ -84,10 +111,18 @@
     font-size: 36px;
     line-height: 1;
     font-weight: normal;
+    color: white;
 
     @media (min-width: 1360px) {
-      font-size: 68px;
-      margin-bottom: 20px;
+      font-size: 42px;
+      margin-bottom: 40px;
+    }
+    @media (min-width: 1536px) {
+      margin-bottom: 30px;
+      font-size: 52px;
+    }
+    @media (min-width: 1900px) {
+      font-size: 70px;
     }
   }
 
@@ -141,7 +176,7 @@
     @media (min-width: 768px) {
       bottom: 40px !important;
     }
-    @media (min-width: 1560px) {
+    @media (min-width: 1536px) {
       bottom: 60px !important;
     }
   }
@@ -167,7 +202,7 @@
 
     @media (min-width: 1360px) {
       position: absolute;
-      left: 72px;
+      left: 40px;
       bottom: 0;
       z-index: 1;
 
@@ -177,7 +212,7 @@
       display: flex;
       flex-direction: column;
     }
-    @media (min-width: 1560px) {
+    @media (min-width: 1536px) {
       left: 85px;
       flex: 1 1 auto;
     }
@@ -186,17 +221,18 @@
   &__logo-m2 {
 
     @media (min-width: 1360px) {
-      max-width: 165px;
-      height: 120px;
+      max-width: 126px;
+      height: 90px;
 
       margin-top: auto;
       margin-bottom: 52px;
 
       flex: 0 0 auto;
     }
-    @media (min-width: 1560px) {
-      height: 132px;
-      margin-bottom: 30px;
+    @media (min-width: 1536px) {
+      max-width: 152px;
+      height: 100px;
+      margin-bottom: 50px;
     }
   }
 
@@ -206,7 +242,7 @@
       margin-top: 210px;
       margin-bottom: 30px;
     }
-    @media (min-width: 1560px) {
+    @media (min-width: 1536px) {
       margin-top: 265px;
     }
   }
@@ -223,7 +259,7 @@
       background-size: contain;
       background-position: center;
     }
-    @media (min-width: 1560px) {
+    @media (min-width: 1536px) {
       width: 100px;
       height: 100px;
 

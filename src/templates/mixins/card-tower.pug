@@ -3,15 +3,34 @@ include social-links
 mixin card-tower(data)
   .card-tower
     .card-tower__head
-      .card-tower__img
+      .card-tower__img.card-tower__img_desktop
         img.active(src=data.img alt=data.name)
         img(src='images/real-estate/8.jpg' alt=data.name)
         img(src='images/real-estate/3.jpg' alt=data.name)
         img(src='images/real-estate/4.jpg' alt=data.name)
         img(src='images/real-estate/5.jpg' alt=data.name)
+      .card-tower__img.card-tower__img_mobile
+        .swiper-container.card-tower__swiper-container
+          .swiper-wrapper
+            -
+              arrInfo = [
+                data.img,
+                'images/real-estate/8.jpg',
+                'images/real-estate/2.jpg',
+                'images/real-estate/5.jpg'
+              ];
+
+            each item, index in arrInfo
+              .swiper-slide
+                img.active(src=item alt=`slide-${index}`)
+
+          .swiper-pagination.card-tower__pagination
+
+
       .card-tower__info
         h3.card-tower__name=data.name
         span.card-tower__type=data.type
+        span.card-tower__type Метро: !{data.metro}
         address.card-tower__address=data.address
         p.card-tower__description=data.description
         .card-tower__btns
@@ -30,9 +49,6 @@ mixin card-tower(data)
               span.card-tower__row-title Сдача:
               span.card-tower__row-info=data.dateEnd
             .card-tower__row
-              span.card-tower__row-title Метро:
-              span.card-tower__row-info=data.metro
-            .card-tower__row
               span.card-tower__row-title
                 | Цена за м
                 sup 2
@@ -42,7 +58,7 @@ mixin card-tower(data)
 
           .card-tower__description-full-wrap
             .card-tower__description-full=data.description
-          
+
       .card-tower__layouts(hidden data-block)
         .card-tower__table-head
           .card-tower__table-head-cell
@@ -71,9 +87,11 @@ mixin card-tower(data)
           .card-tower__table-img
             each layout, index in layouts
               if layout.active
-                img(src=layout.img alt=`Планировка-${index}`)
+                a(href=layout.img data-fslightbox=`plans-${data.value}-${index}`)
+                  img(src=layout.img alt=`Планировка-${index}`)
               else
-                img(src=layout.img alt=`Планировка-${index}` hidden)
+                a(href=layout.img data-fslightbox=`plans-${data.value}-${index}` hidden)
+                  img(src=layout.img alt=`Планировка-${index}`)
 
           .card-tower__table-row-wrap
             each layout in layouts
@@ -88,10 +106,10 @@ mixin card-tower(data)
             | Презентация
             br
             | с планировками
-          button.card-tower__link.card-tower__link_order(data-open-modal)
+          button.card-tower__link.card-tower__link_order(data-open-modal data-value-select=data.value)
             | Заявка
             br
             | на бронь
 
-        
+
       button.card-tower__minus(data-btn="close") -

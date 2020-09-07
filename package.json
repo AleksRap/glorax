@@ -12,6 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "fslightbox": "^3.1.0",
+    "gulp-filenames": "^4.0.1",
+    "gulp-hash-filename": "^3.0.0",
     "normalize.css": "^8.0.1",
     "swiper": "^5.4.1"
   },

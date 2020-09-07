@@ -7,16 +7,15 @@ const config    = require('../config.js');
 const replace   = require('gulp-replace');
 const gulpif    = require('gulp-if');
 const args      = require('yargs').argv;
-
+const filenames = require('gulp-filenames');
 
 module.exports = function replaceUrl() {
   const env = args.env || 'dev';
 
   return src(config.dist.html)
-    .pipe(gulpif((env === 'prod'), replace('css/libs.css', 'css/libs.min.css')))      // Заменяем ссылку
-    .pipe(gulpif((env === 'prod'), replace('css/style.css', 'css/style.min.css')))    // Заменяем ссылку
-    .pipe(gulpif((env === 'prod'), replace('js/libs.js', 'js/libs.min.js')))          // Заменяем ссылку
-    .pipe(gulpif((env === 'prod'), replace('js/script.js', 'js/script.min.js')))      // Заменяем ссылку
-    .pipe(gulpif((env === 'prod'), dest(config.dist.dist)))                           // Выгружаем в папку public
-
+    .pipe(gulpif((env === 'prod'), replace('css/libs.css',  `css/${filenames.get('libs-style')}`)))  // Заменяем ссылку
+    .pipe(gulpif((env === 'prod'), replace('css/style.css', `css/${filenames.get('style')}`)))       // Заменяем ссылку
+    .pipe(gulpif((env === 'prod'), replace('js/libs.js', `js/${filenames.get('libs-script')}`)))     // Заменяем ссылку
+    .pipe(gulpif((env === 'prod'), replace('js/script.js', `js/${filenames.get('script')}`)))        // Заменяем ссылку
+    .pipe(gulpif((env === 'prod'), dest(config.dist.dist)))                                                                   // Выгружаем в папку public
 };

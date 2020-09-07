@@ -5,43 +5,27 @@ include ../mixins/callback-btn
     .swiper-wrapper
       -
         arrInfo = [{
-          title: 'Ligovsky city - Второй квартал',
-          type: 'Жилой комплекс',
           img: 'images/slider/slide-1.jpg',
           url: '#ligovsky-2'
         }, {
-          title: 'Ligovsky city - Первый квартал',
-          type: 'Жилой комплекс',
           img: 'images/slider/slide-1.jpg',
           url: '#ligovsky-1'
         }, {
-          title: 'Golden City',
-          type: 'Жилой комплекс',
           img: 'images/slider/slide-1.jpg',
           url: '#golden'
         }, {
-          title: 'Английская миля',
-          type: 'Жилой комплекс',
           img: 'images/slider/slide-1.jpg',
           url: '#england'
         }, {
-          title: 'Grand House',
-          type: 'Жилой комплекс',
           img: 'images/slider/slide-1.jpg',
           url: '#grand'
         }, {
-          title: 'Олимп',
-          type: 'Жилой комплекс',
           img: 'images/slider/slide-1.jpg',
           url: '#olymp'
         }, {
-          title: 'Мейн Хаус',
-          type: 'Жилой комплекс',
           img: 'images/slider/slide-1.jpg',
           url: '#main'
         }, {
-          title: 'Твин Хаус',
-          type: 'Жилой комплекс',
           img: 'images/slider/slide-1.jpg',
           url: '#twin'
         }];
@@ -51,18 +35,15 @@ include ../mixins/callback-btn
           .main-screen__img
             img(src=item.img alt=`slide-${index}`)
           .main-screen__wrap
-            section.main-screen__content
-              h2.main-screen__title=item.title
-              p.main-screen__type=item.type
+            .main-screen__content
               a.main-screen__link(href=item.url) Перейти к выбору помещений
+
+    section.main-screen__content-fixed
+      h2.main-screen__title Коммерческие помещения<br>от застройщика
 
     .swiper-pagination.main-screen__pagination
 
   .main-screen__info
-    .main-screen__advantages
-      .main-screen__advantage.main-screen__advantage_1
-      .main-screen__advantage.main-screen__advantage_2
-      .main-screen__advantage.main-screen__advantage_3
     a.logo-m2.main-screen__logo-m2(href='#')
 
   +callback-btn('main-screen', 'little')

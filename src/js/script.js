@@ -72,6 +72,11 @@ document.addEventListener('DOMContentLoaded', () => {
     selectorBtnOpen: '[data-open-modal]'
   });
 
+  /** Модалка успешной отправки */
+  const modalSendSuccess = new Modal({
+    idModal: 'modal-send-success'
+  });
+
 
   /** Открытие/закрытие карточек проектов на мобильных */
   if (screenWidth < 1000) {
@@ -81,10 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const card = event.target.closest('.card-real-estate');
       if (!card) return;
 
-      const cardBtn = card.querySelector('[data-btn-card="toggle"]');
-
       card.classList.toggle('open');
-      cardBtn.classList.toggle('open');
     })
   }
 
@@ -113,7 +115,20 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     speed: 1500,
     pagination: {
-      el: '.swiper-pagination',
+      el: '.main-screen__pagination',
+      clickable: true,
+    }
+  });
+  new Swiper('.card-tower__swiper-container', {
+    slidesPerView: 1,
+    initialSlide: 0,
+    loop: true,
+    autoplay: {
+      delay: 6000,
+    },
+    speed: 1500,
+    pagination: {
+      el: '.card-tower__pagination',
       clickable: true,
     }
   });
@@ -123,37 +138,35 @@ document.addEventListener('DOMContentLoaded', () => {
   const anchors = document.querySelectorAll('[href^="#"]');
   const speed = 0.3;
 
-  if (anchors.length) {
-    anchors.forEach(anchor => {
-      anchor.addEventListener('click', event => {
-        event.preventDefault();
+  anchors.forEach(anchor => {
+    anchor.addEventListener('click', event => {
+      event.preventDefault();
 
-        const yOffset = window.pageYOffset;
-        const hash = event.target.href.replace(/[^#]*(.*)/, '$1');
-        const topPosition = document.querySelector(hash).getBoundingClientRect().top;
+      const yOffset = window.pageYOffset;
+      const hash = event.target.href.replace(/[^#]*(.*)/, '$1');
+      const topPosition = document.querySelector(hash).getBoundingClientRect().top;
 
-        let startTimestamp = null;
+      let startTimestamp = null;
 
-        requestAnimationFrame(step);
+      requestAnimationFrame(step);
 
-        function step(timestamp) {
-          if (startTimestamp === null) startTimestamp = timestamp;
-          const currentTimestamp = timestamp - startTimestamp;
-          const headerHeight = document.querySelector('.header').clientHeight;
-          const stopPosition =  yOffset + topPosition - headerHeight;
+      function step(timestamp) {
+        if (startTimestamp === null) startTimestamp = timestamp;
+        const currentTimestamp = timestamp - startTimestamp;
+        const headerHeight = document.querySelector('.header').clientHeight;
+        const stopPosition =  yOffset + topPosition - headerHeight;
 
-          const directionScroll =
-            topPosition < 0
-              ? Math.max(yOffset - currentTimestamp/speed, stopPosition)
-              : Math.min(yOffset + currentTimestamp/speed, stopPosition);
+        const directionScroll =
+          topPosition < 0
+            ? Math.max(yOffset - currentTimestamp/speed, stopPosition)
+            : Math.min(yOffset + currentTimestamp/speed, stopPosition);
 
-          window.scrollTo(0, directionScroll);
+        window.scrollTo(0, directionScroll);
 
-          directionScroll !== stopPosition && requestAnimationFrame(step);
-        }
-      });
+        directionScroll !== stopPosition && requestAnimationFrame(step);
+      }
     });
-  }
+  });
 
 
   /** Маска номера телефона на поля. Maskedinput */
@@ -168,7 +181,98 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /** Галереи в карточках ЖК */
-  document.querySelectorAll('.card-tower__img').forEach(wrapImg => new GalleryCards(wrapImg));
+  document.querySelectorAll('.card-tower__img_desktop').forEach((wrapImg, index) => new GalleryCards(wrapImg, index));
+
+
+  /** Форма */
+  const form = document.querySelector('[data-form]');
+  const btn = form.querySelector('[data-send]');
+  const error = form.querySelector('[data-form="error"]');
+  const loader = form.querySelector('[data-loader]');
+
+  const name = form.querySelector('[data-form="name"]');
+  const phone = form.querySelector('[data-form="phone"]');
+  const projectId = form.querySelector('[data-form="project_id"]');
+  const time = form.querySelector('[data-form="time"]');
+
+  const arrFormAreas = [name, phone, projectId, time];
+  arrFormAreas.forEach(area => area.addEventListener('input', () => error.classList.remove('active')));
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    btn.setAttribute('disabled', true);
+    loader.classList.add('active');
+
+    const body = {
+      name: name.value,
+      phone: phone.value,
+      projectId: projectId.value,
+      time: time.value
+    };
+
+
+    /**
+     * Объект с данными для Comagic
+     * @type {{phone, name, message, email: string}}
+     */
+    const bodySpecialForComagic = {
+      name: body.name,
+      email: '',
+      phone: body.phone,
+      message: body.time
+    }
+
+    Comagic.addOfflineRequest(bodySpecialForComagic);
+
+    function clearAreasForm() {
+      name.value = '';
+      phone.value = '';
+      projectId.value = '1';
+      time.value = '';
+    }
+
+    fetch('/api/request/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8'
+      },
+      body: JSON.stringify(body)
+    })
+      .then(response => response.json())
+      .then(({status, message = ''}) => {
+        if (status !== 'success') throw new Error(message);
+
+        modalSendSuccess.open();
+
+        clearAreasForm();
+
+        dataLayer.push({'event': 'formsuccess'});
+      })
+      .catch(e => {
+        error.innerHTML = `Произошла ошибка, попробуйте снова<br>(${e})`;
+        error.classList.add('active');
+      })
+      .finally(() => {
+        btn.removeAttribute('disabled');
+        loader.classList.remove('active');
+
+        /** Удаляем ошибку после закрытия и очищаем поля */
+        document.addEventListener('closeModal', () => {
+          error.classList.remove('active');
+          clearAreasForm();
+        }, {once: true});
+      });
+  });
+
+
+  /** Менять активный ЖК в селекте при нажатии заявка на бронь внутри карточки */
+  const btnsOrder = document.querySelectorAll('[data-value-select]');
+  btnsOrder.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      projectId.value = e.target.closest('button').dataset.valueSelect;
+    });
+  });
 });
 
 
@@ -218,18 +322,22 @@ class Modal {
     this._modalWindow = this._modal.querySelector('[data-modal="window"]');
 
     this._btnsOpen = document.querySelectorAll(data.selectorBtnOpen);
-    this._btnClose = this._modal.querySelector('[data-modal="close"]');
+    this._btnsClose = this._modal.querySelectorAll('[data-modal="close"]');
 
     this.bind();
   }
 
   open() {
+    this.closeAllModals();
+
     this._modal.classList.add('modal_open');
     this._modalWindow.classList.add('modal__window_open');
   }
   close() {
     this._modal.classList.remove('modal_open');
     this._modalWindow.classList.remove('modal__window_open');
+
+    this.generateEvent();
   }
 
   bind() {
@@ -259,12 +367,28 @@ class Modal {
     /**
      * Закрытие модалки по клику на крестик
      */
-    ManagementEvents.addEventToArr({
-      arr: this.arrEvents,
-      el: this._btnClose,
-      event: 'click',
-      fn: () => this.close()
+    this._btnsClose.forEach(btnClose => {
+      ManagementEvents.addEventToArr({
+        arr: this.arrEvents,
+        el: btnClose,
+        event: 'click',
+        fn: () => this.close()
+      });
     });
+  }
+
+  closeAllModals() {
+    [...document.querySelectorAll('.modal')].forEach(modal => {
+      modal.classList.remove('modal_open');
+
+      const textarea = modal.querySelector('textarea');
+      if (textarea) textarea.value = '';
+    });
+  }
+
+  generateEvent() {
+    const eventClose = new Event('closeModal', {bubbles: true});
+    this._btnsClose.forEach(btnClose => btnClose.dispatchEvent(eventClose));
   }
 
   destroy() {
@@ -401,8 +525,9 @@ class Layouts {
 
 /** Галерея внутри карточек жк */
 class GalleryCards {
-  constructor(el) {
+  constructor(el, index) {
     this._gallery = el;
+    this._index = index;
 
     this._render();
     this._bind();
@@ -449,7 +574,7 @@ class GalleryCards {
     let sectionTemplate = '';
 
     for (let i = 0; i < count; i++) {
-      sectionTemplate += `<a class="card-tower__section" href="${links[i]}" data-fslightbox="gallery"></a>`
+      sectionTemplate += `<a class="card-tower__section" href="${links[i]}" data-fslightbox="gallery-${this._index}"></a>`
     }
 
     return sectionTemplate
@@ -492,3 +617,12 @@ ymaps.ready(() => {
     }));
   });
 });
+
+
+/** Максимальная высота экрана, за вычетом всех инструментов браузера */
+function setVariable() {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+setVariable();
+window.onresize = setVariable;

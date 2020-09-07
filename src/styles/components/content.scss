@@ -1,5 +1,5 @@
 .content {
-  max-width: 1210px;
+  max-width: 1010px;
   width: calc(100% - 40px);
 
   margin-left: 20px;
@@ -14,5 +14,8 @@
   @media (min-width: 1360px) {
     margin-left: auto;
     margin-right: auto;
+  }
+  @media (min-width: 1900px) {
+    max-width: 1210px;
   }
 }

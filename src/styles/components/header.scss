@@ -3,43 +3,55 @@
   top: 0;
   left: 0;
   z-index: 2;
-  
+
   width: 100%;
   height: 80px;
 
   display: flex;
   background-color: transparent;
 
-  transition: height $time-animation-header ease-in, margin-top $time-animation-header $time-animation-header ease-in, background-color $time-animation-header ease-in;
+  transition: all $time-animation-header ease-in;
 
-  @media (min-width: 1360px) {
+  @media (min-width: 1900px) {
     height: 120px;
   }
 
   &_color {
     background-color: $first-color;
-    transition: height $time-animation-header $time-animation-header ease-in, margin-top $time-animation-header ease-in, background-color $time-animation-header $time-animation-header ease-in;
+    transition: all $time-animation-header $time-animation-header ease-in;
 
     .header {
 
       &__logo-wrap {
-        transition: width $time-animation-header $time-animation-header ease-in, height $time-animation-header $time-animation-header ease-in, margin-right $time-animation-header $time-animation-header ease-in;
+        margin-top: 0;
+        transition: all $time-animation-header $time-animation-header ease-in;
 
         @media (min-width: 1360px) {
-          width: 150px;
-          height: 150px;
+          width: 80px;
+          height: 80px;
+
+          margin-top: 0;
+          margin-right: 70px;
         }
-        @media (min-width: 1560px) {
-          margin-right: 118px;
+        @media (min-width: 1536px) {
+          margin-right: 90px;
+        }
+        @media (min-width: 1900px) {
+          margin-top: 20px;
+          margin-right: 170px;
         }
       }
 
       &__logo {
-        transition: max-width $time-animation-header $time-animation-header ease-in, height $time-animation-header $time-animation-header ease-in;
+        transition: all $time-animation-header ease-in;
 
         @media (min-width: 1360px) {
-          max-width: 112px;
-          height: 112px;
+          max-width: 60px;
+          height: 60px;
+        }
+        @media (min-width: 1900px) {
+          max-width: 100px;
+          height: 100px;
         }
       }
 
@@ -47,7 +59,15 @@
 
         &::after {
           opacity: 0;
-          transition: opacity $time-animation-header $time-animation-header ease-in;
+          transition: all $time-animation-header $time-animation-header ease-in;
+        }
+
+        .nav__item {
+          transition: all $time-animation-header ease-in;
+
+          @media (min-width: 1900px) {
+            padding-bottom: 35px;
+          }
         }
       }
     }
@@ -71,7 +91,7 @@
 
     background-color: $first-color;
 
-    transition: width $time-animation-header ease-in, height $time-animation-header ease-in, margin-right $time-animation-header $time-animation-header / 2 ease-in;
+    transition: all $time-animation-header ease-in;
 
     @media (min-width: 768px) {
       margin-left: 50px;
@@ -80,13 +100,16 @@
       width: 120px;
       height: 120px;
 
-      margin: 40px 30px 0 72px;
+      margin: 5px 15px 0 40px;
     }
-    @media (min-width: 1560px) {
-      width: 200px;
-      height: 200px;
+    @media (min-width: 1536px) {
+      width: 150px;
+      height: 150px;
 
-      margin: 40px 70px 0 85px;
+      margin: 40px 20px 0 85px;
+    }
+    @media (min-width: 1900px) {
+      margin: 40px 100px 0 85px;
     }
   }
 
@@ -94,15 +117,15 @@
     max-width: 60px;
     height: 60px;
 
-    transition: max-width $time-animation-header ease-in, height $time-animation-header ease-in;
+    transition: all $time-animation-header ease-in;
 
     @media (min-width: 1360px) {
       max-width: 87px;
       height: 87px;
     }
-    @media (min-width: 1560px) {
-      max-width: 150px;
-      height: 150px;
+    @media (min-width: 1536px) {
+      max-width: 120px;
+      height: 120px;
     }
   }
 }
