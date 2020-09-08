@@ -21,13 +21,13 @@
     .card-real-estate {
 
       &__img {
-        height: 60px;
-        transition: height $time-animation-card ease-in;
+        height: 100px;
+        transition: all $time-animation-card ease-in;
       }
 
       &__info {
-        height: 280px;
-        transition: height $time-animation-card ease-in;
+        height: 240px;
+        transition: all $time-animation-card ease-in;
       }
 
       &__address {
@@ -56,16 +56,16 @@
 
         &__img {
           height: 40px;
-          transition: height $time-animation-card ease-in;
+          transition: all $time-animation-card ease-in;
 
           @media (min-width: 1900px) {
-            height: 60px;
+            height: 100px;
           }
         }
 
         &__info {
-          height: 280px;
-          transition: height $time-animation-card ease-in;
+          height: 240px;
+          transition: all $time-animation-card ease-in;
         }
 
         &__address {
@@ -86,13 +86,22 @@
         }
       }
     }
+
+    @media (min-width: 1900px) {
+      .card-real-estate {
+
+        &__img {
+          height: 100px;
+        }
+      }
+    }
   }
 
   &__img {
     width: 100%;
     height: 160px;
 
-    transition: height $time-animation-card ease-in;
+    transition: all $time-animation-card ease-in;
 
     @media (min-width: 1900px) {
       height: 195px;
@@ -120,7 +129,7 @@
     border: 1px solid rgba(89, 125, 163, .5);
     border-top: none;
 
-    transition: height $time-animation-card ease-in;
+    transition: all $time-animation-card ease-in;
   }
 
   &__name {

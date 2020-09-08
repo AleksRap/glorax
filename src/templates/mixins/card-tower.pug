@@ -21,7 +21,7 @@ mixin card-tower(data)
               ];
 
             each item, index in arrInfo
-              .swiper-slide
+              a.swiper-slide(href=item data-fslightbox=`render-${data.value}`)
                 img.active(src=item alt=`slide-${index}`)
 
           .swiper-pagination.card-tower__pagination
@@ -94,8 +94,8 @@ mixin card-tower(data)
                   img(src=layout.img alt=`Планировка-${index}`)
 
           .card-tower__table-row-wrap
-            each layout in layouts
-              .card-tower__table-row
+            each layout, index in layouts
+              a.card-tower__table-row(href=layout.img data-fslightbox=`plans-${data.value}-${index}` data-row-fslightbox)
                 .card-tower__table-cell=layout.number
                 .card-tower__table-cell=layout.floor
                 .card-tower__table-cell=layout.square
@@ -112,4 +112,4 @@ mixin card-tower(data)
             | на бронь
 
 
-      button.card-tower__minus(data-btn="close") -
+      button.card-tower__close(data-btn="close")

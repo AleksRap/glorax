@@ -96,7 +96,7 @@
 
       background-color: rgba(255, 255, 255, .7);
 
-      transition: height $time-opacity-animation-on-off ease-in, background-color $time-opacity-animation-on-off ease-in;
+      transition: all $time-opacity-animation-on-off ease-in;
     }
 
     &.active {
@@ -104,7 +104,7 @@
       &::before {
         height: 14px;
         background-color: rgba(255, 255, 255, .9);
-        transition: height $time-opacity-animation-on-off ease-in, background-color $time-opacity-animation-on-off ease-in;
+        transition: all $time-opacity-animation-on-off ease-in;
       }
     }
   }
@@ -226,7 +226,7 @@
     outline: none;
     border: none;
     border-bottom: 8px solid transparent;
-    transition: border $time-opacity-animation-on-off ease-in;
+    transition: all $time-opacity-animation-on-off ease-in;
 
     font-size: 14px;
     color: #343A42;
@@ -241,12 +241,12 @@
 
     &:hover {
       border-bottom: 8px solid #1B2E50;
-      transition: border $time-opacity-animation-on-off ease-in;
+      transition: all $time-opacity-animation-on-off ease-in;
     }
 
     &_active {
       border-bottom: 8px solid #1B2E50;
-      transition: border $time-opacity-animation-on-off ease-in;
+      transition: all $time-opacity-animation-on-off ease-in;
     }
   }
 
@@ -348,25 +348,7 @@
 
   &__description-full-wrap {
     position: relative;
-    height: 300px;
-
-    &::after {
-      display: none;
-
-      @media (min-width: 768px) {
-        display: block;
-
-        position: absolute;
-        content: '';
-        bottom: 0;
-        left: 0;
-
-        width: 100%;
-        height: 85px;
-
-        background: linear-gradient(180deg, rgba(27, 46, 80, 0) 0%, #1B2E50 100%);
-      }
-    }
+    height: 290px;
   }
 
   &__description-full {
@@ -378,9 +360,6 @@
     font-size: 14px;
     line-height: 1.5;
 
-    @media (min-width: 768px) {
-      padding-bottom: 60px;
-    }
     @media (min-width: 1360px) {
       margin-left: -450px;
       padding-left: 450px;
@@ -508,6 +487,9 @@
     grid-template-columns: repeat(3, 1fr) 100px;
     justify-items: center;
 
+    color: white;
+    text-decoration: none;
+
     @media (min-width: 1360px) {
       grid-template-columns: 170px 135px 190px 1fr;
     }
@@ -630,7 +612,7 @@
     }
   }
 
-  &__minus {
+  &__close {
     cursor: pointer;
 
     position: absolute;
@@ -640,7 +622,7 @@
     width: 34px;
     height: 34px;
 
-    background-color: #fff;
+    background: white url('../svg/icons/close.svg') center/50% no-repeat;
     border: none;
     outline: none;
   }
@@ -663,7 +645,7 @@
 
   &__pagination {
     position: absolute;
-    bottom: 30px !important;
+    bottom: 15px !important;
     left: 0;
     right: 0;
     margin: 0 auto;

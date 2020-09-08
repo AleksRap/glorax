@@ -90,8 +90,11 @@
   &__number {
     margin-left: auto;
     margin-bottom: 20px;
-    font-size: 18px;
+    font-size: 16px;
 
+    @media (min-width: 360px) {
+      font-size: 18px;
+    }
     @media (min-width: 1360px) {
       font-size: 20px;
     }

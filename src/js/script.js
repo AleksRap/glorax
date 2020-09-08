@@ -586,6 +586,7 @@ class GalleryCards {
 
 /** Yandex api */
 ymaps.ready(() => {
+
   const myMap = new ymaps.Map('map-yandex', {
     center: [59.93, 30.31],
     zoom: 11
@@ -600,10 +601,11 @@ ymaps.ready(() => {
   `;
 
   const footer = (name, address, id) => `
-    <a class="card-map__footer" href="#${id}">
+    <div class="card-map__footer">
       <h2 class="card-map__title">${name}</h2>
       <p class="card-map__address">${address}</p>
-    </a>
+      <a class="card-map__link" href="#${id}">Подробнее</a>
+    </div>
   `;
 
   arrInfo.forEach(({ name, coordinates, address, img, id }) => {

@@ -37,7 +37,7 @@
 
   &__title {
     margin-top: 0;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
 
     font-size: 16px;
     font-weight: 500;
@@ -51,13 +51,37 @@
     line-height: 1.2;
     font-weight: 300;
   }
+
+  &__link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 5px;
+
+    margin-top: 10px;
+
+    background-color: #1B2E50;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.ymaps-2-1-77-balloon__content {
+
+  & > * {
+    width: 215px !important;
+    height: auto !important;
+  }
 }
 
 .ymaps-2-1-77-balloon__close+.ymaps-2-1-77-balloon__content {
   margin-right: 0 !important;
-  padding: 0;
+  padding: 0 !important;
 }
 
 .ymaps-2-1-77-balloon__close-button {
-  opacity: .8;
+  opacity: .8 !important;
+  background: url('../svg/icons/close.svg') center/50% no-repeat !important;
 }
